@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="GhostOps.ai — Secure enterprise AI integration for real systems." />
+  <title>GhostOps.ai</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      background: #0d0d0d;
+      color: #f1f1f1;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    header {
+      position: relative;
+      text-align: center;
+      padding: 6rem 1rem 3rem;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #00ffe1;
+      z-index: 1;
+      position: relative;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+      color: #aaa;
+      font-weight: normal;
+      z-index: 1;
+      position: relative;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .glow-ring {
+      position: absolute;
+      top: -60px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(0,255,225,0.15) 0%, transparent 70%);
+      animation: pulse 4s infinite ease-in-out;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    @keyframes pulse {
+      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
+      50% { transform: translateX(-50%) scale(1.2); opacity: 0.2; }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section h3 {
+      color: #00ffe1;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      padding-left: 1.2rem;
+    }
+
+    li {
+      margin-bottom: 0.75rem;
+    }
+
+    a.cta {
+      display: inline-block;
+      background: #00ffe1;
+      color: #000;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    a.cta:hover {
+      background: #00cbb9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 4rem 1rem 2rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+
+    svg#bg-waves {
+      position: absolute;
+      top: -40px;
+      left: 0;
+      width: 100%;
+      z-index: 0;
+      opacity: 0.03;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.2rem; }
+      h2 { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <svg id="bg-waves" viewBox="0 0 1440 320">
+    <path fill="#00ffe1" fill-opacity="1" d="M0,256L30,240C60,224,120,192,180,186.7C240,181,300,203,360,213.3C420,224,480,224,540,197.3C600,171,660,117,720,106.7C780,96,840,128,900,149.3C960,171,1020,181,1080,176C1140,171,1200,149,1260,128C1320,107,1380,85,1410,74.7L1440,64L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+  </svg>
+
+  <header>
+    <div class="glow-ring"></div>
+    <h1>GhostOps.ai</h1>
+    <h2>We integrate AI into real-world systems—securely, quietly, and fast.</h2>
+    <div style="margin-top:2rem;">
+      <a href="https://calendly.com/your-link-here" class="cta">Book a Free Strategy Call</a>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <div class="section">
+      <h3>🧠 Who We Help</h3>
+      <ul>
+        <li>⚡ Mid-size companies drowning in manual ops</li>
+        <li>🏛️ Enterprises stuck with legacy platforms (Oracle, SAP, Salesforce)</li>
+        <li>💼 Agencies needing white-label AI integration help</li>
+        <li>🔌 Utility & energy orgs looking to modernize ops</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>🔧 What We Deliver</h3>
+      <ul>
+        <li><strong>Internal AI Assistants</strong> – Slack/Teams bots trained on your data</li>
+        <li><strong>RAG Systems</strong> – Vector search + AI on private docs</li>
+        <li><strong>Automations</strong> – Summaries, triage, email drafts, ticket routing</li>
+        <li><strong>Custom Integrations</strong> – Tie AI into your existing APIs + databases</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>💥 Why GhostOps?</h3>
+      <ul>
+        <li>🎯 Built by Oracle-tier integration experts — not hype merchants</li>
+        <li>🔒 Security and compliance baked in from Day 1</li>
+        <li>⚙️ Real-world experience in power, utilities, field ops, and IT</li>
+        <li>🛠️ We don’t talk about building — we just ship</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>📞 Let's Build Something Real</h3>
+      <p>You don't need another AI deck. You need something that works. Let's build your first production integration in <strong>&lt; 30 days</strong>.</p>
+      <a href="https://calendly.com/your-link-here" class="cta">Book a Call</a>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2025 GhostOps.ai — Quietly delivering next-gen enterprise AI.
+  </footer>
+
+</body>
+</html>
