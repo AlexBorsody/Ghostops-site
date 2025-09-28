@@ -113,7 +113,41 @@
       z-index: -1;
       opacity: 0.25;
     }
-  </style>
+
+#ghost-mascot-container {
+  position: fixed;
+  bottom: -60px;
+  right: 20px;
+  z-index: 999;
+  transition: bottom 1s ease-in-out;
+}
+
+#ghost-mascot-container.show {
+  bottom: 20px;
+}
+
+#ghost-mascot {
+  cursor: pointer;
+  animation: floaty 3s ease-in-out infinite;
+}
+
+#ghost-mascot:hover {
+  animation: wiggle 0.3s ease-in-out infinite;
+}
+
+@keyframes floaty {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(5deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+    <style>
+  
 </head>
 
 <script>
