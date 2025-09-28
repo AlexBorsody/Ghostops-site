@@ -209,5 +209,12 @@
     window.addEventListener('resize', initCanvas);
     initCanvas();
     animateParticles();
-  </script></body>
+    
+  // Auto-show ghost after delay
+  setTimeout(() => {
+    document.getElementById('ghost-mascot-container').classList.add('show');
+  }, 3000);
+
+  </script>
+</body>
 </html>
