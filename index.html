@@ -1,182 +1,198 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="GhostOps.ai — Secure enterprise AI integration for real systems." />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GhostOps.ai — Stealth AI integrations for real infrastructure.">
   <title>GhostOps.ai</title>
   <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      margin: 0;
-      font-family: 'Segoe UI', Roboto, sans-serif;
-      background: #0d0d0d;
-      color: #f1f1f1;
-      line-height: 1.6;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
+      color: #f0f0f0;
+      scroll-behavior: smooth;
       overflow-x: hidden;
     }
-
-    header {
-      position: relative;
-      text-align: center;
-      padding: 6rem 1rem 3rem;
-      overflow: hidden;
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: #0d0d0d;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      border-bottom: 1px solid #1e1e1e;
     }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .logo {
+      font-weight: bold;
       color: #00ffe1;
-      z-index: 1;
+      font-size: 1.25rem;
+    }
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+    }
+    .menu-toggle span {
+      background: #f0f0f0;
+      height: 3px;
+      margin: 4px 0;
+      width: 25px;
+    }
+    .nav-links {
+      display: flex;
+    }
+    .nav-links a {
+      color: #f0f0f0;
+      margin-left: 1.5rem;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: #00ffe1;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle { display: flex; }
+      .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #0d0d0d;
+        width: 100%;
+        flex-direction: column;
+        display: none;
+      }
+      .nav-links a {
+        margin: 1rem;
+      }
+      .nav-links.show { display: flex; }
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .section {
+      padding: 100px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+      padding-top: 120px;
       position: relative;
     }
-
-    h2 {
+    .hero h1 {
+      font-size: 2.5rem;
+      color: #00ffe1;
+    }
+    .hero p {
       font-size: 1.2rem;
       color: #aaa;
-      font-weight: normal;
-      z-index: 1;
-      position: relative;
-      max-width: 600px;
-      margin: auto;
     }
-
-    .glow-ring {
+    .hero-canvas {
       position: absolute;
-      top: -60px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, rgba(0,255,225,0.15) 0%, transparent 70%);
-      animation: pulse 4s infinite ease-in-out;
-      border-radius: 50%;
-      z-index: 0;
-    }
-
-    @keyframes pulse {
-      0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.6; }
-      50% { transform: translateX(-50%) scale(1.2); opacity: 0.2; }
-    }
-
-    .container {
-      max-width: 800px;
-      margin: auto;
-      padding: 2rem 1rem;
-    }
-
-    .section {
-      margin-bottom: 3rem;
-    }
-
-    .section h3 {
-      color: #00ffe1;
-      font-size: 1.4rem;
-      margin-bottom: 1rem;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    li {
-      margin-bottom: 0.75rem;
-    }
-
-    a.cta {
-      display: inline-block;
-      background: #00ffe1;
-      color: #000;
-      padding: 0.75rem 1.5rem;
-      border-radius: 4px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s ease;
-    }
-
-    a.cta:hover {
-      background: #00cbb9;
-    }
-
-    footer {
-      text-align: center;
-      padding: 4rem 1rem 2rem;
-      color: #666;
-      font-size: 0.9rem;
-    }
-
-    svg#bg-waves {
-      position: absolute;
-      top: -40px;
+      top: 0;
       left: 0;
       width: 100%;
-      z-index: 0;
-      opacity: 0.03;
-    }
-
-    @media (max-width: 600px) {
-      h1 { font-size: 2.2rem; }
-      h2 { font-size: 1rem; }
+      height: 100%;
+      z-index: -1;
+      opacity: 0.25;
     }
   </style>
 </head>
 <body>
-
-  <svg id="bg-waves" viewBox="0 0 1440 320">
-    <path fill="#00ffe1" fill-opacity="1" d="M0,256L30,240C60,224,120,192,180,186.7C240,181,300,203,360,213.3C420,224,480,224,540,197.3C600,171,660,117,720,106.7C780,96,840,128,900,149.3C960,171,1020,181,1080,176C1140,171,1200,149,1260,128C1320,107,1380,85,1410,74.7L1440,64L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
-  </svg>
-
-  <header>
-    <div class="glow-ring"></div>
-    <h1>GhostOps.ai</h1>
-    <h2>We integrate AI into real-world systems—securely, quietly, and fast.</h2>
-    <div style="margin-top:2rem;">
-      <a href="https://calendly.com/alex-freeenergymedia/30min"   class="cta">Book a Free Strategy Call</a>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">GhostOps.ai</div>
+      <div class="menu-toggle" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </div>
     </div>
-  </header>
+  </nav>  <section class="hero section fade-in" id="hero">
+    <canvas class="hero-canvas" id="heroCanvas"></canvas>
+    <h1>Stealth AI Deployment for Real Infrastructure</h1>
+    <p>We help legacy systems become future-ready using quiet, precise AI execution. No hype. Just results.</p>
+  </section>  <section class="section fade-in" id="about">
+    <h2>About GhostOps</h2>
+    <p>GhostOps is a boutique AI consultancy built by infrastructure engineers who understand legacy constraints. We specialize in stealth-mode automation, API integration, and closed-loop data ops. We target high-trust clients with complex infrastructure who need quiet execution and real results.</p>
+  </section>  <section class="section fade-in" id="services">
+    <h2>What We Do</h2>
+    <ul>
+      <li>🔒 Secure, containerized AI workflows for regulated industries</li>
+      <li>🧠 Fine-tuned LLMs trained on real operational knowledge</li>
+      <li>🔧 Zero-hype automation pipelines for NMS, OMS, and legacy platforms</li>
+      <li>🌐 API-based middleware for transforming outdated systems</li>
+      <li>🚀 Rapid MVP builds using PWA, FlutterFlow, Airtable, and GPT agents</li>
+    </ul>
+  </section>  <section class="section fade-in" id="contact">
+    <h2>Contact</h2>
+    <p>Book a call: <a href="https://calendly.com/asborsody" style="color: #00ffe1">calendly.com/asborsody</a></p>
+  </section>  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navLinks');
+      nav.classList.toggle('show');
+    }
+    function handleScrollAnimations() {
+      const elements = document.querySelectorAll('.fade-in');
+      elements.forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 100) {
+          el.classList.add('visible');
+        }
+      });
+    }
+    document.addEventListener('scroll', handleScrollAnimations);
+    window.addEventListener('load', handleScrollAnimations);
 
-  <div class="container">
-
-    <div class="section">
-      <h3>🧠 Who We Help</h3>
-      <ul>
-        <li>⚡ Mid-size companies drowning in manual ops</li>
-        <li>🏛️ Enterprises stuck with legacy platforms (Oracle, SAP, Salesforce)</li>
-        <li>💼 Agencies needing white-label AI integration help</li>
-        <li>🔌 Utility & energy orgs looking to modernize ops</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h3>🔧 What We Deliver</h3>
-      <ul>
-        <li><strong>Internal AI Assistants</strong> – Slack/Teams bots trained on your data</li>
-        <li><strong>RAG Systems</strong> – Vector search + AI on private docs</li>
-        <li><strong>Automations</strong> – Summaries, triage, email drafts, ticket routing</li>
-        <li><strong>Custom Integrations</strong> – Tie AI into your existing APIs + databases</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h3>💥 Why GhostOps?</h3>
-      <ul>
-        <li>🎯 Built by Enterprise-tier integration experts — not hype merchants</li>
-        <li>🔒 Security and compliance baked in from Day 1</li>
-        <li>⚙️ Real-world experience in power, utilities, field ops, and IT</li>
-        <li>🛠️ We don’t talk about building — we just ship</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h3>📞 Let's Build Something Real</h3>
-      <p>You don't need another AI deck. You need something that works. Let's build your first production integration in <strong>&lt; 30 days</strong>.</p>
-      <a href="https://calendly.com/asborsody" class="cta">Book a Call</a>
-    </div>
-
-  </div>
-
-  <footer>
-    &copy; 2025 GhostOps.ai — Quietly delivering next-gen enterprise AI.
-  </footer>
-
-</body>
+    // Simple animated particle effect
+    const canvas = document.getElementById('heroCanvas');
+    const ctx = canvas.getContext('2d');
+    let w, h, particles;
+    function initCanvas() {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight / 1.5;
+      particles = Array.from({ length: 100 }, () => ({
+        x: Math.random() * w,
+        y: Math.random() * h,
+        r: Math.random() * 2 + 1,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5
+      }));
+    }
+    function animateParticles() {
+      ctx.clearRect(0, 0, w, h);
+      for (const p of particles) {
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0 || p.x > w) p.dx *= -1;
+        if (p.y < 0 || p.y > h) p.dy *= -1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = '#00ffe1';
+        ctx.fill();
+      }
+      requestAnimationFrame(animateParticles);
+    }
+    window.addEventListener('resize', initCanvas);
+    initCanvas();
+    animateParticles();
+  </script></body>
 </html>
