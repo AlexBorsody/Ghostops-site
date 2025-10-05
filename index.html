@@ -190,6 +190,79 @@
 </script>
   
 <body>
+
+<canvas id="fractalCanvas" style="position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1;"></canvas>
+
+<script src="https://cdn.jsdelivr.net/npm/three@0.158.0/build/three.min.js"></script>
+<script>
+  const canvas = document.getElementById("fractalCanvas");
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setSize(window.innerWidth, window.innerHeight);
+
+  const scene = new THREE.Scene();
+  const camera = new THREE.Camera();
+  camera.position.z = 1;
+
+  const uniforms = {
+    u_time: { value: 0.0 },
+    u_resolution: { value: new THREE.Vector2() }
+  };
+
+  uniforms.u_resolution.value.x = window.innerWidth;
+  uniforms.u_resolution.value.y = window.innerHeight;
+
+  const fragmentShader = `
+    precision highp float;
+
+    uniform vec2 u_resolution;
+    uniform float u_time;
+
+    #define MAX_ITER 100
+
+    void main() {
+      vec2 uv = gl_FragCoord.xy / u_resolution.xy;
+      vec2 c = vec2(uv.x * 3.0 - 1.5, uv.y * 2.0 - 1.0);
+
+      vec2 z = vec2(0.0);
+      float iter;
+      for (int i = 0; i < MAX_ITER; i++) {
+        float x = (z.x * z.x - z.y * z.y) + c.x;
+        float y = (2.0 * z.x * z.y) + c.y;
+        z = vec2(x, y);
+        if (length(z) > 2.0) {
+          iter = float(i);
+          break;
+        }
+      }
+
+      float norm = iter / float(MAX_ITER);
+      vec3 color = vec3(0.0);
+      color = mix(vec3(0.0, 0.1, 0.2), vec3(0.0, 0.6, 1.0), norm);
+      gl_FragColor = vec4(color, 1.0);
+    }
+  `;
+
+  const material = new THREE.ShaderMaterial({
+    uniforms,
+    fragmentShader
+  });
+
+  const plane = new THREE.PlaneGeometry(2, 2);
+  const mesh = new THREE.Mesh(plane, material);
+  scene.add(mesh);
+
+  function animate(time) {
+    uniforms.u_time.value = time * 0.001;
+    renderer.render(scene, camera);
+    requestAnimationFrame(animate);
+  }
+  requestAnimationFrame(animate);
+
+  window.addEventListener('resize', () => {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    uniforms.u_resolution.value.set(window.innerWidth, window.innerHeight);
+  });
+</script>  
   <nav>
     <div class="nav-container">
       <div class="logo">GhostOps.ai</div>
