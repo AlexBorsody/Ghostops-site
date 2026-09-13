@@ -1,488 +1,1192 @@
-<!DOCTYPE html><html lang="en">
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="GhostOp.ai — Stealth AI integrations for real infrastructure.">
-  <title>GhostOp.ai</title>
-
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#00ffe1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="color-scheme" content="light" />
+  <meta name="theme-color" content="#f4f4f0" />
+  <meta name="description" content="Independent technical advisory for founders, investors, and operating teams making consequential software decisions." />
+  <meta property="og:title" content="GhostOps — Technical Advisory" />
+  <meta property="og:description" content="Technical diligence, fractional architecture advisory, and build audits for consequential software decisions." />
+  <link rel="icon" href="data:," />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,500;600&display=swap" rel="stylesheet" />
+  <title>GhostOps — Technical Advisory</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1a1a1a);
-      color: #f0f0f0;
-      scroll-behavior: smooth;
-      overflow-x: hidden;
-  position: relative;
-  z-index: 0;
-}
-    
-    nav {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      background: #0d0d0d;
-      padding: 1rem 2rem;
-      z-index: 1000;
-      border-bottom: 1px solid #1e1e1e;
+    :root {
+      --paper: #f4f4f0;
+      --white: #fbfbf8;
+      --ink: #111313;
+      --muted: #555b59;
+      --line: #c8cac4;
+      --line-dark: #2f3332;
+      --signal: #ff4a19;
+      --acid: #dff64f;
+      --dark: #151817;
+      --content: 1180px;
+      --shadow: 0 28px 80px rgba(19, 22, 21, .12);
     }
-    .nav-container {
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Archivo", sans-serif;
+      font-variation-settings: "wdth" 98;
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+    a { color: inherit; }
+    button { font: inherit; }
+    ::selection { background: var(--acid); color: var(--ink); }
+
+    .skip-link {
+      position: fixed;
+      top: 8px;
+      left: 8px;
+      z-index: 100;
+      padding: 10px 14px;
+      background: var(--ink);
+      color: white;
+      transform: translateY(-150%);
+    }
+    .skip-link:focus { transform: translateY(0); }
+
+    .topline {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      border-bottom: 1px solid rgba(17, 19, 19, .18);
+      background: rgba(244, 244, 240, .94);
+    }
+    .topline-inner {
+      width: min(var(--content), calc(100% - 40px));
+      min-height: 58px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .status strong { color: var(--ink); font-weight: 500; }
+    .status-divider { color: var(--signal); }
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--signal);
+      box-shadow: 0 0 0 4px rgba(255, 74, 25, .12);
+    }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      font-size: 13px;
+      font-weight: 650;
+    }
+    nav a { text-decoration: none; }
+    nav a:hover, nav a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
+    .nav-cta {
+      padding: 9px 14px;
+      background: var(--ink);
+      color: white;
+      text-decoration: none !important;
+    }
+
+    main { overflow: clip; }
+    .hero {
+      width: min(var(--content), calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 720px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
+      gap: 70px;
+      align-items: center;
+      padding: 82px 0 72px;
+    }
+    .hero-copy { max-width: 760px; }
+    .kicker {
+      margin: 0 0 22px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      line-height: 1.4;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      color: #3c423f;
+    }
+    .hero h1 {
+      max-width: 740px;
+      margin: 0;
+      font-family: "Source Serif 4", serif;
+      font-size: clamp(50px, 6.4vw, 89px);
+      line-height: .94;
+      letter-spacing: -.048em;
+      font-weight: 600;
+    }
+    .hero h1 em {
+      font-style: normal;
+      text-decoration: underline;
+      text-decoration-color: var(--signal);
+      text-decoration-thickness: .09em;
+      text-underline-offset: .1em;
+    }
+    .hero-lede {
+      max-width: 700px;
+      margin: 34px 0 0;
+      font-size: clamp(18px, 1.9vw, 23px);
+      line-height: 1.45;
+      color: #303432;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+      margin-top: 34px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 49px;
+      padding: 12px 18px;
+      border: 1px solid var(--ink);
+      background: var(--ink);
+      color: white;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .button:hover, .button:focus-visible { background: var(--signal); border-color: var(--signal); }
+    .button.secondary { background: transparent; color: var(--ink); }
+    .button.secondary:hover, .button.secondary:focus-visible { background: var(--ink); color: white; }
+    .button svg { width: 17px; height: 17px; }
+
+    .docket {
+      position: relative;
+      align-self: stretch;
+      min-height: 530px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .ghost-stage {
+      position: absolute;
+      z-index: 3;
+      top: 2%;
+      right: -2%;
+      width: 142px;
+      aspect-ratio: 1;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
+      filter: drop-shadow(0 15px 18px rgba(17, 19, 19, .16));
+    }
+    .ghost-stage:hover .ghost-mark,
+    .ghost-stage:focus-visible .ghost-mark { animation-play-state: paused; transform: translate3d(-2px, -7px, 0) rotate(-6deg) scale(1.06); }
+    .ghost-stage:active .ghost-mark { transform: scale(.96); }
+    .ghost-stage .ghost-mark { transition: transform .2s ease; animation: ghost-float 4.2s ease-in-out infinite; }
+    .ghost-stage.is-summoning::after { animation: ghost-summon .55s ease-out; }
+    .ghost-stage::before,
+    .ghost-stage::after {
+      content: "";
+      position: absolute;
+      inset: 18% 12% 10%;
+      border: 2px solid var(--signal);
+      border-radius: 52% 48% 44% 48%;
+      opacity: .18;
+      transform: translate(12px, 7px) rotate(7deg);
+      animation: ghost-echo 4.2s ease-in-out infinite;
+    }
+    .ghost-stage::after {
+      opacity: .08;
+      transform: translate(23px, 13px) rotate(12deg);
+      animation-delay: -.5s;
+    }
+    .ghost-mark {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      overflow: visible;
+    }
+    .ghost-body {
+      fill: var(--white);
+      stroke: var(--ink);
+      stroke-width: 3;
+      stroke-linejoin: round;
+    }
+    .ghost-shadow { fill: rgba(17, 19, 19, .12); }
+    .ghost-eye { fill: var(--ink); transform-box: fill-box; transform-origin: center; animation: ghost-blink 5.4s ease-in-out infinite; }
+    .ghost-cheek { fill: var(--signal); opacity: .55; }
+    .ghost-spark { fill: var(--acid); stroke: var(--ink); stroke-width: 2; transform-box: fill-box; transform-origin: center; animation: ghost-spark 2.8s ease-in-out infinite; }
+    @keyframes ghost-float {
+      0%, 100% { transform: translate3d(0, 0, 0) rotate(3deg); }
+      50% { transform: translate3d(-5px, -13px, 0) rotate(-2deg); }
+    }
+    @keyframes ghost-echo {
+      0%, 100% { opacity: .08; transform: translate(16px, 9px) rotate(8deg) scale(.96); }
+      50% { opacity: .24; transform: translate(25px, 18px) rotate(12deg) scale(1.04); }
+    }
+    @keyframes ghost-blink {
+      0%, 44%, 48%, 100% { transform: scaleY(1); }
+      46% { transform: scaleY(.12); }
+    }
+    @keyframes ghost-spark {
+      0%, 100% { transform: rotate(0deg) scale(.88); }
+      50% { transform: rotate(16deg) scale(1.08); }
+    }
+    @keyframes ghost-summon {
+      0% { opacity: .7; transform: translate(0, 0) scale(.75); }
+      100% { opacity: 0; transform: translate(32px, 24px) scale(1.55); }
+    }
+
+    .contact-layer[hidden] { display: none; }
+    .contact-layer {
+      position: fixed;
+      inset: 0;
+      z-index: 80;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      background: rgba(17, 19, 19, .72);
+    }
+    .contact-dialog {
+      position: relative;
+      width: min(620px, 100%);
+      max-height: min(760px, calc(100vh - 44px));
+      overflow-y: auto;
+      background: var(--white);
+      border: 1px solid var(--ink);
+      box-shadow: 18px 18px 0 var(--signal);
+      animation: ghost-door .35s cubic-bezier(.2, .8, .2, 1);
+    }
+    .contact-dialog::before {
+      content: "";
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      right: -70px;
+      top: -85px;
+      border: 2px solid var(--signal);
+      border-radius: 50%;
+      box-shadow: 0 0 0 16px rgba(255, 74, 25, .12), 0 0 0 32px rgba(255, 74, 25, .06);
+      pointer-events: none;
+    }
+    .contact-head {
+      position: relative;
+      display: grid;
+      grid-template-columns: 70px 1fr auto;
+      gap: 16px;
+      align-items: center;
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--ink);
+      background: var(--acid);
+    }
+    .contact-ghost { width: 70px; height: 70px; }
+    .contact-head strong { display: block; font-size: 20px; letter-spacing: -.02em; }
+    .contact-head span { display: block; margin-top: 2px; font-family: "IBM Plex Mono", monospace; font-size: 10px; text-transform: uppercase; }
+    .dialog-close {
+      position: relative;
+      z-index: 1;
+      width: 38px;
+      height: 38px;
+      border: 1px solid var(--ink);
+      background: var(--white);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 23px;
+      line-height: 1;
+    }
+    .dialog-close:hover, .dialog-close:focus-visible { background: var(--ink); color: white; }
+    .contact-form { padding: 26px 28px 30px; }
+    .contact-form p { margin: 0 0 22px; color: var(--muted); }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-form label { display: block; margin-bottom: 16px; font-size: 12px; font-weight: 750; }
+    .contact-form input,
+    .contact-form textarea {
+      display: block;
+      width: 100%;
+      margin-top: 7px;
+      padding: 12px 13px;
+      border: 1px solid var(--ink);
+      border-radius: 0;
+      background: white;
+      color: var(--ink);
+      font: 500 15px/1.4 "Archivo", sans-serif;
+    }
+    .contact-form textarea { min-height: 120px; resize: vertical; }
+    .contact-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
+    .contact-note { margin: 16px 0 0 !important; font-family: "IBM Plex Mono", monospace; font-size: 10px; }
+    .contact-feedback { margin: 0; color: #226e2a; font-family: "IBM Plex Mono", monospace; font-size: 11px; }
+    @keyframes ghost-door {
+      from { transform: translateY(24px) scale(.96) rotate(-1deg); }
+      to { transform: translateY(0) scale(1) rotate(0); }
+    }
+    .docket::before {
+      content: "";
+      position: absolute;
+      inset: 6% 10% 5%;
+      background: repeating-linear-gradient(0deg, transparent 0 35px, rgba(17, 19, 19, .08) 35px 36px);
+      border: 1px solid var(--line);
+      transform: rotate(4deg);
+    }
+    .case-sheet {
+      position: relative;
+      z-index: 1;
+      width: min(390px, 100%);
+      background: var(--white);
+      border: 1px solid var(--ink);
+      box-shadow: var(--shadow);
+      transform: rotate(-1.5deg);
+    }
+    .sheet-head {
+      padding: 17px 19px;
+      border-bottom: 1px solid var(--ink);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      max-width: 1100px;
-      margin: auto;
+      gap: 14px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .08em;
     }
-    .logo {
-      font-weight: bold;
-      color: #00ffe1;
-      font-size: 1.25rem;
+    .sheet-head strong { color: var(--signal); }
+    .sheet-body { padding: 26px 22px 24px; }
+    .sheet-title {
+      margin: 0 0 24px;
+      font-size: 25px;
+      line-height: 1.13;
+      letter-spacing: -.025em;
     }
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
+    .signal-line {
+      display: grid;
+      grid-template-columns: 36px 1fr;
+      gap: 13px;
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
     }
-    .menu-toggle span {
-      background: #f0f0f0;
-      height: 3px;
-      margin: 4px 0;
-      width: 25px;
+    .signal-line:last-child { border-bottom: 1px solid var(--line); }
+    .signal-line span {
+      font-family: "IBM Plex Mono", monospace;
+      color: var(--signal);
+      font-size: 11px;
     }
-    .nav-links {
-      display: flex;
-    }
-    .nav-links a {
-      color: #f0f0f0;
-      margin-left: 1.5rem;
-      text-decoration: none;
+    .signal-line p { margin: 0; font-size: 14px; line-height: 1.42; }
+    .stamp {
+      width: max-content;
+      margin: 28px 0 2px auto;
+      padding: 7px 10px;
+      border: 2px solid var(--signal);
+      color: var(--signal);
+      font-family: "IBM Plex Mono", monospace;
       font-weight: 500;
-      transition: color 0.2s ease;
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      transform: rotate(-3deg);
     }
-    .nav-links a:hover {
-      color: #00ffe1;
+
+    .audience-band {
+      border-top: 1px solid var(--ink);
+      border-bottom: 1px solid var(--ink);
+      background: var(--acid);
     }
-    @media (max-width: 768px) {
-      .menu-toggle { display: flex; }
-      .nav-links {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        background: #0d0d0d;
-        width: 100%;
-        flex-direction: column;
-        display: none;
-      }
-      .nav-links a {
-        margin: 1rem;
-      }
-      .nav-links.show { display: flex; }
+    .audience-inner {
+      width: min(var(--content), calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr repeat(3, .6fr);
     }
-    .fade-in {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
+    .audience-inner > * {
+      padding: 18px 20px;
+      border-right: 1px solid var(--ink);
     }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    .audience-inner > *:first-child { padding-left: 0; }
+    .audience-inner > *:last-child { border-right: 0; }
+    .audience-label { font-size: 13px; font-weight: 750; }
+    .audience-item { font-family: "IBM Plex Mono", monospace; font-size: 12px; text-transform: uppercase; }
+
     .section {
-      padding: 100px 20px;
-      max-width: 1000px;
-      margin: auto;
-      margin-top:.1em;
+      width: min(var(--content), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 112px 0;
     }
-    .hero {
-      text-align: center;
-      padding-top: 120px;
+    .section-heading {
+      display: grid;
+      grid-template-columns: 180px minmax(0, 1fr);
+      gap: 40px;
+      margin-bottom: 58px;
+    }
+    .section-index {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      letter-spacing: .05em;
+      color: var(--muted);
+    }
+    .section-heading h2 {
+      max-width: 790px;
+      margin: 0;
+      font-family: "Source Serif 4", serif;
+      font-size: clamp(38px, 4.9vw, 62px);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+    }
+    .section-heading p {
+      grid-column: 2;
+      max-width: 690px;
+      margin: 18px 0 0;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .offer-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      border-top: 1px solid var(--ink);
+    }
+    .offer {
+      grid-column: span 4;
+      min-height: 430px;
+      padding: 25px 25px 28px;
+      border-right: 1px solid var(--ink);
+      display: flex;
+      flex-direction: column;
+      background: transparent;
+      transition: background .2s ease, color .2s ease;
+    }
+    .offer:last-child { border-right: 0; }
+    .offer:hover { background: var(--white); }
+    .offer-number {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--signal);
+    }
+    .offer h3 {
+      margin: 34px 0 16px;
+      font-size: 27px;
+      line-height: 1.05;
+      letter-spacing: -.03em;
+    }
+    .offer > p { margin: 0; color: var(--muted); }
+    .offer ul {
+      list-style: none;
+      margin: auto 0 0;
+      padding: 26px 0 0;
+    }
+    .offer li {
       position: relative;
+      padding: 9px 0 9px 19px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
     }
-    .hero h1 {
-      font-size: 2.5rem;
-      color: #00ffe1;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      color: #aaa;
-    }
-    .hero-canvas {
+    .offer li::before {
+      content: "+";
       position: absolute;
-      top: 0;
       left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-      opacity: 0.25;
+      color: var(--signal);
+      font-family: "IBM Plex Mono", monospace;
     }
 
-#ghost-mascot-container {
-  position: fixed;
-  bottom: -60px;
-  right: 20px;
-  z-index: 999;
-  transition: bottom 1s ease-in-out;
-}
+    .dark-section {
+      background: var(--dark);
+      color: #f4f4f0;
+    }
+    .dark-inner {
+      width: min(var(--content), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 112px 0;
+    }
+    .dark-section .section-heading p,
+    .dark-section .section-index { color: #aeb5b1; }
+    .deliverable-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 70px;
+      align-items: start;
+    }
+    .review-flow {
+      border: 1px solid var(--line-dark);
+      background: #101211;
+    }
+    .flow-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 18px;
+      border-bottom: 1px solid var(--line-dark);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      color: #aeb5b1;
+    }
+    .flow-item {
+      display: grid;
+      grid-template-columns: 54px 1fr auto;
+      align-items: center;
+      gap: 18px;
+      padding: 22px 18px;
+      border-bottom: 1px solid var(--line-dark);
+    }
+    .flow-item:last-child { border-bottom: 0; }
+    .flow-n {
+      color: var(--signal);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+    }
+    .flow-item h3 { margin: 0 0 3px; font-size: 17px; }
+    .flow-item p { margin: 0; color: #aeb5b1; font-size: 13px; }
+    .flow-state {
+      padding: 4px 7px;
+      border: 1px solid #626864;
+      color: #cfd4d1;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      text-transform: uppercase;
+    }
+    .deliverable-copy blockquote {
+      margin: 0;
+      font-family: "Source Serif 4", serif;
+      font-size: clamp(31px, 3.5vw, 47px);
+      line-height: 1.08;
+      letter-spacing: -.03em;
+    }
+    .deliverable-copy blockquote span { color: var(--acid); }
+    .deliverable-copy p { color: #aeb5b1; margin: 28px 0 0; font-size: 16px; }
+    .principles {
+      margin-top: 50px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1px;
+      background: var(--line-dark);
+      border: 1px solid var(--line-dark);
+    }
+    .principle { background: var(--dark); padding: 22px; }
+    .principle strong { display: block; margin-bottom: 7px; font-size: 14px; }
+    .principle span { display: block; color: #aeb5b1; font-size: 13px; }
 
-#competitor-intel svg {
-  display: block;
-  margin: 0 auto;
-  width: 40px;
-  height: 40px;
-  margin-top:40px;
-  margin-bottom:15px;
-}
-    
-#ghost-mascot-container.show {
-  bottom: 20px;
-}
+    .fit-layout {
+      display: grid;
+      grid-template-columns: minmax(0, .8fr) minmax(380px, 1.2fr);
+      gap: 70px;
+      align-items: start;
+    }
+    .fit-copy h2 {
+      margin: 0;
+      max-width: 450px;
+      font-family: "Source Serif 4", serif;
+      font-size: clamp(39px, 4.4vw, 60px);
+      line-height: 1;
+      letter-spacing: -.04em;
+    }
+    .fit-copy p { max-width: 510px; margin: 23px 0 0; color: var(--muted); font-size: 17px; }
+    .fit-copy .tiny-note {
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      color: var(--muted);
+    }
+    .fit-tool { border: 1px solid var(--ink); background: var(--white); }
+    .fit-tool-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px 18px;
+      border-bottom: 1px solid var(--ink);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+    }
+    .fit-options { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--ink); }
+    .fit-option {
+      min-height: 94px;
+      padding: 14px;
+      border: 0;
+      border-right: 1px solid var(--ink);
+      background: transparent;
+      color: var(--ink);
+      text-align: left;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 700;
+    }
+    .fit-option:last-child { border-right: 0; }
+    .fit-option:hover, .fit-option:focus-visible { background: #ecece6; }
+    .fit-option[aria-selected="true"] { background: var(--acid); }
+    .fit-result { min-height: 300px; padding: 28px; }
+    .fit-result-label {
+      display: block;
+      margin-bottom: 10px;
+      color: var(--signal);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+    .fit-result h3 { margin: 0; font-size: 28px; letter-spacing: -.03em; }
+    .fit-result p { max-width: 620px; margin: 15px 0 21px; color: var(--muted); }
+    .fit-result ul { margin: 0 0 26px; padding: 0; list-style: none; }
+    .fit-result li { padding: 6px 0; font-size: 14px; }
+    .fit-result li::before { content: "→"; margin-right: 10px; color: var(--signal); }
+    .copy-feedback {
+      display: inline-block;
+      min-height: 18px;
+      margin-left: 12px;
+      color: #226e2a;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 11px;
+    }
 
-#ghost-mascot {
-  cursor: pointer;
-  animation: floaty 3s ease-in-out infinite;
-}
+    .about {
+      width: min(var(--content), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 30px 0 116px;
+    }
+    .about-card {
+      display: grid;
+      grid-template-columns: .75fr 1.25fr;
+      background: var(--signal);
+      color: #111313;
+      border: 1px solid var(--ink);
+    }
+    .about-label { padding: 34px; border-right: 1px solid var(--ink); }
+    .about-label .kicker { color: var(--ink); }
+    .about-label svg { width: 116px; height: 116px; margin-top: 65px; }
+    .about-copy { padding: clamp(36px, 6vw, 72px); }
+    .about-copy h2 {
+      margin: 0;
+      font-family: "Source Serif 4", serif;
+      font-size: clamp(37px, 4.2vw, 59px);
+      line-height: 1.02;
+      letter-spacing: -.04em;
+    }
+    .about-copy p { max-width: 700px; margin: 24px 0 0; font-size: 18px; }
+    .about-proof {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 42px;
+      background: rgba(17, 19, 19, .4);
+      border: 1px solid rgba(17, 19, 19, .4);
+    }
+    .proof { padding: 18px; background: var(--signal); }
+    .proof strong { display: block; font-size: 16px; }
+    .proof span { display: block; margin-top: 5px; font-size: 12px; line-height: 1.35; }
 
-#ghost-mascot:hover {
-  animation: wiggle 0.3s ease-in-out infinite;
-}
+    .close {
+      background: var(--white);
+      border-top: 1px solid var(--ink);
+    }
+    .close-inner {
+      width: min(var(--content), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 96px 0 44px;
+    }
+    .close-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 60px;
+      align-items: end;
+    }
+    .close h2 {
+      max-width: 820px;
+      margin: 0;
+      font-family: "Source Serif 4", serif;
+      font-size: clamp(45px, 6vw, 78px);
+      line-height: .97;
+      letter-spacing: -.048em;
+    }
+    .close-side p { margin: 0 0 22px; color: var(--muted); }
+    .close-note { margin-top: 20px; font-size: 12px; color: var(--muted); }
+    footer {
+      margin-top: 90px;
+      padding-top: 20px;
+      border-top: 1px solid var(--ink);
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 10px;
+      line-height: 1.5;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+      color: var(--muted);
+    }
 
-@keyframes floaty {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
-}
+    :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
 
-@keyframes wiggle {
-  0% { transform: rotate(0deg); }
-  25% { transform: rotate(5deg); }
-  75% { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
-}
+    @media (max-width: 900px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; gap: 30px; padding-top: 64px; }
+      .docket { min-height: 480px; }
+      .section-heading { grid-template-columns: 120px 1fr; gap: 20px; }
+      .offer { grid-column: span 12; min-height: auto; border-right: 0; border-bottom: 1px solid var(--ink); }
+      .offer ul { margin-top: 30px; }
+      .deliverable-grid, .fit-layout, .about-card, .close-grid { grid-template-columns: 1fr; }
+      .about-label { border-right: 0; border-bottom: 1px solid var(--ink); display: flex; align-items: center; justify-content: space-between; }
+      .about-label svg { margin-top: 0; width: 78px; height: 78px; }
+      .fit-layout { gap: 40px; }
+      .audience-inner { grid-template-columns: 1.3fr repeat(3, 1fr); }
+    }
 
-.ghost-glow {
-  color: #00ffff;
-  font-weight: bold;
-  text-shadow: 0 0 5px #00ffff,
-               0 0 10px #00ffff,
-               0 0 20px #00ffff,
-               0 0 40px #0ff,
-               0 0 80px #0ff;
-  opacity: 0;
-  transition: opacity 2s ease-in-out;
-}
+    @media (max-width: 650px) {
+      .topline-inner, .hero, .section, .dark-inner, .about, .close-inner, .audience-inner { width: min(100% - 28px, var(--content)); }
+      .topline-inner { min-height: 54px; }
+      nav a:not(.nav-cta) { display: none; }
+      .status { font-size: 10px; }
+      .status-descriptor, .status-divider { display: none; }
+      .nav-cta { padding: 8px 11px; font-size: 12px; }
+      .hero { padding: 50px 0 58px; }
+      .hero h1 { font-size: clamp(46px, 14.5vw, 67px); }
+      .hero-lede { font-size: 18px; }
+      .hero-actions { align-items: stretch; }
+      .hero-actions .button { width: 100%; }
+      .docket { min-height: 430px; }
+      .ghost-stage { top: -2%; right: -3%; width: 104px; }
+      .case-sheet { width: calc(100% - 18px); }
+      .docket::before { inset: 7% 4% 4%; }
+      .audience-inner { grid-template-columns: 1fr 1fr; }
+      .audience-inner > * { padding: 14px 10px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
+      .audience-inner > *:first-child { grid-column: 1 / -1; padding-left: 10px; }
+      .audience-inner > *:nth-child(3) { border-right: 0; }
+      .audience-inner > *:last-child { border-bottom: 0; grid-column: 1 / -1; }
+      .section, .dark-inner { padding: 82px 0; }
+      .section-heading { grid-template-columns: 1fr; margin-bottom: 40px; }
+      .section-heading p { grid-column: 1; }
+      .offer { padding: 24px 0; }
+      .deliverable-grid { gap: 48px; }
+      .flow-item { grid-template-columns: 36px 1fr; }
+      .flow-state { grid-column: 2; width: max-content; }
+      .principles { grid-template-columns: 1fr; }
+      .fit-options { grid-template-columns: 1fr; }
+      .fit-option { min-height: 66px; border-right: 0; border-bottom: 1px solid var(--ink); }
+      .fit-option:last-child { border-bottom: 0; }
+      .fit-result { padding: 22px 18px; }
+      .copy-feedback { display: block; margin: 10px 0 0; }
+      .about { padding-top: 0; padding-bottom: 82px; }
+      .about-label { padding: 22px; }
+      .about-label svg { width: 64px; height: 64px; }
+      .about-copy { padding: 32px 22px; }
+      .about-proof { grid-template-columns: 1fr; }
+      .contact-layer { padding: 14px; }
+      .contact-dialog { max-height: calc(100vh - 28px); box-shadow: 8px 8px 0 var(--signal); }
+      .contact-head { grid-template-columns: 54px 1fr auto; padding: 14px; gap: 11px; }
+      .contact-ghost { width: 54px; height: 54px; }
+      .contact-head strong { font-size: 17px; }
+      .contact-form { padding: 22px 18px 24px; }
+      .field-row { grid-template-columns: 1fr; gap: 0; }
+      .contact-actions .button { width: 100%; }
+      .close-inner { padding-top: 78px; }
+      footer { flex-direction: column; margin-top: 68px; }
+    }
 
-.ghost-glow.visible {
-  opacity: 1;
-}
-
-    
-    </style>
-  
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+    }
+  </style>
 </head>
-
-<script>
-  // Register Service Worker
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(reg => console.log('Service Worker registered:', reg.scope))
-        .catch(err => console.error('Service Worker error:', err));
-    });
-  }
-</script>
-  
 <body>
-  
-  <nav>
-    <div class="nav-container">
-      <div class="logo">GhostOps.ai</div>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <span></span><span></span><span></span>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="topline">
+    <div class="topline-inner">
+      <div class="status"><span class="status-dot" aria-hidden="true"></span><strong>GhostOps</strong><span class="status-divider">/</span><span class="status-descriptor">Technical advisory</span></div>
+      <nav aria-label="Primary navigation">
+        <a href="#work">Work</a>
+        <a href="#approach">Approach</a>
+        <a href="#about">About us</a>
+        <a class="nav-cta" href="#fit">Find the right review</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="kicker">For founders, investors &amp; operating teams</p>
+        <h1 id="hero-title">Know what’s real before you <em>bet on it.</em></h1>
+        <p class="hero-lede">Independent technical judgment for consequential software decisions—before the next check is signed, the next enterprise promise is made, or a fragile build becomes an expensive problem.</p>
+        <div class="hero-actions">
+          <a class="button" href="#fit">Find the right engagement
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4" stroke="currentColor" stroke-width="1.7"/></svg>
+          </a>
+          <a class="button secondary" href="#work">See the work</a>
+        </div>
       </div>
-      <div class="nav-links" id="navLinks">
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
+
+      <div class="docket" aria-label="Illustration of a technical review docket">
+        <button class="ghost-stage" id="ghost-contact" type="button" aria-label="Ask the GhostOps ghost to open the contact form" aria-haspopup="dialog">
+          <svg class="ghost-mark" viewBox="0 0 160 160" aria-hidden="true">
+            <ellipse class="ghost-shadow" cx="78" cy="139" rx="37" ry="8"/>
+            <path class="ghost-body" d="M39 124V75c0-29 17-47 41-47s41 18 41 47v49l-14-10-14 13-13-13-14 13-13-13-14 10Z"/>
+            <ellipse class="ghost-eye" cx="67" cy="75" rx="4.7" ry="6.5"/>
+            <ellipse class="ghost-eye" cx="94" cy="75" rx="4.7" ry="6.5"/>
+            <path d="M72 91c5 5 12 5 17 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+            <circle class="ghost-cheek" cx="57" cy="89" r="5"/>
+            <circle class="ghost-cheek" cx="104" cy="89" r="5"/>
+            <path class="ghost-spark" d="m128 30 3 9 9 3-9 3-3 9-3-9-9-3 9-3 3-9Z"/>
+          </svg>
+        </button>
+        <article class="case-sheet">
+          <div class="sheet-head"><span>Decision file / 01</span><strong>Independent review</strong></div>
+          <div class="sheet-body">
+            <h2 class="sheet-title">What the pitch deck cannot tell you.</h2>
+            <div class="signal-line"><span>01</span><p>Will the architecture survive the next stage of growth?</p></div>
+            <div class="signal-line"><span>02</span><p>Where do security, identity, and integration risks hide?</p></div>
+            <div class="signal-line"><span>03</span><p>Can this team deliver what has been promised?</p></div>
+            <div class="stamp">Evidence over theater</div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <div class="audience-band" aria-label="Who GhostOps advises">
+      <div class="audience-inner">
+        <div class="audience-label">Built for consequential decisions</div>
+        <div class="audience-item">Founders</div>
+        <div class="audience-item">Investors</div>
+        <div class="audience-item">Operating teams</div>
       </div>
     </div>
-  </nav>  <section class="hero section fade-in" id="hero">
-    <canvas class="hero-canvas" id="heroCanvas"></canvas>
-    <h1 class="ghost-glow" >Stealth AI Deployment for Real Infrastructure</h1>
-    <p>We help legacy systems become future-ready using quiet, precise AI execution. No hype. Just results.</p>
-  </section>  <section class="section fade-in" id="about">
-    <h2>About GhostOps</h2>
-    <p>GhostOps is a boutique AI consultancy built by infrastructure engineers who understand legacy constraints. We specialize in stealth-mode automation, API integration, and closed-loop data ops. We target high-trust clients with complex infrastructure who need quiet execution and real results.</p>
-  </section>  <section class="section fade-in" id="services">
-    <h2>What We Do</h2>
-    <ul>
-      <li>🔒 Secure, containerized AI workflows for regulated industries</li>
-      <li>🧠 Fine-tuned LLMs trained on real operational knowledge</li>
-      <li>🔧 Zero-hype automation pipelines for NMS, OMS, and legacy platforms</li>
-      <li>🌐 API-based middleware for transforming outdated systems</li>
-      <li>🚀 Rapid MVP builds using PWA, FlutterFlow, Airtable, and GPT agents</li>
-    </ul>
-  </section> 
-  
-  <section class="section fade-in" id="integration">
-  <h2>Ghost-Level Integration Expertise</h2>
-  <p><strong>At GhostOp, we don't just build AI — we embed it.</strong> Our specialty is bridging the void between cutting-edge research and real-world implementation. We operate where most teams hesitate: inside legacy infrastructure, constrained environments, and regulated ecosystems.</p>
-  <p>Whether it's quietly wiring LLMs into power grid operations or embedding autonomous agents into government workflows, we deploy with stealth and precision. Our clients don’t need noise — they need results.</p>
 
-  <h3>Our Integration Styles:</h3>
-  <ul>
-    <li>🕶️ <strong>The GhostDrop™:</strong> Silent, zero-downtime deployments that go live without a ripple.</li>
-    <li>⚡ <strong>The PhantomPatch™:</strong> API overlays that modernize without rewriting your stack.</li>
-    <li>🧠 <strong>ShadowSync™:</strong> Bi-directional data syncing between air-gapped systems and AI workflows.</li>
-    <li>🔗 <strong>HauntHooks™:</strong> Secure middleware that plugs legacysystems into future-facing platforms.</li>
-  </ul>
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div class="section-index">01 / Engagements</div>
+        <h2 id="work-title">Three moments when senior technical judgment changes the outcome.</h2>
+        <p>Focused scopes around a decision—not project labor, seat-filling, or an open-ended transformation program.</p>
+      </div>
 
-  <p>We turn bleeding-edge tech into quietly transformative infrastructure. <strong>No hype. Just high-trust deployment.</strong></p>
-</section>
+      <div class="offer-grid">
+        <article class="offer">
+          <span class="offer-number">01 — Before money moves</span>
+          <h3>Technical diligence</h3>
+          <p>An independent read on the product, platform, team, and hidden liabilities behind an investment, acquisition, or strategic bet.</p>
+          <ul>
+            <li>Architecture and codebase risk review</li>
+            <li>Security, identity, and integration exposure</li>
+            <li>Team and delivery capability assessment</li>
+            <li>Decision memo with red flags and conditions</li>
+          </ul>
+        </article>
 
-  
-  <section id="how-we-help" style="padding: 4rem 1rem; background-color: #0d0d0d; color: #f0f0f0;">
-  <div style="max-width: 900px; margin: auto; text-align: center;">
-    <h2 style="font-size: 2.2rem; margin-bottom: 1rem;">🛠️ How GhostOp Helps Your Business</h2>
-    <p style="font-size: 1.1rem; margin-bottom: 2.5rem; color: #ccc;">
-      We integrate AI so you don’t have to. Whether you’re a solo founder, an enterprise CTO, or a lean dev team under pressure — we plug in, build fast, and ship solutions that last.
-    </p><h3 style="font-size: 1.5rem; margin-bottom: 1rem;">⚡ Real-World Use Cases</h3>
-<table style="width: 100%; border-collapse: collapse; margin-bottom: 3rem;">
-  <tr style="background-color: #1a1a1a;">
-    <th style="padding: 1rem; text-align: left;">Problem</th>
-    <th style="padding: 1rem; text-align: left;">Our Ghostly Fix</th>
-  </tr>
-  <tr>
-    <td style="padding: 1rem; vertical-align: top;">Too much copywriting, not enough time</td>
-    <td style="padding: 1rem;">GPT tools that write in your voice: emails, posts, captions, product pages.</td>
-  </tr>
-  <tr style="background-color: #1a1a1a;">
-    <td style="padding: 1rem; vertical-align: top;">Manual work eating your day</td>
-    <td style="padding: 1rem;">Agents that automate your CRM, inbox, and workflows — silently.</td>
-  </tr>
-  <tr>
-    <td style="padding: 1rem; vertical-align: top;">Overworked devs, no AI bandwidth</td>
-    <td style="padding: 1rem;">We build clean, maintainable GPT integrations for you.</td>
-  </tr>
-  <tr style="background-color: #1a1a1a;">
-    <td style="padding: 1rem; vertical-align: top;">Clunky no-code tools you’ve outgrown</td>
-    <td style="padding: 1rem;">We replace them with ownable, robust solutions that scale.</td>
-  </tr>
-</table>
+        <article class="offer">
+          <span class="offer-number">02 — While the stakes rise</span>
+          <h3>Fractional architecture advisor</h3>
+          <p>Senior technical counsel for a founder, board, or leadership team navigating scale, enterprise demands, and irreversible platform choices.</p>
+          <ul>
+            <li>Architecture decision support</li>
+            <li>Enterprise readiness and roadmap pressure-test</li>
+            <li>API, identity, and security strategy</li>
+            <li>Technical hiring and vendor review</li>
+          </ul>
+        </article>
 
-<h3 style="font-size: 1.5rem; margin-bottom: 1rem;">👨‍💻 Our Experience</h3>
-<ul style="list-style: none; padding: 0; max-width: 700px; margin: auto;">
-  <li style="margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
-    <svg width="24" height="24" fill="#00ffff" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><circle cx="12" cy="12" r="10"/></svg>
-    Built PWAs for Enterpeise with offline sync + scalable APIs.
-  </li>
-  <li style="margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
-    <svg width="24" height="24" fill="#00ffff" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><circle cx="12" cy="12" r="10"/></svg>
-    Integrated OpenAI with legacy stacks.
-  </li>
-  <li style="margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
-    <svg width="24" height="24" fill="#00ffff" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><circle cx="12" cy="12" r="10"/></svg>
-    Delivered LangChain agents, RAG flows, and embedded vector search.
-  </li>
-  <li style="margin-bottom: 1rem; display: flex; align-items: center; justify-content: center;">
-    <svg width="24" height="24" fill="#00ffff" viewBox="0 0 24 24" style="margin-right: 0.5rem;"><circle cx="12" cy="12" r="10"/></svg>
-    Supported IDCS, Azure AD, Okta + built secure auth flows.
-  </li>
-</ul>
+        <article class="offer">
+          <span class="offer-number">03 — When confidence breaks</span>
+          <h3>Build audit</h3>
+          <p>A fast, unsentimental review when the demo looks good but delivery feels fragile, the roadmap keeps slipping, or the system will not scale.</p>
+          <ul>
+            <li>Production-readiness assessment</li>
+            <li>Delivery bottleneck diagnosis</li>
+            <li>Integration and dependency mapping</li>
+            <li>Prioritized recovery plan</li>
+          </ul>
+        </article>
+      </div>
+    </section>
 
-<p style="margin-top: 3rem; font-size: 1.1rem; color: #bbb;">
-  👻 <strong>Why GhostOp?</strong> We're lean, senior, and hands-on. No interns. No buzzword slides. Just durable AI infrastructure.
-</p>
+    <section class="dark-section" id="approach" aria-labelledby="approach-title">
+      <div class="dark-inner">
+        <div class="section-heading">
+          <div class="section-index">02 / The work</div>
+          <h2 id="approach-title">A decision-grade answer, not another stack of slides.</h2>
+          <p>Every review turns ambiguity into a compact set of findings leadership can act on immediately.</p>
+        </div>
 
+        <div class="deliverable-grid">
+          <div class="review-flow" aria-label="Review process">
+            <div class="flow-head"><span>Review sequence</span><span>Output</span></div>
+            <div class="flow-item">
+              <span class="flow-n">01</span>
+              <div><h3>Interrogate the claim</h3><p>What is being promised, and what evidence supports it?</p></div>
+              <span class="flow-state">Questions</span>
+            </div>
+            <div class="flow-item">
+              <span class="flow-n">02</span>
+              <div><h3>Trace the system</h3><p>Architecture, dependencies, data, identity, and delivery reality.</p></div>
+              <span class="flow-state">Map</span>
+            </div>
+            <div class="flow-item">
+              <span class="flow-n">03</span>
+              <div><h3>Separate risk from noise</h3><p>Material issues, acceptable debt, and false alarms.</p></div>
+              <span class="flow-state">Findings</span>
+            </div>
+            <div class="flow-item">
+              <span class="flow-n">04</span>
+              <div><h3>Make the decision usable</h3><p>Clear priorities, options, conditions, and next moves.</p></div>
+              <span class="flow-state">Memo</span>
+            </div>
+          </div>
+
+          <div class="deliverable-copy">
+            <blockquote>“The useful answer is rarely <span>yes or no.</span> It is what must be true for the bet to work.”</blockquote>
+            <p>We work across the seams where software risk becomes business risk: product and platform, APIs and identity, vendor and team, enterprise promise and delivery reality.</p>
+            <div class="principles">
+              <div class="principle"><strong>Independent</strong><span>No implementation pitch attached to the finding.</span></div>
+              <div class="principle"><strong>Direct</strong><span>Risks stated in business language, without euphemism.</span></div>
+              <div class="principle"><strong>Senior-led</strong><span>The judgment is the work, not a layer of account management.</span></div>
+              <div class="principle"><strong>Bounded</strong><span>Clear questions, clear outputs, and a defined decision.</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="fit" aria-labelledby="fit-title">
+      <div class="fit-layout">
+        <div class="fit-copy">
+          <p class="kicker">A useful first conversation</p>
+          <h2 id="fit-title">Start with the decision—not a shopping list.</h2>
+          <p>Choose the situation that looks most like yours. We’ll frame the right first review and give you a short brief you can send through the channel that brought you here.</p>
+          <div class="tiny-note">No intake form. No automated funnel. No sensitive material needed for the first conversation.</div>
+        </div>
+
+        <div class="fit-tool" aria-live="polite">
+          <div class="fit-tool-head"><span>Engagement finder</span><span>Choose one</span></div>
+          <div class="fit-options" role="tablist" aria-label="Choose your situation">
+            <button class="fit-option" role="tab" aria-selected="true" data-fit="money">We are about to invest or acquire</button>
+            <button class="fit-option" role="tab" aria-selected="false" data-fit="scale">The company is outgrowing its architecture</button>
+            <button class="fit-option" role="tab" aria-selected="false" data-fit="stuck">The build is stuck or trust has slipped</button>
+          </div>
+          <div class="fit-result" id="fit-result"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about" aria-labelledby="about-title">
+      <div class="about-card">
+        <div class="about-label">
+          <p class="kicker">03 / About us</p>
+          <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+            <rect x="13" y="13" width="94" height="94" stroke="currentColor" stroke-width="2"/>
+            <path d="M30 41h60M30 60h39M30 79h49" stroke="currentColor" stroke-width="4"/>
+            <circle cx="88" cy="78" r="12" fill="#dff64f" stroke="currentColor" stroke-width="2"/>
+            <path d="m83 78 4 4 7-9" stroke="currentColor" stroke-width="2.5"/>
+          </svg>
+        </div>
+        <div class="about-copy">
+          <h2 id="about-title">Built in the space between technical detail and executive consequence.</h2>
+          <p>Our perspective comes from both sides of the table: building in startups and open-source communities, then operating inside complex enterprise environments where integrations, identity, security, mobile systems, and mission-critical delivery all collide.</p>
+          <p>That range matters. It lets us see past startup theater without applying enterprise bureaucracy—and translate deep technical findings into decisions founders, investors, and boards can actually use.</p>
+          <div class="about-proof" aria-label="Areas of experience">
+            <div class="proof"><strong>Builder’s context</strong><span>Products, teams, tradeoffs, and shipping under pressure.</span></div>
+            <div class="proof"><strong>Enterprise depth</strong><span>APIs, identity, security, integration, and regulated systems.</span></div>
+            <div class="proof"><strong>Operator’s judgment</strong><span>What is fixable, what is fragile, and what changes the bet.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="close" aria-labelledby="close-title">
+      <div class="close-inner">
+        <div class="close-grid">
+          <h2 id="close-title">Bring the claim. We’ll help test the reality.</h2>
+          <div class="close-side">
+            <p>The best first note is simple: the decision in front of you, what feels uncertain, and when the answer matters.</p>
+            <button class="button" id="copy-general" type="button">Copy a concise intro
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="6" y="6" width="9" height="9" stroke="currentColor" stroke-width="1.5"/><path d="M4 12V4h8" stroke="currentColor" stroke-width="1.5"/></svg>
+            </button>
+            <div class="close-note" id="general-feedback" aria-live="polite"></div>
+          </div>
+        </div>
+        <footer>
+          <span>GhostOps / Independent technical advisory</span>
+          <span>Technical diligence · Architecture advisory · Build audits</span>
+        </footer>
+      </div>
+    </section>
+  </main>
+
+  <div class="contact-layer" id="contact-layer" hidden>
+    <section class="contact-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-title" aria-describedby="contact-description">
+      <div class="contact-head">
+        <svg class="contact-ghost" viewBox="0 0 160 160" aria-hidden="true">
+          <path class="ghost-body" d="M39 124V75c0-29 17-47 41-47s41 18 41 47v49l-14-10-14 13-13-13-14 13-13-13-14 10Z"/>
+          <ellipse class="ghost-eye" cx="67" cy="75" rx="4.7" ry="6.5"/>
+          <ellipse class="ghost-eye" cx="94" cy="75" rx="4.7" ry="6.5"/>
+          <path d="M72 91c5 5 12 5 17 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <circle class="ghost-cheek" cx="57" cy="89" r="5"/>
+          <circle class="ghost-cheek" cx="104" cy="89" r="5"/>
+        </svg>
+        <div><strong id="contact-title">Tell us what’s haunting the build.</strong><span>Confidential first-note builder</span></div>
+        <button class="dialog-close" id="contact-close" type="button" aria-label="Close contact form">×</button>
+      </div>
+      <form class="contact-form" id="contact-form">
+        <p id="contact-description">Give us the shape of the decision. We’ll turn it into a concise note you can copy and send through your preferred channel.</p>
+        <div class="field-row">
+          <label>Your name
+            <input id="contact-name" name="name" autocomplete="name" required />
+          </label>
+          <label>Your email
+            <input id="contact-email" name="email" type="email" autocomplete="email" required />
+          </label>
+        </div>
+        <label>What decision or problem are you facing?
+          <textarea id="contact-message" name="message" required placeholder="The decision, what feels uncertain, and when the answer matters."></textarea>
+        </label>
+        <div class="contact-actions">
+          <button class="button" type="submit">Copy contact note
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4" stroke="currentColor" stroke-width="1.7"/></svg>
+          </button>
+          <span class="contact-feedback" id="contact-feedback" aria-live="polite"></span>
+        </div>
+        <p class="contact-note">Nothing is sent from this page. Your finished note is copied so you stay in control of where it goes.</p>
+      </form>
+    </section>
   </div>
-</section>
-
-
-<section id="competitor-intel" class="bg-[#0f0f0f] text-white py-16 px-6 md:px-16">
-  <div class="max-w-5xl mx-auto">
-    <h2 class="text-4xl font-bold mb-12 text-center">🚫 Why GhostOp Isn't Like the Others</h2>
-
-    <div class="grid gap-10">
-      <!-- Competitor 1 -->
-      <div class="border-l-4 border-cyan-400 pl-6 flex flex-col gap-2">
-        <div class="flex items-center gap-3">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" height="50" width="50">
-            <path d="M3 6h18M3 12h18M3 18h18" />
-          </svg>
-          <h3 class="text-2xl font-semibold">Fiverr & Upwork AI “Experts”</h3>
-        </div>
-        <p class="text-gray-300"><strong>❌ Problem:</strong> Mass-produced junk, no architecture thinking, copy-paste GPT wrappers, no support.</p>
-        <p class="text-green-300"><strong>✅ GhostOp:</strong> We deploy battle-tested AI systems — not freelance vaporware.</p>
-      </div>
-
-      <!-- Competitor 2 -->
-      <div class="border-l-4 border-cyan-400 pl-6 flex flex-col gap-2">
-        <div class="flex items-center gap-3">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M9.75 3L4.5 9l5.25 6M14.25 3l5.25 6-5.25 6" />
-          </svg>
-          <h3 class="text-2xl font-semibold">Big Agencies (Accenture, Deloitte, etc.)</h3>
-        </div>
-        <p class="text-gray-300"><strong>❌ Problem:</strong> Overhead, junior devs, death-by-slide-deck, overpriced PoCs.</p>
-        <p class="text-green-300"><strong>✅ GhostOp:</strong> No layers, no fluff. Just real engineering from day one.</p>
-      </div>
-
-      <!-- Competitor 3 -->
-      <div class="border-l-4 border-cyan-400 pl-6 flex flex-col gap-2">
-        <div class="flex items-center gap-3">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <path d="M5 13l4 4L19 7" />
-          </svg>
-          <h3 class="text-2xl font-semibold">Low-Code AI Tools (Durable, Bubble, etc.)</h3>
-        </div>
-        <p class="text-gray-300"><strong>❌ Problem:</strong> Break at scale, hard to customize, throwaway code.</p>
-        <p class="text-green-300"><strong>✅ GhostOp:</strong> You own your stack. We build real infrastructure that lasts.</p>
-      </div>
-
-      <!-- Competitor 4 -->
-      <div class="border-l-4 border-cyan-400 pl-6 flex flex-col gap-2">
-        <div class="flex items-center gap-3">
-          <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" />
-            <path d="M15 9l-6 6M9 9l6 6" />
-          </svg>
-          <h3 class="text-2xl font-semibold">GPT Plugin Bros & SEO Spammers</h3>
-        </div>
-        <p class="text-gray-300"><strong>❌ Problem:</strong> Zero UX, sloppy prompts, security holes, garbage output.</p>
-        <p class="text-green-300"><strong>✅ GhostOp:</strong> We ship real AI products — not gimmicks.</p>
-      </div>
-    </div>
-
-    <div class="mt-12 bg-[#1a1a1a] p-6 rounded shadow-lg font-mono text-green-400 text-sm leading-relaxed">
-      <span class="text-cyan-400">$</span> ghostverifier --analyze competitors<br>
-      ✔ Compared to Fiverr GPT gigs and bloated consulting firms,<br>
-      <strong class="text-white">GhostOp delivers production-grade code, architecture, and results — no slides, no bullshit.</strong>
-    </div>
-  </div>
-</section>
-
-
-<section class="section fade-in" id="contact">
-    <h2>Contact</h2>
-    <p>Book a call: <a href="https://calendly.com/ghostops" style="color: #00ffe1">calendly.com/ghostops</a></p>
-  </section>
-  
-    
-    <!-- Ghost Mascot -->
-<div id="ghost-mascot-container">
-  <svg id="ghost-mascot" viewBox="0 0 100 100" width="80" height="80" xmlns="http://www.w3.org/2000/svg">
-    <path d="M50 10 
-             C70 10, 90 30, 90 50 
-             C90 80, 10 80, 10 50 
-             C10 30, 30 10, 50 10 
-             Z" 
-          fill="#00ffff" stroke="#000" stroke-width="2"/>
-    <circle cx="35" cy="45" r="5" fill="#000"/>
-    <circle cx="65" cy="45" r="5" fill="#000"/>
-  </svg>
-</div>
-    
-    <script>
-    function toggleMenu() {
-      const nav = document.getElementById('navLinks');
-      nav.classList.toggle('show');
-    }
-    function handleScrollAnimations() {
-      const elements = document.querySelectorAll('.fade-in');
-      elements.forEach(el => {
-        const rect = el.getBoundingClientRect();
-        if (rect.top < window.innerHeight - 100) {
-          el.classList.add('visible');
-        }
-      });
-    }
-    document.addEventListener('scroll', handleScrollAnimations);
-    window.addEventListener('load', handleScrollAnimations);
-
-    // Simple animated particle effect
-    const canvas = document.getElementById('heroCanvas');
-    const ctx = canvas.getContext('2d');
-    let w, h, particles;
-    function initCanvas() {
-      w = canvas.width = window.innerWidth;
-      h = canvas.height = window.innerHeight / 1.5;
-      particles = Array.from({ length: 100 }, () => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        r: Math.random() * 2 + 1,
-        dx: (Math.random() - 0.5) * 0.5,
-        dy: (Math.random() - 0.5) * 0.5
-      }));
-    }
-    function animateParticles() {
-      ctx.clearRect(0, 0, w, h);
-      for (const p of particles) {
-        p.x += p.dx;
-        p.y += p.dy;
-        if (p.x < 0 || p.x > w) p.dx *= -1;
-        if (p.y < 0 || p.y > h) p.dy *= -1;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = '#00ffe1';
-        ctx.fill();
-      }
-      requestAnimationFrame(animateParticles);
-    }
-    window.addEventListener('resize', initCanvas);
-    initCanvas();
-    animateParticles();
-    
-  // Auto-show ghost after delay
-  setTimeout(() => {
-    document.getElementById('ghost-mascot-container').classList.add('show');
-  }, 3000);
-
-  </script>
-
 
   <script>
-  window.addEventListener('load', () => {
-    const glowText = document.querySelectorAll('.ghost-glow');
-    glowText.forEach((el, i) => {
-      setTimeout(() => {
-        el.classList.add('visible');
-      }, i * 500); // stagger if multiple
+    const fitData = {
+      money: {
+        label: 'Recommended first step',
+        title: 'Technical diligence',
+        body: 'Frame the investment thesis, then test the technology, team, and delivery assumptions that could change the deal.',
+        bullets: ['Independent risk memo', 'Material red flags and close conditions', 'Clear post-deal priorities'],
+        brief: `I'm considering an investment, acquisition, or strategic commitment and want an independent technical read.\n\nThe decision: [what is being considered]\nThe uncertainty: [what you do not yet trust]\nThe timing: [when the answer is needed]\n\nI'd like to discuss a focused technical diligence review.`
+      },
+      scale: {
+        label: 'Recommended first step',
+        title: 'Fractional architecture advisory',
+        body: 'Create a steady source of senior technical judgment around scale, enterprise commitments, security, and platform choices.',
+        bullets: ['Decision support for leadership', 'Architecture and enterprise-readiness pressure-test', 'A roadmap tied to business stakes'],
+        brief: `We're reaching a stage where architecture decisions carry more business risk.\n\nThe company: [what you build]\nThe pressure: [growth, enterprise customers, security, integrations, hiring]\nThe decision: [what needs senior judgment]\n\nI'd like to discuss a focused architecture advisory relationship.`
+      },
+      stuck: {
+        label: 'Recommended first step',
+        title: 'Build audit',
+        body: 'Establish what is actually broken, what merely looks messy, and the smallest credible path back to control.',
+        bullets: ['Production and delivery reality check', 'Root-cause map across technical boundaries', 'Prioritized recovery sequence'],
+        brief: `A software build has lost momentum or confidence, and we need an independent diagnosis.\n\nThe system: [what is being built]\nThe symptom: [slipping delivery, instability, scale, security, integration]\nThe consequence: [what is at risk]\n\nI'd like to discuss a focused build audit.`
+      }
+    };
+
+    const result = document.getElementById('fit-result');
+    const tabs = Array.from(document.querySelectorAll('.fit-option'));
+
+    function renderFit(key) {
+      const item = fitData[key];
+      result.innerHTML = `
+        <span class="fit-result-label">${item.label}</span>
+        <h3>${item.title}</h3>
+        <p>${item.body}</p>
+        <ul>${item.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
+        <button type="button" class="button secondary" id="copy-fit">Copy a briefing note</button>
+        <span class="copy-feedback" id="copy-feedback" aria-live="polite"></span>`;
+
+      document.getElementById('copy-fit').addEventListener('click', () => {
+        copyText(item.brief, document.getElementById('copy-feedback'));
+      });
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
+        tab.setAttribute('aria-selected', 'true');
+        renderFit(tab.dataset.fit);
+      });
     });
-  });
-</script>
 
+    async function copyText(text, feedback) {
+      try {
+        await navigator.clipboard.writeText(text);
+        feedback.textContent = 'Copied—send it through your usual channel.';
+      } catch (err) {
+        const area = document.createElement('textarea');
+        area.value = text;
+        area.setAttribute('readonly', '');
+        area.style.position = 'fixed';
+        area.style.opacity = '0';
+        document.body.appendChild(area);
+        area.select();
+        document.execCommand('copy');
+        area.remove();
+        feedback.textContent = 'Copied—send it through your usual channel.';
+      }
+    }
 
+    document.getElementById('copy-general').addEventListener('click', () => {
+      copyText(`I'd like an independent technical perspective on a decision we're making.\n\nThe decision: [what is being considered]\nThe uncertainty: [what feels unclear or risky]\nThe timing: [when the answer matters]\n\nCan we set up a confidential first conversation?`, document.getElementById('general-feedback'));
+    });
 
+    const ghostContact = document.getElementById('ghost-contact');
+    const contactLayer = document.getElementById('contact-layer');
+    const contactDialog = contactLayer.querySelector('.contact-dialog');
+    const contactClose = document.getElementById('contact-close');
+    const contactForm = document.getElementById('contact-form');
+    let contactReturnFocus = null;
 
+    function openContact() {
+      contactReturnFocus = document.activeElement;
+      ghostContact.classList.add('is-summoning');
+      contactLayer.hidden = false;
+      document.body.style.overflow = 'hidden';
+      requestAnimationFrame(() => document.getElementById('contact-name').focus());
+      window.setTimeout(() => ghostContact.classList.remove('is-summoning'), 600);
+    }
 
-<script src="https://cdn.jsdelivr.net/npm/tsparticles@3.0.0/tsparticles.bundle.min.js"></script>
-<div id="tsparticles" style="position:fixed;top:0;left:0;width:100vw;height:100vh;z-index:-1;"></div>
-<script>
-tsParticles.load("tsparticles", {
-  background: { color: "#000" },
-  particles: {
-    number: { value: 80 },
-    color: { value: "#00ffff" },
-    shape: { type: "circle" },
-    opacity: { value: 0.3 },
-    size: { value: 3 },
-    move: { enable: true, speed: 0.5 }
-  },
-  interactivity: {
-    events: { onhover: { enable: true, mode: "repulse" } },
-    modes: { repulse: { distance: 100 } }
-  }
-});
-</script>
+    function closeContact() {
+      contactLayer.hidden = true;
+      document.body.style.overflow = '';
+      if (contactReturnFocus) contactReturnFocus.focus();
+    }
 
+    ghostContact.addEventListener('click', openContact);
+    contactClose.addEventListener('click', closeContact);
+    contactLayer.addEventListener('click', event => {
+      if (event.target === contactLayer) closeContact();
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !contactLayer.hidden) closeContact();
+      if (event.key === 'Tab' && !contactLayer.hidden) {
+        const controls = Array.from(contactDialog.querySelectorAll('button, input, textarea')).filter(el => !el.disabled);
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
+    });
 
+    contactForm.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!contactForm.reportValidity()) return;
+      const name = document.getElementById('contact-name').value.trim();
+      const email = document.getElementById('contact-email').value.trim();
+      const message = document.getElementById('contact-message').value.trim();
+      const note = `GhostOps inquiry\n\nFrom: ${name}\nEmail: ${email}\n\nDecision or problem:\n${message}\n\nI'd like to discuss the right focused review.`;
+      copyText(note, document.getElementById('contact-feedback'));
+    });
 
-
-
-
-
-
-  
+    renderFit('money');
+  </script>
 </body>
 </html>
