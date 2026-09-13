@@ -5,35 +5,35 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="light" />
   <meta name="theme-color" content="#111313" />
-  <meta name="description" content="GhostOp provides independent technical diligence, fractional architecture advisory, and build audits for founders, investors, and operating teams making consequential software decisions." />
+  <meta name="description" content="A code review asks whether the code is well written. Technical diligence asks whether the technology is a sound basis for the bet — architecture survivability, liability inventory, team capability, and the red flags that should change deal terms." />
   <meta property="og:site_name" content="GhostOp" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="GhostOp — Technical Diligence, Architecture Advisory &amp; Build Audits" />
-  <meta property="og:description" content="Technical diligence, fractional architecture advisory, and build audits for consequential software decisions." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ghostop.ai/" />
+  <meta property="og:title" content="Technical Diligence Is Not a Code Review — GhostOp" />
+  <meta property="og:description" content="A code review asks whether the code is well written. Technical diligence asks whether the technology is a sound basis for the bet — architecture survivability, liability inventory, team capability, and the red flags that should change deal terms." />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://ghostop.ai/blog-technical-diligence-before-you-sign.html" />
   <meta property="og:image" content="https://ghostop.ai/icon-512.png" />
   <meta property="og:image:width" content="512" />
   <meta property="og:image:height" content="512" />
   <meta property="og:image:type" content="image/png" />
   <meta property="og:image:alt" content="GhostOp logo" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="GhostOp — Technical Diligence, Architecture Advisory &amp; Build Audits" />
-  <meta name="twitter:description" content="Technical diligence, fractional architecture advisory, and build audits for consequential software decisions." />
+  <meta name="twitter:title" content="Technical Diligence Is Not a Code Review — GhostOp" />
+  <meta name="twitter:description" content="A code review asks whether the code is well written. Technical diligence asks whether the technology is a sound basis for the bet — architecture survivability, liability inventory, team capability, and the red flags that should change deal terms." />
   <meta name="twitter:image" content="https://ghostop.ai/icon-512.png" />
   <meta name="twitter:image:alt" content="GhostOp logo" />
-  <link rel="canonical" href="https://ghostop.ai/" />
+  <link rel="canonical" href="https://ghostop.ai/blog-technical-diligence-before-you-sign.html" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"GhostOp","url":"https://ghostop.ai/","image":"https://ghostop.ai/icon-512.png","description":"Independent technical advisory for founders, investors, and operating teams making consequential software decisions.","slogan":"I make complex systems actually work in the real world.","knowsAbout":["Technical diligence","Fractional architecture advisory","Build audits","API architecture","Identity and authentication","Application security","Systems integration"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Advisory engagements","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Technical diligence"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fractional architecture advisor"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Build audit"}}]}}
+  {"@context": "https://schema.org", "@type": "Article", "headline": "Technical Diligence Is Not a Code Review", "description": "A code review asks whether the code is well written. Technical diligence asks whether the technology is a sound basis for the bet — architecture survivability, liability inventory, team capability, and the red flags that should change deal terms.", "datePublished": "2026-09-13", "author": {"@type": "Organization", "name": "GhostOp", "url": "https://ghostop.ai/"}, "publisher": {"@type": "Organization", "name": "GhostOp", "url": "https://ghostop.ai/"}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://ghostop.ai/blog-technical-diligence-before-you-sign.html"}}
   </script>
-  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="https://ghostop.ai/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="https://ghostop.ai/icon-512.png" />
+  <link rel="apple-touch-icon" href="https://ghostop.ai/apple-touch-icon.png" />
+  <link rel="manifest" href="https://ghostop.ai/manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,500;600&display=swap" rel="stylesheet" />
-  <title>GhostOp — Technical Diligence, Architecture Advisory &amp; Build Audits</title>
+  <title>Technical Diligence Is Not a Code Review — GhostOp</title>
   <style>
     :root {
       --paper: #f4f4f0;
@@ -877,423 +877,112 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
     }
+  
   </style>
-</head>
-<body>
+  <style>
+    /* --- Blog pages (GhostOp writing) --- */
+    .blog-top { width: min(860px, calc(100% - 40px)); margin: 0 auto; padding: 84px 0 0; }
+    .blog-back { margin: 0 0 26px; font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
+    .blog-back a { text-decoration: none; }
+    .blog-back a:hover { text-decoration: underline; text-underline-offset: 4px; }
+    .blog-title { font-family: "Source Serif 4", serif; font-weight: 600; font-size: clamp(38px, 5vw, 64px); line-height: 1.02; letter-spacing: -.03em; margin: 0; max-width: 780px; }
+    .blog-title em { font-style: normal; text-decoration: underline; text-decoration-color: var(--signal); text-decoration-thickness: .09em; text-underline-offset: .1em; }
+    .blog-lede { margin: 26px 0 0; font-size: clamp(17px, 1.8vw, 21px); line-height: 1.5; color: #303432; max-width: 640px; }
+    .blog-meta { margin-top: 28px; font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); display: flex; gap: 14px; align-items: center; }
+    .blog-meta .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--signal); }
+    .article-body { width: min(680px, 100%); margin: 58px auto 0; font-family: "Source Serif 4", serif; font-size: 19px; line-height: 1.7; color: #232726; }
+    .article-body > p { margin: 0 0 28px; }
+    .article-body h2 { font-weight: 600; font-size: clamp(25px, 2.8vw, 32px); line-height: 1.15; letter-spacing: -.02em; margin: 58px 0 20px; color: var(--ink); }
+    .article-body ul { margin: 0 0 28px; padding-left: 26px; }
+    .article-body li { margin-bottom: 16px; }
+    .article-body a { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--signal); }
+    .article-signoff { margin-top: 52px; padding-top: 30px; border-top: 1px solid var(--line); font-size: 17px; color: #3c423f; }
+    .blog-cta { width: min(860px, calc(100% - 40px)); margin: 84px auto 0; border: 1px solid var(--ink); background: var(--white); padding: 46px; }
+    .blog-cta h2 { font-family: "Source Serif 4", serif; font-weight: 600; font-size: clamp(26px, 3.4vw, 38px); letter-spacing: -.025em; line-height: 1.1; margin: 0 0 14px; }
+    .blog-cta p { margin: 0 0 28px; color: #303432; max-width: 560px; font-size: 17px; line-height: 1.55; }
+    .blog-cta .row { display: flex; flex-wrap: wrap; gap: 14px; }
+    .blog-foot { width: min(860px, calc(100% - 40px)); margin: 0 auto; padding-bottom: 64px; }
+    .post-list { width: min(860px, calc(100% - 40px)); margin: 62px auto 0; display: grid; gap: 22px; }
+    .post-card { display: block; background: var(--white); border: 1px solid var(--line); padding: 36px 38px; text-decoration: none; transition: border-color .18s ease, transform .18s ease; }
+    .post-card:hover, .post-card:focus-visible { border-color: var(--ink); transform: translateY(-2px); }
+    .post-kicker { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); display: flex; gap: 12px; align-items: center; }
+    .post-kicker .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--signal); }
+    .post-card h2 { font-family: "Source Serif 4", serif; font-weight: 600; font-size: clamp(24px, 3vw, 32px); line-height: 1.12; letter-spacing: -.02em; margin: 14px 0 12px; }
+    .post-card h2 .u { text-decoration: underline; text-decoration-color: var(--signal); text-decoration-thickness: .08em; text-underline-offset: .12em; }
+    .post-card p { margin: 0 0 20px; color: #3c423f; font-size: 16px; line-height: 1.55; }
+    .post-more { font-family: "IBM Plex Mono", monospace; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; font-weight: 500; }
+    .post-more span { color: var(--signal); }
+    nav a[aria-current="page"] { text-decoration: underline; text-underline-offset: 4px; }
+    @media (max-width: 640px) {
+      .blog-cta { padding: 32px 26px; }
+      .post-card { padding: 28px 26px; }
+      .blog-top { padding-top: 60px; }
+    }
+
+  </style>
+</head><body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="topline">
     <div class="topline-inner">
-      <div class="status"><span class="status-dot" aria-hidden="true"></span><strong>GhostOp</strong><span class="status-divider">/</span><span class="status-descriptor">Technical advisory</span></div>
+      <a class="status" href="https://ghostop.ai/" style="text-decoration: none;"><span class="status-dot" aria-hidden="true"></span><strong>GhostOp</strong><span class="status-divider">/</span><span class="status-descriptor">Technical advisory</span></a>
       <nav aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#approach">Approach</a>
-        <a href="#about">About us</a>
+        <a href="https://ghostop.ai/#work">Work</a>
+        <a href="https://ghostop.ai/#approach">Approach</a>
+        <a href="https://ghostop.ai/#about">About us</a>
         <a href="/blog.html">Writing</a>
-        <a class="nav-cta" href="#fit">Find the right review</a>
+        <a class="nav-cta" href="https://ghostop.ai/#fit">Find the right review</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="kicker">For founders, investors &amp; operating teams</p>
-        <h1 id="hero-title">Know what’s real before you <em>bet on it.</em></h1>
-        <p class="hero-lede">Independent technical judgment for consequential software decisions—before the next check is signed, the next enterprise promise is made, or a fragile build becomes an expensive problem.</p>
-        <div class="hero-actions">
-          <a class="button" href="#fit">Find the right engagement
-            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4" stroke="currentColor" stroke-width="1.7"/></svg>
-          </a>
-          <a class="button secondary" href="#work">Explore engagements</a>
-          <button class="button secondary" id="hero-contact" type="button">Talk to the ghost</button>
-        </div>
-      </div>
-
-      <div class="docket" aria-label="Illustration of a technical review docket">
-        <button class="ghost-stage" id="ghost-contact" type="button" aria-label="Ask the GhostOp ghost to open the contact form" aria-haspopup="dialog">
-          <svg class="ghost-mark" viewBox="0 0 160 160" aria-hidden="true">
-            <ellipse class="ghost-shadow" cx="78" cy="139" rx="37" ry="8"/>
-            <path class="ghost-body" d="M39 124V75c0-29 17-47 41-47s41 18 41 47v49l-14-10-14 13-13-13-14 13-13-13-14 10Z"/>
-            <ellipse class="ghost-eye" cx="67" cy="75" rx="4.7" ry="6.5"/>
-            <ellipse class="ghost-eye" cx="94" cy="75" rx="4.7" ry="6.5"/>
-            <path d="M72 91c5 5 12 5 17 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-            <circle class="ghost-cheek" cx="57" cy="89" r="5"/>
-            <circle class="ghost-cheek" cx="104" cy="89" r="5"/>
-            <path class="ghost-spark" d="m128 30 3 9 9 3-9 3-3 9-3-9-9-3 9-3 3-9Z"/>
-          </svg>
-          <span class="ghost-hint" aria-hidden="true">psst — click me, I take messages</span>
-        </button>
-        <article class="case-sheet">
-          <div class="sheet-head"><span>Decision file / 01</span><strong>Independent review</strong></div>
-          <div class="sheet-body">
-            <h2 class="sheet-title">What the pitch deck cannot tell you.</h2>
-            <div class="signal-line"><span>01</span><p>Will the architecture survive the next stage of growth?</p></div>
-            <div class="signal-line"><span>02</span><p>Where do security, identity, and integration risks hide?</p></div>
-            <div class="signal-line"><span>03</span><p>Can this team deliver what has been promised?</p></div>
-            <div class="stamp">Evidence over theater</div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <div class="audience-band" aria-label="Who GhostOp advises">
-      <div class="audience-inner">
-        <div class="audience-label">Built for consequential decisions</div>
-        <div class="audience-item">Founders</div>
-        <div class="audience-item">Investors</div>
-        <div class="audience-item">Operating teams</div>
-      </div>
+    <div class="blog-top">
+      <p class="blog-back"><a href="/blog.html">&larr; Writing</a></p>
+      <p class="kicker">Technical diligence</p>
+      <h1 class="blog-title">Technical Diligence <em>Is Not a Code Review</em></h1>
+      <p class="blog-meta"><span class="dot" aria-hidden="true"></span><span>GhostOp</span><span>&middot;</span><span>September 13, 2026</span></p>
     </div>
-
-    <section class="section" id="work" aria-labelledby="work-title">
-      <div class="section-heading">
-        <div class="section-index">01 / Engagements</div>
-        <h2 id="work-title">Three moments when senior technical judgment changes the outcome.</h2>
-        <p>Focused scopes around a decision—not project labor, seat-filling, or an open-ended transformation program.</p>
-      </div>
-
-      <div class="offer-grid">
-        <article class="offer">
-          <span class="offer-number">01 — Before money moves</span>
-          <h3>Technical diligence</h3>
-          <p>An independent read on the product, platform, team, and hidden liabilities behind an investment, acquisition, or strategic bet.</p>
-          <ul>
-            <li>Architecture and codebase risk review</li>
-            <li>Security, identity, and integration exposure</li>
-            <li>Team and delivery capability assessment</li>
-            <li>Decision memo with red flags and conditions</li>
-          </ul>
-        </article>
-
-        <article class="offer">
-          <span class="offer-number">02 — While the stakes rise</span>
-          <h3>Fractional architecture advisor</h3>
-          <p>Senior technical counsel for a founder, board, or leadership team navigating scale, enterprise demands, and irreversible platform choices.</p>
-          <ul>
-            <li>Architecture decision support</li>
-            <li>Enterprise readiness and roadmap pressure-test</li>
-            <li>API, identity, and security strategy</li>
-            <li>Technical hiring and vendor review</li>
-          </ul>
-        </article>
-
-        <article class="offer">
-          <span class="offer-number">03 — When confidence breaks</span>
-          <h3>Build audit</h3>
-          <p>A fast, unsentimental review when the demo looks good but delivery feels fragile, the roadmap keeps slipping, or the system will not scale.</p>
-          <ul>
-            <li>Production-readiness assessment</li>
-            <li>Delivery bottleneck diagnosis</li>
-            <li>Integration and dependency mapping</li>
-            <li>Prioritized recovery plan</li>
-          </ul>
-        </article>
+    <article class="article-body">
+<p>When money is about to move &mdash; an investment, an acquisition, a strategic partnership &mdash; someone eventually asks whether the technology is real. Too often, the answer comes from the wrong exercise: a code review. Someone reads the repository for a few days, reports that the code is &ldquo;clean&rdquo; or &ldquo;a bit messy,&rdquo; and the deal proceeds on vibes.</p>
+<p>A code review answers a narrow question: is this code well written? Technical diligence answers the question that actually matters: <strong>is this technology a sound basis for the bet being made?</strong> Those are very different investigations.</p>
+<h2>What diligence examines that code review doesn&rsquo;t</h2>
+<p><strong>Architecture survivability.</strong> Will the system handle 10x the current load &mdash; not in theory, but given how it is actually deployed? I have seen systems that were &ldquo;built to scale&rdquo; running on a single database with no read replicas, no caching strategy, and a deployment process that required downtime. The architecture diagram said one thing; the production reality said another. Diligence reconciles the two.</p>
+<p><strong>The liability inventory.</strong> Every system carries hidden obligations: unpatched dependencies with known CVEs, data handling that would fail a compliance review, vendor contracts with pricing cliffs, open-source licenses that conflict with the business model. None of these appear in a code quality report. All of them affect valuation and deal terms.</p>
+<p><strong>Team and delivery capability.</strong> Can this team actually ship what the roadmap promises? Diligence looks at deployment frequency, incident history, test coverage that is real rather than decorative, and whether the architecture matches the team&rsquo;s actual skills. A brilliant microservices design executed by a team of three generalists is not a plan &mdash; it is a wish.</p>
+<p><strong>The integration surface.</strong> Modern products are assemblies: payments, identity, data pipelines, AI services, third-party APIs. Each integration is a dependency on someone else&rsquo;s roadmap, pricing, and reliability. Diligence maps these dependencies and asks what happens when one of them changes &mdash; because they always change.</p>
+<h2>The red flags that change deals</h2>
+<p>Not every finding should kill a deal. In fact, most shouldn&rsquo;t &mdash; the point of diligence is to price risk, not to demand perfection. But some findings genuinely change the terms:</p>
+<ul>
+<li><strong>Security exposure that a customer would walk away from.</strong> Unencrypted PII, missing access controls, no incident response capability. Enterprise customers run their own diligence, and what you buy is what they will find.</li>
+<li><strong>Architecture that cannot reach the next milestone without a rewrite.</strong> If the promised growth requires rebuilding the foundation, that cost belongs in the model now &mdash; not discovered later.</li>
+<li><strong>Key-person dependency with no mitigation.</strong> When one founder is the entire platform team, you are not acquiring technology. You are acquiring a person, with all the retention risk that implies.</li>
+<li><strong>Demo-ware presented as product.</strong> The three flows that work in the pitch, backed by manual processes and hardcoded data. The gap between the demo and the product is the gap between the valuation and reality.</li>
+</ul>
+<h2>How good diligence gets done</h2>
+<p>Speed matters &mdash; deals move fast, and diligence that takes six weeks is diligence that gets skipped. The most effective reviews are bounded and decision-oriented: a defined set of questions, direct access to the technical team, and an output written for the person signing the check, not for engineers. The deliverable is a memo with findings, red flags, and conditions &mdash; not a 200-page report nobody reads.</p>
+<p>The best diligence also stays independent. When the review is done by someone hoping to win the implementation contract, every finding mysteriously requires their services. Independence is what makes the findings trustworthy: no implementation pitch attached to the verdict.</p>
+<h2>Before the next check is signed</h2>
+<p>Technical diligence is the cheapest insurance in a transaction. A few weeks of focused review, against a decision worth millions, to answer the one question the pitch deck cannot: is the technology behind the story real enough to bet on?</p>
+<p class="article-signoff"><em>GhostOp provides independent technical diligence for investments, acquisitions, and strategic bets: architecture risk, security and integration exposure, team capability, and a decision memo with red flags and conditions.</em> <a href="https://ghostop.ai/#work">Explore engagements</a>.</p>
+    </article>
+    <section class="blog-cta" aria-labelledby="blog-cta-title">
+      <h2 id="blog-cta-title">Bring the claim. We&rsquo;ll help test the reality.</h2>
+      <p>If this reads like your build &mdash; or the one you&rsquo;re about to bet on &mdash; start with the decision, not a shopping list.</p>
+      <div class="row">
+        <a class="button" href="https://ghostop.ai/#work">Explore engagements
+          <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4" stroke="currentColor" stroke-width="1.7"/></svg>
+        </a>
+        <a class="button secondary" href="https://ghostop.ai/">Back to the homepage</a>
       </div>
     </section>
 
-    <section class="dark-section" id="approach" aria-labelledby="approach-title">
-      <div class="dark-inner">
-        <div class="section-heading">
-          <div class="section-index">02 / The work</div>
-          <h2 id="approach-title">A decision-grade answer, not another stack of slides.</h2>
-          <p>Every review turns ambiguity into a compact set of findings leadership can act on immediately.</p>
-        </div>
-
-        <div class="deliverable-grid">
-          <div class="review-flow" aria-label="Review process">
-            <div class="flow-head"><span>Review sequence</span><span>Output</span></div>
-            <div class="flow-item">
-              <span class="flow-n">01</span>
-              <div><h3>Interrogate the claim</h3><p>What is being promised, and what evidence supports it?</p></div>
-              <span class="flow-state">Questions</span>
-            </div>
-            <div class="flow-item">
-              <span class="flow-n">02</span>
-              <div><h3>Trace the system</h3><p>Architecture, dependencies, data, identity, and delivery reality.</p></div>
-              <span class="flow-state">Map</span>
-            </div>
-            <div class="flow-item">
-              <span class="flow-n">03</span>
-              <div><h3>Separate risk from noise</h3><p>Material issues, acceptable debt, and false alarms.</p></div>
-              <span class="flow-state">Findings</span>
-            </div>
-            <div class="flow-item">
-              <span class="flow-n">04</span>
-              <div><h3>Make the decision usable</h3><p>Clear priorities, options, conditions, and next moves.</p></div>
-              <span class="flow-state">Memo</span>
-            </div>
-          </div>
-
-          <div class="deliverable-copy">
-            <blockquote>“The useful answer is rarely <span>yes or no.</span> It is what must be true for the bet to work.”</blockquote>
-            <p>We work across the seams where software risk becomes business risk: product and platform, APIs and identity, vendor and team, enterprise promise and delivery reality.</p>
-            <div class="principles">
-              <div class="principle"><strong>Independent</strong><span>No implementation pitch attached to the finding.</span></div>
-              <div class="principle"><strong>Direct</strong><span>Risks stated in business language, without euphemism.</span></div>
-              <div class="principle"><strong>Senior-led</strong><span>The judgment is the work, not a layer of account management.</span></div>
-              <div class="principle"><strong>Bounded</strong><span>Clear questions, clear outputs, and a defined decision.</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="fit" aria-labelledby="fit-title">
-      <div class="fit-layout">
-        <div class="fit-copy">
-          <p class="kicker">A useful first conversation</p>
-          <h2 id="fit-title">Start with the decision—not a shopping list.</h2>
-          <p>Choose the situation that looks most like yours. We’ll frame the right first review and give you a short brief you can send through the channel that brought you here.</p>
-          <div class="tiny-note">No intake form. No automated funnel. No sensitive material needed for the first conversation.</div>
-        </div>
-
-        <div class="fit-tool" aria-live="polite">
-          <div class="fit-tool-head"><span>Engagement finder</span><span>Choose one</span></div>
-          <div class="fit-options" role="tablist" aria-label="Choose your situation">
-            <button class="fit-option" role="tab" aria-selected="true" data-fit="money">We are about to invest or acquire</button>
-            <button class="fit-option" role="tab" aria-selected="false" data-fit="scale">The company is outgrowing its architecture</button>
-            <button class="fit-option" role="tab" aria-selected="false" data-fit="stuck">The build is stuck or trust has slipped</button>
-          </div>
-          <div class="fit-result" id="fit-result"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="about" aria-labelledby="about-title">
-      <div class="about-card">
-        <div class="about-label">
-          <p class="kicker">03 / About us</p>
-          <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
-            <rect x="13" y="13" width="94" height="94" stroke="currentColor" stroke-width="2"/>
-            <path d="M30 41h60M30 60h39M30 79h49" stroke="currentColor" stroke-width="4"/>
-            <circle cx="88" cy="78" r="12" fill="#dff64f" stroke="currentColor" stroke-width="2"/>
-            <path d="m83 78 4 4 7-9" stroke="currentColor" stroke-width="2.5"/>
-          </svg>
-        </div>
-        <div class="about-copy">
-          <h2 id="about-title">Built in the space between technical detail and executive consequence.</h2>
-          <p class="credo">&ldquo;I make complex systems actually work in the real world.&rdquo;</p>
-          <p>GhostOp is an independent technical advisory and execution practice &mdash; senior judgment at expensive decision points, not a consultancy bench or an AI agency.</p>
-          <p>Our perspective comes from both sides of the table: building in startups and open-source communities, then operating inside complex enterprise environments where integrations, identity, security, mobile systems, and mission-critical delivery all collide.</p>
-          <p>That range matters. It lets us see past startup theater without applying enterprise bureaucracy—and translate deep technical findings into decisions founders, investors, and boards can actually use.</p>
-          <div class="about-proof" aria-label="Areas of experience">
-            <div class="proof"><strong>Builder’s context</strong><span>Products, teams, tradeoffs, and shipping under pressure.</span></div>
-            <div class="proof"><strong>Enterprise depth</strong><span>APIs, identity, security, integration, and regulated systems.</span></div>
-            <div class="proof"><strong>Operator’s judgment</strong><span>What is fixable, what is fragile, and what changes the bet.</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="record" aria-label="Public record">
-      <div class="record-inner">
-        <p class="kicker">The record</p>
-        <dl class="record-list">
-          <div class="record-item">
-            <dt>Range</dt>
-            <dd>15+ years across startups, open-source communities, web and mobile, and enterprise systems.</dd>
-          </div>
-          <div class="record-item">
-            <dt>Public work</dt>
-            <dd>Co-maintainer of Drupal&rsquo;s PWA module, opensource.com author, and conference speaker on progressive web apps.</dd>
-          </div>
-          <div class="record-item">
-            <dt>Depth</dt>
-            <dd>APIs and integrations, identity and authentication, security, frontend/backend boundaries, performance and caching &mdash; in regulated, mission-critical environments.</dd>
-          </div>
-        </dl>
-      </div>
-    </section>
-
-    <section class="close" aria-labelledby="close-title">
-      <div class="close-inner">
-        <div class="close-grid">
-          <h2 id="close-title">Bring the claim. We’ll help test the reality.</h2>
-          <div class="close-side">
-            <p>The best first note is simple: the decision in front of you, what feels uncertain, and when the answer matters. Copy the template, fill in the blanks, and send it through your usual channel.</p>
-            <button class="button" id="copy-general" type="button">Copy the first-note template
-              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="6" y="6" width="9" height="9" stroke="currentColor" stroke-width="1.5"/><path d="M4 12V4h8" stroke="currentColor" stroke-width="1.5"/></svg>
-            </button>
-            <div class="close-note" id="general-feedback" aria-live="polite"></div>
-          </div>
-        </div>
-        <footer>
-          <span>GhostOp / Independent technical advisory</span>
-          <span>Technical diligence · Architecture advisory · Build audits</span>
-        </footer>
-      </div>
-    </section>
+    <div class="blog-foot">
+      <footer>
+        <span>GhostOp / Independent technical advisory</span>
+        <span>Technical diligence &middot; Architecture advisory &middot; Build audits</span>
+      </footer>
+    </div>
   </main>
-
-  <div class="contact-layer" id="contact-layer" hidden>
-    <section class="contact-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-title" aria-describedby="contact-description">
-      <div class="contact-head">
-        <svg class="contact-ghost" viewBox="0 0 160 160" aria-hidden="true">
-          <path class="ghost-body" d="M39 124V75c0-29 17-47 41-47s41 18 41 47v49l-14-10-14 13-13-13-14 13-13-13-14 10Z"/>
-          <ellipse class="ghost-eye" cx="67" cy="75" rx="4.7" ry="6.5"/>
-          <ellipse class="ghost-eye" cx="94" cy="75" rx="4.7" ry="6.5"/>
-          <path d="M72 91c5 5 12 5 17 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-          <circle class="ghost-cheek" cx="57" cy="89" r="5"/>
-          <circle class="ghost-cheek" cx="104" cy="89" r="5"/>
-        </svg>
-        <div><strong id="contact-title">Tell us what’s haunting the build.</strong><span>Confidential first-note builder</span></div>
-        <button class="dialog-close" id="contact-close" type="button" aria-label="Close contact form">×</button>
-      </div>
-      <form class="contact-form" id="contact-form">
-        <p id="contact-description">Give us the shape of the decision. We’ll turn it into a concise note you can copy and send through your preferred channel.</p>
-        <div class="field-row">
-          <label>Your name
-            <input id="contact-name" name="name" autocomplete="name" required />
-          </label>
-          <label>Your email
-            <input id="contact-email" name="email" type="email" autocomplete="email" required />
-          </label>
-        </div>
-        <label>What decision or problem are you facing?
-          <textarea id="contact-message" name="message" required placeholder="The decision, what feels uncertain, and when the answer matters."></textarea>
-        </label>
-        <div class="contact-actions">
-          <button class="button" type="submit">Copy contact note
-            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4" stroke="currentColor" stroke-width="1.7"/></svg>
-          </button>
-          <span class="contact-feedback" id="contact-feedback" aria-live="polite"></span>
-        </div>
-        <p class="contact-note">Nothing is sent from this page. Your finished note is copied so you stay in control of where it goes.</p>
-      </form>
-    </section>
-  </div>
-
-  <script>
-    const fitData = {
-      money: {
-        label: 'Recommended first step',
-        title: 'Technical diligence',
-        body: 'Frame the investment thesis, then test the technology, team, and delivery assumptions that could change the deal.',
-        bullets: ['Independent risk memo', 'Material red flags and close conditions', 'Clear post-deal priorities'],
-        brief: `I'm considering an investment, acquisition, or strategic commitment and want an independent technical read.\n\nThe decision: [what is being considered]\nThe uncertainty: [what you do not yet trust]\nThe timing: [when the answer is needed]\n\nI'd like to discuss a focused technical diligence review.`
-      },
-      scale: {
-        label: 'Recommended first step',
-        title: 'Fractional architecture advisory',
-        body: 'Create a steady source of senior technical judgment around scale, enterprise commitments, security, and platform choices.',
-        bullets: ['Decision support for leadership', 'Architecture and enterprise-readiness pressure-test', 'A roadmap tied to business stakes'],
-        brief: `We're reaching a stage where architecture decisions carry more business risk.\n\nThe company: [what you build]\nThe pressure: [growth, enterprise customers, security, integrations, hiring]\nThe decision: [what needs senior judgment]\n\nI'd like to discuss a focused architecture advisory relationship.`
-      },
-      stuck: {
-        label: 'Recommended first step',
-        title: 'Build audit',
-        body: 'Establish what is actually broken, what merely looks messy, and the smallest credible path back to control.',
-        bullets: ['Production and delivery reality check', 'Root-cause map across technical boundaries', 'Prioritized recovery sequence'],
-        brief: `A software build has lost momentum or confidence, and we need an independent diagnosis.\n\nThe system: [what is being built]\nThe symptom: [slipping delivery, instability, scale, security, integration]\nThe consequence: [what is at risk]\n\nI'd like to discuss a focused build audit.`
-      }
-    };
-
-    const result = document.getElementById('fit-result');
-    const tabs = Array.from(document.querySelectorAll('.fit-option'));
-
-    function renderFit(key) {
-      const item = fitData[key];
-      result.innerHTML = `
-        <span class="fit-result-label">${item.label}</span>
-        <h3>${item.title}</h3>
-        <p>${item.body}</p>
-        <ul>${item.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
-        <button type="button" class="button secondary" id="copy-fit">Copy a briefing note</button>
-        <span class="copy-feedback" id="copy-feedback" aria-live="polite"></span>`;
-
-      document.getElementById('copy-fit').addEventListener('click', () => {
-        copyText(item.brief, document.getElementById('copy-feedback'));
-      });
-    }
-
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
-        tab.setAttribute('aria-selected', 'true');
-        renderFit(tab.dataset.fit);
-      });
-    });
-
-    async function copyText(text, feedback) {
-      try {
-        await navigator.clipboard.writeText(text);
-        feedback.textContent = 'Copied—send it through your usual channel.';
-      } catch (err) {
-        const area = document.createElement('textarea');
-        area.value = text;
-        area.setAttribute('readonly', '');
-        area.style.position = 'fixed';
-        area.style.opacity = '0';
-        document.body.appendChild(area);
-        area.select();
-        document.execCommand('copy');
-        area.remove();
-        feedback.textContent = 'Copied—send it through your usual channel.';
-      }
-    }
-
-    document.getElementById('copy-general').addEventListener('click', () => {
-      copyText(`I'd like an independent technical perspective on a decision we're making.\n\nThe decision: [what is being considered]\nThe uncertainty: [what feels unclear or risky]\nThe timing: [when the answer matters]\n\nCan we set up a confidential first conversation?`, document.getElementById('general-feedback'));
-    });
-
-    const ghostContact = document.getElementById('ghost-contact');
-    const contactLayer = document.getElementById('contact-layer');
-    const contactDialog = contactLayer.querySelector('.contact-dialog');
-    const contactClose = document.getElementById('contact-close');
-    const contactForm = document.getElementById('contact-form');
-    let contactReturnFocus = null;
-
-    function openContact() {
-      contactReturnFocus = document.activeElement;
-      ghostContact.classList.add('is-summoning');
-      contactLayer.hidden = false;
-      document.body.style.overflow = 'hidden';
-      requestAnimationFrame(() => document.getElementById('contact-name').focus());
-      window.setTimeout(() => ghostContact.classList.remove('is-summoning'), 600);
-    }
-
-    function closeContact() {
-      contactLayer.hidden = true;
-      document.body.style.overflow = '';
-      if (contactReturnFocus) contactReturnFocus.focus();
-    }
-
-    ghostContact.addEventListener('click', openContact);
-    document.getElementById('hero-contact').addEventListener('click', openContact);
-    contactClose.addEventListener('click', closeContact);
-    contactLayer.addEventListener('click', event => {
-      if (event.target === contactLayer) closeContact();
-    });
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && !contactLayer.hidden) closeContact();
-      if (event.key === 'Tab' && !contactLayer.hidden) {
-        const controls = Array.from(contactDialog.querySelectorAll('button, input, textarea')).filter(el => !el.disabled);
-        const first = controls[0];
-        const last = controls[controls.length - 1];
-        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-        if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-      }
-    });
-
-    contactForm.addEventListener('submit', event => {
-      event.preventDefault();
-      if (!contactForm.reportValidity()) return;
-      const name = document.getElementById('contact-name').value.trim();
-      const email = document.getElementById('contact-email').value.trim();
-      const message = document.getElementById('contact-message').value.trim();
-      const note = `GhostOp inquiry\n\nFrom: ${name}\nEmail: ${email}\n\nDecision or problem:\n${message}\n\nI'd like to discuss the right focused review.`;
-      copyText(note, document.getElementById('contact-feedback'));
-    });
-
-    renderFit('money');
-  </script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js').catch(() => {});
-      });
-    }
-  </script>
 </body>
 </html>
