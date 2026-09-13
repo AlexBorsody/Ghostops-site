@@ -6,7 +6,7 @@
   <meta name="color-scheme" content="light" />
   <meta name="theme-color" content="#111313" />
   <meta name="description" content="Independent technical advisory for founders, investors, and operating teams making consequential software decisions." />
-  <meta property="og:title" content="GhostOps — Technical Advisory" />
+  <meta property="og:title" content="GhostOp — Technical Advisory" />
   <meta property="og:description" content="Technical diligence, fractional architecture advisory, and build audits for consequential software decisions." />
   <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
   <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,500;600&display=swap" rel="stylesheet" />
-  <title>GhostOps — Technical Advisory</title>
+  <title>GhostOp — Technical Advisory</title>
   <style>
     :root {
       --paper: #f4f4f0;
@@ -706,6 +706,35 @@
       letter-spacing: -.04em;
     }
     .about-copy p { max-width: 700px; margin: 24px 0 0; font-size: 18px; }
+    .credo {
+      max-width: 700px;
+      margin: 26px 0 0 !important;
+      padding-left: 18px;
+      border-left: 3px solid var(--signal);
+      font-size: clamp(20px, 2.6vw, 26px);
+      font-style: italic;
+      line-height: 1.35;
+      color: var(--ink);
+    }
+    .record { border-top: 1px solid var(--line); background: var(--paper); }
+    .record-inner { max-width: var(--content); margin: 0 auto; padding: 60px 32px; }
+    .record-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
+      margin: 30px 0 0;
+      padding: 0;
+    }
+    .record-item dt {
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+    .record-item dd { margin: 0; font-size: 16px; line-height: 1.6; color: var(--muted); }
     .about-proof {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -767,6 +796,8 @@
       .offer { grid-column: span 12; min-height: auto; border-right: 0; border-bottom: 1px solid var(--ink); }
       .offer ul { margin-top: 30px; }
       .deliverable-grid, .fit-layout, .about-card, .close-grid { grid-template-columns: 1fr; }
+      .record-list { grid-template-columns: 1fr; gap: 26px; }
+      .record-inner { padding: 44px 20px; }
       .about-label { border-right: 0; border-bottom: 1px solid var(--ink); display: flex; align-items: center; justify-content: space-between; }
       .about-label svg { margin-top: 0; width: 78px; height: 78px; }
       .fit-layout { gap: 40px; }
@@ -835,7 +866,7 @@
 
   <header class="topline">
     <div class="topline-inner">
-      <div class="status"><span class="status-dot" aria-hidden="true"></span><strong>GhostOps</strong><span class="status-divider">/</span><span class="status-descriptor">Technical advisory</span></div>
+      <div class="status"><span class="status-dot" aria-hidden="true"></span><strong>GhostOp</strong><span class="status-divider">/</span><span class="status-descriptor">Technical advisory</span></div>
       <nav aria-label="Primary navigation">
         <a href="#work">Work</a>
         <a href="#approach">Approach</a>
@@ -861,7 +892,7 @@
       </div>
 
       <div class="docket" aria-label="Illustration of a technical review docket">
-        <button class="ghost-stage" id="ghost-contact" type="button" aria-label="Ask the GhostOps ghost to open the contact form" aria-haspopup="dialog">
+        <button class="ghost-stage" id="ghost-contact" type="button" aria-label="Ask the GhostOp ghost to open the contact form" aria-haspopup="dialog">
           <svg class="ghost-mark" viewBox="0 0 160 160" aria-hidden="true">
             <ellipse class="ghost-shadow" cx="78" cy="139" rx="37" ry="8"/>
             <path class="ghost-body" d="M39 124V75c0-29 17-47 41-47s41 18 41 47v49l-14-10-14 13-13-13-14 13-13-13-14 10Z"/>
@@ -887,7 +918,7 @@
       </div>
     </section>
 
-    <div class="audience-band" aria-label="Who GhostOps advises">
+    <div class="audience-band" aria-label="Who GhostOp advises">
       <div class="audience-inner">
         <div class="audience-label">Built for consequential decisions</div>
         <div class="audience-item">Founders</div>
@@ -1023,6 +1054,8 @@
         </div>
         <div class="about-copy">
           <h2 id="about-title">Built in the space between technical detail and executive consequence.</h2>
+          <p class="credo">&ldquo;I make complex systems actually work in the real world.&rdquo;</p>
+          <p>GhostOp is an independent technical advisory and execution practice &mdash; senior judgment at expensive decision points, not a consultancy bench or an AI agency.</p>
           <p>Our perspective comes from both sides of the table: building in startups and open-source communities, then operating inside complex enterprise environments where integrations, identity, security, mobile systems, and mission-critical delivery all collide.</p>
           <p>That range matters. It lets us see past startup theater without applying enterprise bureaucracy—and translate deep technical findings into decisions founders, investors, and boards can actually use.</p>
           <div class="about-proof" aria-label="Areas of experience">
@@ -1031,6 +1064,26 @@
             <div class="proof"><strong>Operator’s judgment</strong><span>What is fixable, what is fragile, and what changes the bet.</span></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="record" aria-label="Public record">
+      <div class="record-inner">
+        <p class="kicker">The record</p>
+        <dl class="record-list">
+          <div class="record-item">
+            <dt>Range</dt>
+            <dd>15+ years across startups, open-source communities, web and mobile, and enterprise systems.</dd>
+          </div>
+          <div class="record-item">
+            <dt>Public work</dt>
+            <dd>Co-maintainer of Drupal&rsquo;s PWA module, opensource.com author, and conference speaker on progressive web apps.</dd>
+          </div>
+          <div class="record-item">
+            <dt>Depth</dt>
+            <dd>APIs and integrations, identity and authentication, security, frontend/backend boundaries, performance and caching &mdash; in regulated, mission-critical environments.</dd>
+          </div>
+        </dl>
       </div>
     </section>
 
@@ -1047,7 +1100,7 @@
           </div>
         </div>
         <footer>
-          <span>GhostOps / Independent technical advisory</span>
+          <span>GhostOp / Independent technical advisory</span>
           <span>Technical diligence · Architecture advisory · Build audits</span>
         </footer>
       </div>
@@ -1210,7 +1263,7 @@
       const name = document.getElementById('contact-name').value.trim();
       const email = document.getElementById('contact-email').value.trim();
       const message = document.getElementById('contact-message').value.trim();
-      const note = `GhostOps inquiry\n\nFrom: ${name}\nEmail: ${email}\n\nDecision or problem:\n${message}\n\nI'd like to discuss the right focused review.`;
+      const note = `GhostOp inquiry\n\nFrom: ${name}\nEmail: ${email}\n\nDecision or problem:\n${message}\n\nI'd like to discuss the right focused review.`;
       copyText(note, document.getElementById('contact-feedback'));
     });
 

@@ -1,5 +1,5 @@
-/* GhostOps service worker — cache-first PWA shell for ghostop.ai */
-const CACHE = 'ghostops-v2';
+/* GhostOp service worker — cache-first PWA shell for ghostop.ai */
+const CACHE = 'ghostop-v2';
 const ASSETS = [
   './',
   'index.html',
