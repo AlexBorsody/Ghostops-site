@@ -7,19 +7,37 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ghostop.ai/blog.html</loc>
+    <loc>https://ghostop.ai/blog/</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ghostop.ai/blog-build-audit-what-fragile-software-looks-like.html</loc>
+    <loc>https://ghostop.ai/blog/build-audit-what-fragile-software-looks-like/</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ghostop.ai/blog-technical-diligence-before-you-sign.html</loc>
+    <loc>https://ghostop.ai/blog/technical-diligence-before-you-sign/</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ghostop.ai/blog-microservices-tax-hidden-costs.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ghostop.ai/blog-identity-shortcut-liability.html</loc>
+    <lastmod>2026-09-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ghostop.ai/blog-coding-agents-architecture-moat.html</loc>
     <lastmod>2026-09-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

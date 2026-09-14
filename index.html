@@ -3,1223 +3,1016 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="color-scheme" content="light" />
-  <meta name="theme-color" content="#111313" />
-  <meta name="description" content="GhostOp provides independent technical diligence, fractional architecture advisory, and build audits for founders, investors, and operating teams making consequential software decisions." />
+  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#0a0d0c" />
+  <meta name="description" content="GhostOp is a technical product studio for difficult real-world problems. We find the signal inside complex systems, then design, build, integrate, and operate the product it points to." />
   <meta property="og:site_name" content="GhostOp" />
   <meta property="og:locale" content="en_US" />
-  <meta property="og:title" content="GhostOp — Technical Diligence, Architecture Advisory &amp; Build Audits" />
-  <meta property="og:description" content="Technical diligence, fractional architecture advisory, and build audits for consequential software decisions." />
+  <meta property="og:title" content="GhostOp — Technical product studio" />
+  <meta property="og:description" content="We turn difficult technical ideas into products that actually work." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ghostop.ai/" />
   <meta property="og:image" content="https://ghostop.ai/icon-512.png" />
   <meta property="og:image:width" content="512" />
   <meta property="og:image:height" content="512" />
   <meta property="og:image:type" content="image/png" />
-  <meta property="og:image:alt" content="GhostOp logo" />
+  <meta property="og:image:alt" content="GhostOp white ghost mark" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="GhostOp — Technical Diligence, Architecture Advisory &amp; Build Audits" />
-  <meta name="twitter:description" content="Technical diligence, fractional architecture advisory, and build audits for consequential software decisions." />
+  <meta name="twitter:title" content="GhostOp — Technical product studio" />
+  <meta name="twitter:description" content="We turn difficult technical ideas into products that actually work." />
   <meta name="twitter:image" content="https://ghostop.ai/icon-512.png" />
-  <meta name="twitter:image:alt" content="GhostOp logo" />
+  <meta name="twitter:image:alt" content="GhostOp white ghost mark" />
   <link rel="canonical" href="https://ghostop.ai/" />
   <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"ProfessionalService","name":"GhostOp","url":"https://ghostop.ai/","image":"https://ghostop.ai/icon-512.png","description":"Independent technical advisory for founders, investors, and operating teams making consequential software decisions.","slogan":"I make complex systems actually work in the real world.","knowsAbout":["Technical diligence","Fractional architecture advisory","Build audits","API architecture","Identity and authentication","Application security","Systems integration"],"hasOfferCatalog":{"@type":"OfferCatalog","name":"Advisory engagements","itemListElement":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Technical diligence"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Fractional architecture advisor"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Build audit"}}]}}
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"GhostOp",
+    "url":"https://ghostop.ai/",
+    "logo":"https://ghostop.ai/icon-512.png",
+    "description":"A technical product studio that discovers, designs, builds, integrates, and operates difficult technical products for companies and investors.",
+    "slogan":"I make complex systems actually work in the real world.",
+    "knowsAbout":["Product discovery","Software product development","Technical diligence","API architecture","Systems integration","Identity and authentication","Application security","AI product operationalization","Production reliability"],
+    "hasOfferCatalog":{
+      "@type":"OfferCatalog",
+      "name":"Studio engagements",
+      "itemListElement":[
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Should-Build Sprint","description":"Fixed-fee technical diligence and product discovery."}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Build to production","description":"Prototype, integration, engineering, and production launch."}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Technical ownership","description":"Ongoing fractional architecture and system ownership."}},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"Product participation","description":"Selective licensing, revenue-share, or equity participation."}}
+      ]
+    }
+  }
   </script>
-  <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png" />
-  <link rel="icon" type="image/png" sizes="512x512" href="icon-512.png" />
-  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
-  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png" />
+  <link rel="icon" type="image/png" sizes="512x512" href="assets/icon-512.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="manifest" href="assets/manifest.json" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,500;600&display=swap" rel="stylesheet" />
-  <title>GhostOp — Technical Diligence, Architecture Advisory &amp; Build Audits</title>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500;600&display=swap" rel="stylesheet" />
+  <title>GhostOp — Technical product studio</title>
   <style>
     :root {
-      --paper: #f4f4f0;
-      --white: #fbfbf8;
-      --ink: #111313;
-      --muted: #555b59;
-      --line: #c8cac4;
-      --line-dark: #2f3332;
-      --signal: #ff4a19;
-      --acid: #dff64f;
-      --dark: #151817;
-      --content: 1180px;
-      --shadow: 0 28px 80px rgba(19, 22, 21, .12);
+      --ink: #0a0d0c;
+      --panel: #101412;
+      --panel-2: #151a17;
+      --bone: #eeeae1;
+      --paper: #f5f2e9;
+      --fog: #9ca69f;
+      --line: #2c3430;
+      --phosphor: #cbff57;
+      --signal: #ff542b;
+      --cyan: #9cebd5;
+      --max: 1240px;
+      --serif: "Source Serif 4", Georgia, serif;
+      --sans: "Archivo", sans-serif;
+      --mono: "IBM Plex Mono", monospace;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; background: var(--ink); }
     body {
       margin: 0;
-      background: var(--paper);
-      color: var(--ink);
-      font-family: "Archivo", sans-serif;
+      color: var(--bone);
+      background:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px),
+        var(--ink);
+      background-size: 52px 52px;
+      font-family: var(--sans);
       font-variation-settings: "wdth" 98;
-      line-height: 1.5;
+      line-height: 1.55;
       overflow-x: hidden;
     }
-    a { color: inherit; }
-    button { font: inherit; }
-    ::selection { background: var(--acid); color: var(--ink); }
-
-    .skip-link {
+    body::before {
+      content: "";
       position: fixed;
-      top: 8px;
-      left: 8px;
-      z-index: 100;
-      padding: 10px 14px;
-      background: var(--ink);
-      color: white;
-      transform: translateY(-150%);
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: .035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
     }
-    .skip-link:focus { transform: translateY(0); }
+    body.modal-open { overflow: hidden; }
+    a { color: inherit; }
+    button, input, textarea { font: inherit; }
+    button { color: inherit; }
+    ::selection { color: var(--ink); background: var(--phosphor); }
+    :focus-visible { outline: 2px solid var(--phosphor); outline-offset: 4px; }
 
-    .topline {
+    .skip {
+      position: fixed;
+      z-index: 100;
+      top: 10px;
+      left: 10px;
+      padding: 10px 14px;
+      background: var(--phosphor);
+      color: var(--ink);
+      transform: translateY(-160%);
+    }
+    .skip:focus { transform: translateY(0); }
+
+    .shell { width: min(var(--max), calc(100% - 48px)); margin: 0 auto; }
+    .topbar {
       position: sticky;
       top: 0;
-      z-index: 20;
-      border-bottom: 1px solid rgba(17, 19, 19, .18);
-      background: rgba(244, 244, 240, .94);
+      z-index: 30;
+      background: rgba(10,13,12,.92);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(14px);
     }
-    .topline-inner {
-      width: min(var(--content), calc(100% - 40px));
-      min-height: 58px;
-      margin: 0 auto;
+    .topbar-inner {
+      min-height: 62px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      gap: 28px;
     }
-    .status {
-      display: flex;
+    .wordmark {
+      display: inline-flex;
       align-items: center;
-      gap: 9px;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      white-space: nowrap;
-    }
-    .status strong { color: var(--ink); font-weight: 500; }
-    .status-divider { color: var(--signal); }
-    .status-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--signal);
-      box-shadow: 0 0 0 4px rgba(255, 74, 25, .12);
-    }
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 22px;
+      gap: 11px;
+      text-decoration: none;
+      font-family: var(--mono);
       font-size: 13px;
-      font-weight: 650;
-    }
-    nav a { text-decoration: none; }
-    nav a:hover, nav a:focus-visible { text-decoration: underline; text-underline-offset: 4px; }
-    .nav-cta {
-      padding: 9px 14px;
-      background: var(--ink);
-      color: white;
-      text-decoration: none !important;
-    }
-
-    main { overflow: clip; }
-    .hero {
-      width: min(var(--content), calc(100% - 40px));
-      margin: 0 auto;
-      min-height: 720px;
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(320px, .65fr);
-      gap: 70px;
-      align-items: center;
-      padding: 82px 0 72px;
-    }
-    .hero-copy { max-width: 760px; }
-    .kicker {
-      margin: 0 0 22px;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      line-height: 1.4;
-      letter-spacing: .08em;
-      text-transform: uppercase;
-      color: #3c423f;
-    }
-    .hero h1 {
-      max-width: 740px;
-      margin: 0;
-      font-family: "Source Serif 4", serif;
-      font-size: clamp(50px, 6.4vw, 89px);
-      line-height: .94;
-      letter-spacing: -.048em;
       font-weight: 600;
+      letter-spacing: .04em;
     }
-    .hero h1 em {
-      font-style: normal;
-      text-decoration: underline;
-      text-decoration-color: var(--signal);
-      text-decoration-thickness: .09em;
-      text-underline-offset: .1em;
+    .wordmark-mark { width: 28px; height: 28px; }
+    .wordmark small { color: var(--fog); font-size: 10px; font-weight: 400; letter-spacing: .08em; }
+    nav { display: flex; align-items: center; gap: 24px; font-size: 12px; font-weight: 650; }
+    nav a { text-decoration: none; }
+    nav a:hover { color: var(--phosphor); }
+    .nav-call {
+      padding: 9px 12px;
+      border: 1px solid var(--fog);
     }
-    .hero-lede {
-      max-width: 700px;
-      margin: 34px 0 0;
-      font-size: clamp(18px, 1.9vw, 23px);
-      line-height: 1.45;
-      color: #303432;
-    }
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
+    .nav-call:hover { border-color: var(--phosphor); }
+
+    .hero {
+      min-height: calc(100vh - 62px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(420px, .95fr);
+      gap: 64px;
       align-items: center;
-      gap: 16px;
-      margin-top: 34px;
+      padding: 84px 0 72px;
     }
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0 0 24px;
+      color: var(--phosphor);
+      font: 500 11px/1.3 var(--mono);
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 1px; background: currentColor; }
+    h1, h2, h3, p { overflow-wrap: break-word; }
+    .hero h1 {
+      max-width: 790px;
+      margin: 0;
+      font: 600 clamp(52px, 6.45vw, 88px)/.96 var(--serif);
+      letter-spacing: -.048em;
+    }
+    .hero h1 span { color: var(--phosphor); }
+    .lede {
+      max-width: 710px;
+      margin: 30px 0 0;
+      color: #c6ccc8;
+      font-size: clamp(18px, 1.7vw, 22px);
+      line-height: 1.5;
+    }
+    .thesis {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 26px 0 0;
+      color: var(--cyan);
+      font: 500 12px/1.45 var(--mono);
+    }
+    .thesis::before { content: "//"; color: var(--signal); }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      min-height: 49px;
+      min-height: 50px;
       padding: 12px 18px;
-      border: 1px solid var(--ink);
-      background: var(--ink);
-      color: white;
-      font-weight: 700;
+      border: 1px solid var(--phosphor);
+      background: var(--phosphor);
+      color: var(--ink);
+      font-size: 13px;
+      font-weight: 750;
       text-decoration: none;
       cursor: pointer;
+      transition: background .16s ease, color .16s ease, border-color .16s ease;
     }
-    .button:hover, .button:focus-visible { background: var(--signal); border-color: var(--signal); }
-    .button.secondary { background: transparent; color: var(--ink); }
-    .button.secondary:hover, .button.secondary:focus-visible { background: var(--ink); color: white; }
-    .button svg { width: 17px; height: 17px; }
+    .button:hover { background: var(--bone); border-color: var(--bone); }
+    .button.secondary { background: transparent; color: var(--bone); border-color: #59645e; }
+    .button.secondary:hover { border-color: var(--phosphor); color: var(--phosphor); }
+    .button svg { width: 18px; height: 18px; }
 
-    .docket {
+    .signal-machine {
       position: relative;
-      align-self: stretch;
-      min-height: 530px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      min-height: 560px;
+      border: 1px solid var(--line);
+      background: #0c100e;
+      overflow: hidden;
+      isolation: isolate;
     }
-    .ghost-stage {
-      position: absolute;
-      z-index: 3;
-      top: 2%;
-      right: -2%;
-      width: 142px;
-      aspect-ratio: 1;
-      padding: 0;
-      border: 0;
-      background: transparent;
-      color: var(--ink);
-      cursor: pointer;
-      filter: drop-shadow(0 15px 18px rgba(17, 19, 19, .16));
-    }
-    .ghost-stage:hover .ghost-mark,
-    .ghost-stage:focus-visible .ghost-mark { animation-play-state: paused; transform: translate3d(-2px, -7px, 0) rotate(-6deg) scale(1.06); }
-    .ghost-stage:active .ghost-mark { transform: scale(.96); }
-    .ghost-stage .ghost-mark { transition: transform .2s ease; animation: ghost-float 4.2s ease-in-out infinite; }
-    .ghost-stage.is-summoning::after { animation: ghost-summon .55s ease-out; }
-    .ghost-stage::before,
-    .ghost-stage::after {
+    .signal-machine::before {
       content: "";
       position: absolute;
-      inset: 18% 12% 10%;
-      border: 2px solid var(--signal);
-      border-radius: 52% 48% 44% 48%;
-      opacity: .18;
-      transform: translate(12px, 7px) rotate(7deg);
-      animation: ghost-echo 4.2s ease-in-out infinite;
-    }
-    .ghost-stage::after {
-      opacity: .08;
-      transform: translate(23px, 13px) rotate(12deg);
-      animation-delay: -.5s;
-    }
-    .ghost-mark {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: 100%;
-      overflow: visible;
-    }
-    .ghost-hint {
-      position: absolute;
-      z-index: 2;
-      left: 50%;
-      bottom: -10px;
-      transform: translate(-50%, 100%);
-      white-space: nowrap;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 11px;
-      font-weight: 500;
-      letter-spacing: .03em;
-      color: var(--paper);
-      background: var(--ink);
-      padding: 8px 12px;
-      border-radius: 999px;
-      pointer-events: none;
-      animation: ghost-hint-bob 3.2s ease-in-out infinite;
-    }
-    @keyframes ghost-hint-bob {
-      0%, 100% { transform: translate(-50%, 100%); }
-      50% { transform: translate(-50%, calc(100% + 6px)); }
-    }
-    .ghost-body {
-      fill: var(--white);
-      stroke: var(--ink);
-      stroke-width: 3;
-      stroke-linejoin: round;
-    }
-    .ghost-shadow { fill: rgba(17, 19, 19, .12); }
-    .ghost-eye { fill: var(--ink); transform-box: fill-box; transform-origin: center; animation: ghost-blink 5.4s ease-in-out infinite; }
-    .ghost-cheek { fill: var(--signal); opacity: .55; }
-    .ghost-spark { fill: var(--acid); stroke: var(--ink); stroke-width: 2; transform-box: fill-box; transform-origin: center; animation: ghost-spark 2.8s ease-in-out infinite; }
-    @keyframes ghost-float {
-      0%, 100% { transform: translate3d(0, 0, 0) rotate(3deg); }
-      50% { transform: translate3d(-5px, -13px, 0) rotate(-2deg); }
-    }
-    @keyframes ghost-echo {
-      0%, 100% { opacity: .08; transform: translate(16px, 9px) rotate(8deg) scale(.96); }
-      50% { opacity: .24; transform: translate(25px, 18px) rotate(12deg) scale(1.04); }
-    }
-    @keyframes ghost-blink {
-      0%, 44%, 48%, 100% { transform: scaleY(1); }
-      46% { transform: scaleY(.12); }
-    }
-    @keyframes ghost-spark {
-      0%, 100% { transform: rotate(0deg) scale(.88); }
-      50% { transform: rotate(16deg) scale(1.08); }
-    }
-    @keyframes ghost-summon {
-      0% { opacity: .7; transform: translate(0, 0) scale(.75); }
-      100% { opacity: 0; transform: translate(32px, 24px) scale(1.55); }
-    }
-
-    .contact-layer[hidden] { display: none; }
-    .contact-layer {
-      position: fixed;
       inset: 0;
-      z-index: 80;
+      pointer-events: none;
+      background: repeating-linear-gradient(0deg, transparent 0 3px, rgba(255,255,255,.025) 3px 4px);
+      z-index: 4;
+    }
+    .machine-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 48px;
+      padding: 0 16px;
+      border-bottom: 1px solid var(--line);
+      color: var(--fog);
+      font: 500 10px/1 var(--mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .live { display: inline-flex; align-items: center; gap: 8px; color: var(--phosphor); }
+    .live::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 13px currentColor;
+      animation: blink 1.8s ease-in-out infinite;
+    }
+    .scope {
+      position: relative;
+      height: 410px;
+      overflow: hidden;
+    }
+    .scope-grid {
+      position: absolute;
+      inset: 0;
+      opacity: .48;
+      background:
+        linear-gradient(rgba(156,235,213,.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(156,235,213,.1) 1px, transparent 1px);
+      background-size: 42px 42px;
+    }
+    .scope-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .scope-path-base { fill: none; stroke: #33413b; stroke-width: 2; }
+    .scope-path {
+      fill: none;
+      stroke: var(--phosphor);
+      stroke-width: 2.3;
+      filter: drop-shadow(0 0 5px rgba(203,255,87,.55));
+      stroke-dasharray: 10 7;
+      animation: trace 12s linear infinite;
+    }
+    .scope-path-echo {
+      fill: none;
+      stroke: var(--cyan);
+      stroke-width: 1;
+      opacity: .3;
+      transform: translateY(7px);
+    }
+    .apparition {
+      position: absolute;
+      inset: 18% 17% 11%;
       display: grid;
       place-items: center;
-      padding: 22px;
-      background: rgba(17, 19, 19, .72);
+      opacity: .23;
+      animation: apparition 7s ease-in-out infinite;
     }
-    .contact-dialog {
-      position: relative;
-      width: min(620px, 100%);
-      max-height: min(760px, calc(100vh - 44px));
-      overflow-y: auto;
-      background: var(--white);
-      border: 1px solid var(--ink);
-      box-shadow: 18px 18px 0 var(--signal);
-      animation: ghost-door .35s cubic-bezier(.2, .8, .2, 1);
-    }
-    .contact-dialog::before {
-      content: "";
+    .apparition svg { width: 100%; height: 100%; }
+    .apparition path { fill: none; stroke: var(--bone); stroke-width: 1.2; }
+    .apparition circle { fill: none; stroke: var(--cyan); stroke-width: 1; }
+    .signal-message {
       position: absolute;
-      width: 170px;
-      height: 170px;
-      right: -70px;
-      top: -85px;
-      border: 2px solid var(--signal);
-      border-radius: 50%;
-      box-shadow: 0 0 0 16px rgba(255, 74, 25, .12), 0 0 0 32px rgba(255, 74, 25, .06);
-      pointer-events: none;
-    }
-    .contact-head {
-      position: relative;
-      display: grid;
-      grid-template-columns: 70px 1fr auto;
-      gap: 16px;
-      align-items: center;
-      padding: 18px 20px;
-      border-bottom: 1px solid var(--ink);
-      background: var(--acid);
-    }
-    .contact-ghost { width: 70px; height: 70px; }
-    .contact-head strong { display: block; font-size: 20px; letter-spacing: -.02em; }
-    .contact-head span { display: block; margin-top: 2px; font-family: "IBM Plex Mono", monospace; font-size: 10px; text-transform: uppercase; }
-    .dialog-close {
-      position: relative;
-      z-index: 1;
-      width: 38px;
-      height: 38px;
-      border: 1px solid var(--ink);
-      background: var(--white);
-      color: var(--ink);
-      cursor: pointer;
-      font-size: 23px;
-      line-height: 1;
-    }
-    .dialog-close:hover, .dialog-close:focus-visible { background: var(--ink); color: white; }
-    .contact-form { padding: 26px 28px 30px; }
-    .contact-form p { margin: 0 0 22px; color: var(--muted); }
-    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-    .contact-form label { display: block; margin-bottom: 16px; font-size: 12px; font-weight: 750; }
-    .contact-form input,
-    .contact-form textarea {
-      display: block;
-      width: 100%;
-      margin-top: 7px;
-      padding: 12px 13px;
-      border: 1px solid var(--ink);
-      border-radius: 0;
-      background: white;
-      color: var(--ink);
-      font: 500 15px/1.4 "Archivo", sans-serif;
-    }
-    .contact-form textarea { min-height: 120px; resize: vertical; }
-    .contact-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-    .contact-note { margin: 16px 0 0 !important; font-family: "IBM Plex Mono", monospace; font-size: 10px; }
-    .contact-feedback { margin: 0; color: #226e2a; font-family: "IBM Plex Mono", monospace; font-size: 11px; }
-    @keyframes ghost-door {
-      from { transform: translateY(24px) scale(.96) rotate(-1deg); }
-      to { transform: translateY(0) scale(1) rotate(0); }
-    }
-    .docket::before {
-      content: "";
-      position: absolute;
-      inset: 6% 10% 5%;
-      background: repeating-linear-gradient(0deg, transparent 0 35px, rgba(17, 19, 19, .08) 35px 36px);
-      border: 1px solid var(--line);
-      transform: rotate(4deg);
-    }
-    .case-sheet {
-      position: relative;
-      z-index: 1;
-      width: min(390px, 100%);
-      background: var(--white);
-      border: 1px solid var(--ink);
-      box-shadow: var(--shadow);
-      transform: rotate(-1.5deg);
-    }
-    .sheet-head {
-      padding: 17px 19px;
-      border-bottom: 1px solid var(--ink);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 14px;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
+      left: 24px;
+      bottom: 26px;
+      max-width: 290px;
+      padding: 12px 14px;
+      border-left: 2px solid var(--signal);
+      background: rgba(10,13,12,.82);
+      font: 500 11px/1.55 var(--mono);
+      letter-spacing: .04em;
       text-transform: uppercase;
+    }
+    .signal-message span { color: var(--signal); }
+    .machine-foot {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line);
+    }
+    .meter { padding: 16px; border-right: 1px solid var(--line); }
+    .meter:last-child { border-right: 0; }
+    .meter span { display: block; color: var(--fog); font: 9px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .07em; }
+    .meter strong { display: block; margin-top: 8px; font: 500 12px/1.3 var(--mono); color: var(--bone); }
+    .machine-contact {
+      position: absolute;
+      z-index: 8;
+      right: 18px;
+      top: 66px;
+      width: 88px;
+      height: 88px;
+      padding: 0;
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      animation: drift 4.2s ease-in-out infinite;
+      filter: drop-shadow(0 0 12px rgba(245,242,233,.18));
+    }
+    .machine-contact svg { width: 72px; height: 72px; overflow: visible; }
+    .machine-contact:hover { filter: drop-shadow(0 0 15px rgba(203,255,87,.58)); }
+    .machine-contact::after {
+      content: "TALK TO THE GHOST";
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      width: 120px;
+      color: var(--phosphor);
+      font: 9px/1.3 var(--mono);
       letter-spacing: .08em;
     }
-    .sheet-head strong { color: var(--signal); }
-    .sheet-body { padding: 26px 22px 24px; }
-    .sheet-title {
-      margin: 0 0 24px;
-      font-size: 25px;
-      line-height: 1.13;
-      letter-spacing: -.025em;
-    }
-    .signal-line {
-      display: grid;
-      grid-template-columns: 36px 1fr;
-      gap: 13px;
-      padding: 16px 0;
-      border-top: 1px solid var(--line);
-    }
-    .signal-line:last-child { border-bottom: 1px solid var(--line); }
-    .signal-line span {
-      font-family: "IBM Plex Mono", monospace;
-      color: var(--signal);
-      font-size: 11px;
-    }
-    .signal-line p { margin: 0; font-size: 14px; line-height: 1.42; }
-    .stamp {
-      width: max-content;
-      margin: 28px 0 2px auto;
-      padding: 7px 10px;
-      border: 2px solid var(--signal);
-      color: var(--signal);
-      font-family: "IBM Plex Mono", monospace;
-      font-weight: 500;
-      font-size: 11px;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-      transform: rotate(-3deg);
-    }
+    @keyframes trace { to { stroke-dashoffset: -140; } }
+    @keyframes blink { 50% { opacity: .35; } }
+    @keyframes apparition { 0%,100% { opacity: .12; transform: translateY(3px) scale(.98); } 46% { opacity: .3; } 50% { opacity: .12; transform: translateY(-4px) scale(1.02); } 53% { opacity: .28; } }
+    @keyframes drift { 0%,100% { transform: translateY(0) rotate(2deg); } 50% { transform: translateY(-8px) rotate(-2deg); } }
 
-    .audience-band {
-      border-top: 1px solid var(--ink);
-      border-bottom: 1px solid var(--ink);
-      background: var(--acid);
-    }
-    .audience-inner {
-      width: min(var(--content), calc(100% - 40px));
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: 1.2fr repeat(3, .6fr);
-    }
-    .audience-inner > * {
-      padding: 18px 20px;
-      border-right: 1px solid var(--ink);
-    }
-    .audience-inner > *:first-child { padding-left: 0; }
-    .audience-inner > *:last-child { border-right: 0; }
-    .audience-label { font-size: 13px; font-weight: 750; }
-    .audience-item { font-family: "IBM Plex Mono", monospace; font-size: 12px; text-transform: uppercase; }
+    .signal-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--panel); }
+    .signal-strip-inner { display: grid; grid-template-columns: 1.3fr repeat(4, .7fr); }
+    .signal-strip-inner > * { padding: 15px 16px; border-right: 1px solid var(--line); font: 500 10px/1.4 var(--mono); letter-spacing: .07em; text-transform: uppercase; }
+    .signal-strip-inner > *:last-child { border-right: 0; }
+    .signal-strip strong { color: var(--phosphor); }
+    .signal-strip span { color: var(--fog); }
 
-    .section {
-      width: min(var(--content), calc(100% - 40px));
-      margin: 0 auto;
-      padding: 112px 0;
-    }
-    .section-heading {
+    .section { padding: 116px 0; }
+    .section.light { background: var(--paper); color: #111512; }
+    .section.signal-bg { background: var(--phosphor); color: var(--ink); }
+    .section-head {
       display: grid;
-      grid-template-columns: 180px minmax(0, 1fr);
-      gap: 40px;
+      grid-template-columns: 170px minmax(0, 1fr);
+      gap: 42px;
       margin-bottom: 58px;
     }
-    .section-index {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      letter-spacing: .05em;
-      color: var(--muted);
-    }
-    .section-heading h2 {
-      max-width: 790px;
+    .index { color: var(--fog); font: 500 10px/1.5 var(--mono); letter-spacing: .1em; text-transform: uppercase; }
+    .light .index, .signal-bg .index { color: #59605b; }
+    .section-head h2 {
+      max-width: 880px;
       margin: 0;
-      font-family: "Source Serif 4", serif;
-      font-size: clamp(38px, 4.9vw, 62px);
-      line-height: 1.02;
-      letter-spacing: -.04em;
+      font: 600 clamp(40px, 5vw, 67px)/1.01 var(--serif);
+      letter-spacing: -.042em;
     }
-    .section-heading p {
-      grid-column: 2;
-      max-width: 690px;
-      margin: 18px 0 0;
-      font-size: 18px;
-      color: var(--muted);
-    }
+    .section-head p { grid-column: 2; max-width: 720px; margin: 18px 0 0; color: var(--fog); font-size: 18px; }
+    .light .section-head p, .signal-bg .section-head p { color: #505852; }
 
-    .offer-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      border-top: 1px solid var(--ink);
-    }
-    .offer {
-      grid-column: span 4;
-      min-height: 430px;
-      padding: 25px 25px 28px;
-      border-right: 1px solid var(--ink);
-      display: flex;
-      flex-direction: column;
-      background: transparent;
-      transition: background .2s ease, color .2s ease;
-    }
-    .offer:last-child { border-right: 0; }
-    .offer:hover { background: var(--white); }
-    .offer-number {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      color: var(--signal);
-    }
-    .offer h3 {
-      margin: 34px 0 16px;
-      font-size: 27px;
-      line-height: 1.05;
-      letter-spacing: -.03em;
-    }
-    .offer > p { margin: 0; color: var(--muted); }
-    .offer ul {
-      list-style: none;
-      margin: auto 0 0;
-      padding: 26px 0 0;
-    }
-    .offer li {
-      position: relative;
-      padding: 9px 0 9px 19px;
-      border-top: 1px solid var(--line);
-      font-size: 13px;
-    }
-    .offer li::before {
-      content: "+";
+    .between-grid { display: grid; grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr); gap: 80px; align-items: start; }
+    .between-copy p { max-width: 540px; margin: 0 0 24px; color: #303632; font-size: 19px; }
+    .between-copy strong { color: var(--ink); }
+    .between-diagram { border: 1px solid #969b95; background: #eeece4; }
+    .diagram-head { padding: 13px 15px; border-bottom: 1px solid #969b95; font: 500 10px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; display: flex; justify-content: space-between; }
+    .diagram-field { position: relative; min-height: 390px; padding: 38px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 68px 60px; }
+    .diagram-field::before, .diagram-field::after { content: ""; position: absolute; background: #a5aaa4; }
+    .diagram-field::before { width: 1px; top: 0; bottom: 0; left: 50%; }
+    .diagram-field::after { height: 1px; left: 0; right: 0; top: 50%; }
+    .node { position: relative; z-index: 2; }
+    .node:nth-child(even) { text-align: right; }
+    .node b { display: block; font: 600 11px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .node span { display: block; margin-top: 5px; color: #656c67; font-size: 12px; }
+    .core-node {
       position: absolute;
-      left: 0;
-      color: var(--signal);
-      font-family: "IBM Plex Mono", monospace;
-    }
-
-    .dark-section {
-      background: var(--dark);
-      color: #f4f4f0;
-    }
-    .dark-inner {
-      width: min(var(--content), calc(100% - 40px));
-      margin: 0 auto;
-      padding: 112px 0;
-    }
-    .dark-section .section-heading p,
-    .dark-section .section-index { color: #aeb5b1; }
-    .deliverable-grid {
+      z-index: 3;
+      left: 50%;
+      top: 50%;
+      width: 132px;
+      height: 132px;
       display: grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 70px;
-      align-items: start;
-    }
-    .review-flow {
-      border: 1px solid var(--line-dark);
-      background: #101211;
-    }
-    .flow-head {
-      display: flex;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 16px 18px;
-      border-bottom: 1px solid var(--line-dark);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      color: #aeb5b1;
-    }
-    .flow-item {
-      display: grid;
-      grid-template-columns: 54px 1fr auto;
-      align-items: center;
-      gap: 18px;
-      padding: 22px 18px;
-      border-bottom: 1px solid var(--line-dark);
-    }
-    .flow-item:last-child { border-bottom: 0; }
-    .flow-n {
-      color: var(--signal);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-    }
-    .flow-item h3 { margin: 0 0 3px; font-size: 17px; }
-    .flow-item p { margin: 0; color: #aeb5b1; font-size: 13px; }
-    .flow-state {
-      padding: 4px 7px;
-      border: 1px solid #626864;
-      color: #cfd4d1;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 10px;
-      text-transform: uppercase;
-    }
-    .deliverable-copy blockquote {
-      margin: 0;
-      font-family: "Source Serif 4", serif;
-      font-size: clamp(31px, 3.5vw, 47px);
-      line-height: 1.08;
-      letter-spacing: -.03em;
-    }
-    .deliverable-copy blockquote span { color: var(--acid); }
-    .deliverable-copy p { color: #aeb5b1; margin: 28px 0 0; font-size: 16px; }
-    .principles {
-      margin-top: 50px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1px;
-      background: var(--line-dark);
-      border: 1px solid var(--line-dark);
-    }
-    .principle { background: var(--dark); padding: 22px; }
-    .principle strong { display: block; margin-bottom: 7px; font-size: 14px; }
-    .principle span { display: block; color: #aeb5b1; font-size: 13px; }
-
-    .fit-layout {
-      display: grid;
-      grid-template-columns: minmax(0, .8fr) minmax(380px, 1.2fr);
-      gap: 70px;
-      align-items: start;
-    }
-    .fit-copy h2 {
-      margin: 0;
-      max-width: 450px;
-      font-family: "Source Serif 4", serif;
-      font-size: clamp(39px, 4.4vw, 60px);
-      line-height: 1;
-      letter-spacing: -.04em;
-    }
-    .fit-copy p { max-width: 510px; margin: 23px 0 0; color: var(--muted); font-size: 17px; }
-    .fit-copy .tiny-note {
-      margin-top: 30px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      color: var(--muted);
-    }
-    .fit-tool { border: 1px solid var(--ink); background: var(--white); }
-    .fit-tool-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 15px 18px;
-      border-bottom: 1px solid var(--ink);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-    }
-    .fit-options { display: grid; grid-template-columns: repeat(3, 1fr); border-bottom: 1px solid var(--ink); }
-    .fit-option {
-      min-height: 94px;
-      padding: 14px;
-      border: 0;
-      border-right: 1px solid var(--ink);
-      background: transparent;
-      color: var(--ink);
-      text-align: left;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 700;
-    }
-    .fit-option:last-child { border-right: 0; }
-    .fit-option:hover, .fit-option:focus-visible { background: #ecece6; }
-    .fit-option[aria-selected="true"] { background: var(--acid); }
-    .fit-result { min-height: 300px; padding: 28px; }
-    .fit-result-label {
-      display: block;
-      margin-bottom: 10px;
-      color: var(--signal);
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: .06em;
-    }
-    .fit-result h3 { margin: 0; font-size: 28px; letter-spacing: -.03em; }
-    .fit-result p { max-width: 620px; margin: 15px 0 21px; color: var(--muted); }
-    .fit-result ul { margin: 0 0 26px; padding: 0; list-style: none; }
-    .fit-result li { padding: 6px 0; font-size: 14px; }
-    .fit-result li::before { content: "→"; margin-right: 10px; color: var(--signal); }
-    .copy-feedback {
-      display: inline-block;
-      min-height: 18px;
-      margin-left: 12px;
-      color: #226e2a;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 11px;
-    }
-
-    .about {
-      width: min(var(--content), calc(100% - 40px));
-      margin: 0 auto;
-      padding: 30px 0 116px;
-    }
-    .about-card {
-      display: grid;
-      grid-template-columns: .75fr 1.25fr;
-      background: var(--signal);
-      color: #111313;
+      place-items: center;
+      padding: 20px;
       border: 1px solid var(--ink);
-    }
-    .about-label { padding: 34px; border-right: 1px solid var(--ink); }
-    .about-label .kicker { color: var(--ink); }
-    .about-label svg { width: 116px; height: 116px; margin-top: 65px; }
-    .about-copy { padding: clamp(36px, 6vw, 72px); }
-    .about-copy h2 {
-      margin: 0;
-      font-family: "Source Serif 4", serif;
-      font-size: clamp(37px, 4.2vw, 59px);
-      line-height: 1.02;
-      letter-spacing: -.04em;
-    }
-    .about-copy p { max-width: 700px; margin: 24px 0 0; font-size: 18px; }
-    .credo {
-      max-width: 700px;
-      margin: 26px 0 0 !important;
-      padding-left: 18px;
-      border-left: 3px solid var(--signal);
-      font-size: clamp(20px, 2.6vw, 26px);
-      font-style: italic;
-      line-height: 1.35;
-      color: var(--ink);
-    }
-    .record { border-top: 1px solid var(--line); background: var(--paper); }
-    .record-inner { max-width: var(--content); margin: 0 auto; padding: 60px 32px; }
-    .record-list {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 36px;
-      margin: 30px 0 0;
-      padding: 0;
-    }
-    .record-item dt {
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: .12em;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--phosphor);
+      text-align: center;
+      font: 600 11px/1.45 var(--mono);
       text-transform: uppercase;
-      color: var(--ink);
-      margin-bottom: 10px;
     }
-    .record-item dd { margin: 0; font-size: 16px; line-height: 1.6; color: var(--muted); }
-    .about-proof {
+
+    .offer-list { border-top: 1px solid var(--line); }
+    .offer {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1px;
-      margin-top: 42px;
-      background: rgba(17, 19, 19, .4);
-      border: 1px solid rgba(17, 19, 19, .4);
+      grid-template-columns: 80px minmax(180px, .8fr) minmax(0, 1.45fr) 150px;
+      gap: 28px;
+      align-items: start;
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+      transition: background .16s ease;
     }
-    .proof { padding: 18px; background: var(--signal); }
-    .proof strong { display: block; font-size: 16px; }
-    .proof span { display: block; margin-top: 5px; font-size: 12px; line-height: 1.35; }
+    .offer:hover { background: rgba(255,255,255,.018); }
+    .offer-num { color: var(--signal); font: 500 11px/1.5 var(--mono); }
+    .offer h3 { margin: 0; font-size: 25px; line-height: 1.15; letter-spacing: -.025em; }
+    .offer-copy p { margin: 0; color: var(--fog); }
+    .offer-copy ul { display: flex; flex-wrap: wrap; gap: 7px; margin: 16px 0 0; padding: 0; list-style: none; }
+    .offer-copy li { padding: 5px 8px; border: 1px solid #3b4540; color: #bec6c1; font: 10px/1.2 var(--mono); }
+    .offer-mode { text-align: right; color: var(--phosphor); font: 500 10px/1.5 var(--mono); text-transform: uppercase; }
 
-    .close {
-      background: var(--white);
-      border-top: 1px solid var(--ink);
+    .investor-layout { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(330px, .8fr); gap: 80px; align-items: start; }
+    .investor-copy blockquote { margin: 0; font: 600 clamp(37px, 4.7vw, 63px)/1.02 var(--serif); letter-spacing: -.04em; }
+    .investor-copy p { max-width: 720px; margin: 28px 0 0; font-size: 18px; }
+    .capital-note { margin-top: 36px; padding: 20px 0 0; border-top: 1px solid var(--ink); font: 500 11px/1.65 var(--mono); text-transform: uppercase; }
+    .capital-note strong { background: var(--ink); color: var(--phosphor); padding: 3px 6px; }
+    .investor-flow { border: 1px solid var(--ink); background: rgba(255,255,255,.18); }
+    .investor-flow h3 { margin: 0; padding: 15px 18px; border-bottom: 1px solid var(--ink); font: 600 11px/1.3 var(--mono); letter-spacing: .08em; text-transform: uppercase; }
+    .lane { display: grid; grid-template-columns: 38px 1fr; gap: 14px; padding: 19px 18px; border-bottom: 1px solid rgba(10,13,12,.35); }
+    .lane:last-child { border-bottom: 0; }
+    .lane span { font: 600 10px/1.5 var(--mono); }
+    .lane b { display: block; margin-bottom: 3px; font-size: 15px; }
+    .lane p { margin: 0; color: #404640; font-size: 13px; }
+
+    .model-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 80px; align-items: start; }
+    .model-quote { position: sticky; top: 100px; }
+    .model-quote p { margin: 0; font: 500 clamp(31px, 4vw, 52px)/1.08 var(--serif); letter-spacing: -.035em; }
+    .model-quote p em { color: var(--phosphor); font-style: normal; }
+    .model-quote small { display: block; margin-top: 24px; color: var(--fog); font: 11px/1.6 var(--mono); }
+    .model-steps { counter-reset: step; border-top: 1px solid var(--line); }
+    .model-step { counter-increment: step; position: relative; padding: 28px 0 30px 70px; border-bottom: 1px solid var(--line); }
+    .model-step::before { content: "0" counter(step); position: absolute; left: 0; top: 31px; color: var(--signal); font: 500 11px/1 var(--mono); }
+    .model-step h3 { margin: 0 0 8px; font-size: 20px; }
+    .model-step p { margin: 0; color: var(--fog); }
+
+    .patterns { display: grid; grid-template-columns: repeat(12, 1fr); gap: 1px; background: #a8ada7; border: 1px solid #a8ada7; }
+    .pattern { grid-column: span 4; min-height: 220px; padding: 25px; background: var(--paper); }
+    .pattern:nth-child(4), .pattern:nth-child(5) { grid-column: span 6; }
+    .pattern-code { color: var(--signal); font: 500 10px/1.3 var(--mono); letter-spacing: .08em; }
+    .pattern h3 { margin: 48px 0 10px; font: 600 22px/1.1 var(--serif); letter-spacing: -.02em; }
+    .pattern p { margin: 0; color: #555d57; font-size: 14px; }
+
+    .essays-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
+    .essay-feature, .essay-list { background: var(--panel); }
+    .essay-feature { min-height: 430px; padding: 34px; display: flex; flex-direction: column; }
+    .essay-label { color: var(--signal); font: 500 10px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .essay-feature h3 { max-width: 640px; margin: auto 0 20px; font: 600 clamp(36px, 4.8vw, 61px)/1.01 var(--serif); letter-spacing: -.042em; }
+    .essay-feature p { max-width: 610px; margin: 0 0 28px; color: var(--fog); }
+    .text-link { display: inline-flex; align-items: center; gap: 9px; width: max-content; color: var(--phosphor); font: 600 11px/1.4 var(--mono); text-decoration: none; text-transform: uppercase; }
+    .text-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+    .essay-row { display: block; padding: 26px; border-bottom: 1px solid var(--line); text-decoration: none; }
+    .essay-row:last-child { border-bottom: 0; }
+    .essay-row span { color: var(--fog); font: 10px/1.4 var(--mono); }
+    .essay-row strong { display: block; margin-top: 14px; font: 600 22px/1.15 var(--serif); }
+    .essay-row:hover strong { color: var(--phosphor); }
+
+    .contact-section { padding: 116px 0 56px; }
+    .contact-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 64px; align-items: end; }
+    .contact-grid h2 { max-width: 790px; margin: 0; font: 600 clamp(48px, 6vw, 78px)/.98 var(--serif); letter-spacing: -.05em; }
+    .contact-side p { margin: 0 0 24px; color: var(--fog); font-size: 17px; }
+    footer { display: flex; justify-content: space-between; gap: 24px; margin-top: 90px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--fog); font: 500 10px/1.5 var(--mono); text-transform: uppercase; letter-spacing: .06em; }
+
+    .modal[hidden] { display: none; }
+    .modal { position: fixed; inset: 0; z-index: 60; display: grid; place-items: center; padding: 24px; background: rgba(4,6,5,.84); backdrop-filter: blur(10px); }
+    .dialog { position: relative; width: min(680px, 100%); max-height: calc(100vh - 48px); overflow-y: auto; border: 1px solid var(--phosphor); background: var(--panel); box-shadow: 18px 18px 0 rgba(203,255,87,.18); }
+    .dialog-head { display: grid; grid-template-columns: 66px 1fr auto; gap: 16px; align-items: center; padding: 18px; border-bottom: 1px solid var(--line); }
+    .dialog-mark { width: 66px; height: 66px; border: 1px solid var(--line); display: grid; place-items: center; }
+    .dialog-mark svg { width: 46px; height: 46px; }
+    .dialog-head strong { display: block; font: 600 26px/1.1 var(--serif); }
+    .dialog-head span { display: block; margin-top: 5px; color: var(--phosphor); font: 9px/1.4 var(--mono); text-transform: uppercase; letter-spacing: .08em; }
+    .close-dialog { width: 39px; height: 39px; border: 1px solid var(--line); background: transparent; cursor: pointer; font-size: 22px; }
+    .close-dialog:hover { color: var(--ink); background: var(--phosphor); }
+    .contact-form { padding: 28px; }
+    .contact-form > p { margin: 0 0 24px; color: var(--fog); }
+    .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .contact-form label { display: block; margin-bottom: 16px; color: #c9cfcb; font: 500 11px/1.4 var(--mono); }
+    .contact-form input, .contact-form textarea { display: block; width: 100%; margin-top: 7px; padding: 13px; border: 1px solid #4a544f; border-radius: 0; background: #0b0f0d; color: var(--bone); font: 500 15px/1.45 var(--sans); }
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+    .contact-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 14px; }
+    .feedback { min-height: 18px; color: var(--phosphor); font: 10px/1.5 var(--mono); }
+    .form-note { margin: 18px 0 0 !important; color: #77827b !important; font: 10px/1.5 var(--mono); }
+
+    /* Contact transmission: the machine resolves a faint signal into the form. */
+    .modal { overflow: hidden; opacity: 0; }
+    .modal.is-summoning { animation: modal-in .62s ease-out forwards; }
+    .summon-field {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      opacity: 0;
     }
-    .close-inner {
-      width: min(var(--content), calc(100% - 40px));
-      margin: 0 auto;
-      padding: 96px 0 44px;
+    .modal.is-summoning .summon-field { animation: field-in 1.1s ease-out forwards; }
+    .summon-grid {
+      position: absolute;
+      inset: -22%;
+      background:
+        linear-gradient(rgba(156,235,213,.055) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(156,235,213,.055) 1px, transparent 1px);
+      background-size: 38px 38px;
+      transform: perspective(520px) rotateX(64deg) translateY(20%);
+      transform-origin: 50% 78%;
+      mask-image: radial-gradient(circle at 50% 55%, #000 0 27%, transparent 70%);
     }
-    .close-grid {
-      display: grid;
-      grid-template-columns: 1.3fr .7fr;
-      gap: 60px;
-      align-items: end;
+    .summon-ring {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 150px;
+      aspect-ratio: 1;
+      border: 1px solid rgba(203,255,87,.7);
+      border-radius: 50%;
+      box-shadow: 0 0 32px rgba(203,255,87,.1), inset 0 0 32px rgba(203,255,87,.06);
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(.22);
     }
-    .close h2 {
-      max-width: 820px;
-      margin: 0;
-      font-family: "Source Serif 4", serif;
-      font-size: clamp(45px, 6vw, 78px);
-      line-height: .97;
-      letter-spacing: -.048em;
+    .modal.is-summoning .summon-ring:nth-of-type(1) { animation: ring-out 1.05s .02s cubic-bezier(.12,.73,.18,1) both; }
+    .modal.is-summoning .summon-ring:nth-of-type(2) { animation: ring-out 1.15s .15s cubic-bezier(.12,.73,.18,1) both; }
+    .modal.is-summoning .summon-ring:nth-of-type(3) { animation: ring-out 1.25s .27s cubic-bezier(.12,.73,.18,1) both; }
+    .summon-beam {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: min(78vw, 920px);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(156,235,213,.78) 34%, #fff 50%, rgba(203,255,87,.76) 66%, transparent);
+      box-shadow: 0 0 11px rgba(156,235,213,.56);
+      opacity: 0;
+      transform-origin: 50% 50%;
     }
-    .close-side p { margin: 0 0 22px; color: var(--muted); }
-    .close-note { margin-top: 20px; font-size: 12px; color: var(--muted); }
-    footer {
-      margin-top: 90px;
-      padding-top: 20px;
-      border-top: 1px solid var(--ink);
-      display: flex;
-      justify-content: space-between;
-      gap: 24px;
-      font-family: "IBM Plex Mono", monospace;
-      font-size: 10px;
-      line-height: 1.5;
-      text-transform: uppercase;
-      letter-spacing: .04em;
-      color: var(--muted);
+    .summon-beam.b1 { transform: translate(-50%, -50%) rotate(11deg) scaleX(.05); }
+    .summon-beam.b2 { transform: translate(-50%, -50%) rotate(-17deg) scaleX(.05); }
+    .summon-beam.b3 { transform: translate(-50%, -50%) rotate(90deg) scaleX(.05); }
+    .modal.is-summoning .summon-beam { animation: beam-fire .72s .12s ease-out both; }
+    .modal.is-summoning .summon-beam.b2 { animation-delay: .2s; }
+    .modal.is-summoning .summon-beam.b3 { animation-delay: .29s; }
+    .summon-vector {
+      position: absolute;
+      inset: 7%;
+      width: 86%;
+      height: 86%;
+      opacity: 0;
+      overflow: visible;
+    }
+    .summon-vector path { fill: none; stroke: var(--cyan); stroke-width: 1; stroke-dasharray: 4 10; vector-effect: non-scaling-stroke; }
+    .summon-vector circle { fill: var(--phosphor); filter: drop-shadow(0 0 5px var(--phosphor)); }
+    .modal.is-summoning .summon-vector { animation: vector-in 1.15s .22s ease-out both; }
+    .dialog {
+      opacity: 0;
+      transform: translateY(18px) scale(.965);
+      filter: blur(9px);
+      clip-path: inset(50% 0 50% 0);
+    }
+    .modal.is-summoning .dialog { animation: materialize .88s .25s cubic-bezier(.16,.8,.23,1) forwards; }
+    .dialog::before {
+      content: "";
+      position: absolute;
+      z-index: 4;
+      left: 0;
+      right: 0;
+      top: -18px;
+      height: 18px;
+      pointer-events: none;
+      opacity: 0;
+      background: linear-gradient(180deg, transparent, rgba(203,255,87,.72));
+      box-shadow: 0 0 22px rgba(203,255,87,.5);
+    }
+    .modal.is-summoning .dialog::before { animation: scan-dialog .8s .26s ease-out both; }
+    .modal.is-summoning .dialog-mark svg { animation: ghost-arrival 1.05s .33s cubic-bezier(.16,.8,.23,1) both; }
+    .modal.is-summoning .dialog-mark ellipse { transform-box: fill-box; transform-origin: center; animation: ghost-blink 4.2s 1.5s infinite; }
+
+    @keyframes modal-in { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes field-in { 0% { opacity: 0; } 24% { opacity: 1; } 100% { opacity: .62; } }
+    @keyframes ring-out {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(.22); }
+      18% { opacity: .88; }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(6.7); }
+    }
+    @keyframes beam-fire {
+      0% { opacity: 0; scale: .08 1; }
+      20% { opacity: 1; }
+      72% { opacity: .42; scale: 1 1; }
+      100% { opacity: 0; scale: 1.08 1; }
+    }
+    @keyframes vector-in {
+      0% { opacity: 0; transform: scale(.76) rotate(-2deg); }
+      42% { opacity: .55; }
+      100% { opacity: .16; transform: scale(1) rotate(0); }
+    }
+    @keyframes materialize {
+      0% { opacity: 0; transform: translateY(18px) scale(.965); filter: blur(9px); clip-path: inset(50% 0 50% 0); }
+      38% { opacity: .74; filter: blur(2px); clip-path: inset(10% 0 8% 0); }
+      58% { transform: translateY(-3px) scale(1.004); }
+      100% { opacity: 1; transform: none; filter: none; clip-path: inset(0); }
+    }
+    @keyframes scan-dialog {
+      0% { opacity: 0; transform: translateY(0); }
+      18% { opacity: .85; }
+      100% { opacity: 0; transform: translateY(720px); }
+    }
+    @keyframes ghost-arrival {
+      0% { opacity: 0; transform: translateY(22px) scale(.72); filter: blur(8px); }
+      38% { opacity: 1; transform: translateY(-6px) scale(1.08); filter: blur(0); }
+      58% { transform: translateY(2px) scale(.98); }
+      100% { transform: none; }
+    }
+    @keyframes ghost-blink { 0%, 46%, 52%, 100% { transform: scaleY(1); } 49% { transform: scaleY(.08); } }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; }
+      .signal-machine { min-height: 500px; }
+      .between-grid, .investor-layout, .model-grid, .contact-grid { grid-template-columns: 1fr; }
+      .between-grid, .investor-layout, .model-grid { gap: 46px; }
+      .model-quote { position: static; }
+      .offer { grid-template-columns: 58px minmax(150px, .7fr) minmax(0, 1.3fr); }
+      .offer-mode { grid-column: 3; text-align: left; }
+      .essays-grid { grid-template-columns: 1fr; }
+      .pattern { grid-column: span 6; }
+      .pattern:last-child { grid-column: span 12; }
+      .signal-strip-inner { grid-template-columns: repeat(2, 1fr); }
+      .signal-strip-inner > * { border-bottom: 1px solid var(--line); }
+      .signal-strip-inner > *:first-child { grid-column: 1 / -1; }
     }
 
-    :focus-visible { outline: 3px solid var(--signal); outline-offset: 3px; }
-
-    @media (max-width: 900px) {
-      .hero { grid-template-columns: 1fr; min-height: auto; gap: 30px; padding-top: 64px; }
-      .docket { min-height: 480px; }
-      .section-heading { grid-template-columns: 120px 1fr; gap: 20px; }
-      .offer { grid-column: span 12; min-height: auto; border-right: 0; border-bottom: 1px solid var(--ink); }
-      .offer ul { margin-top: 30px; }
-      .deliverable-grid, .fit-layout, .about-card, .close-grid { grid-template-columns: 1fr; }
-      .record-list { grid-template-columns: 1fr; gap: 26px; }
-      .record-inner { padding: 44px 20px; }
-      .about-label { border-right: 0; border-bottom: 1px solid var(--ink); display: flex; align-items: center; justify-content: space-between; }
-      .about-label svg { margin-top: 0; width: 78px; height: 78px; }
-      .fit-layout { gap: 40px; }
-      .audience-inner { grid-template-columns: 1.3fr repeat(3, 1fr); }
-    }
-
-    @media (max-width: 650px) {
-      .topline-inner, .hero, .section, .dark-inner, .about, .close-inner, .audience-inner { width: min(100% - 28px, var(--content)); }
-      .topline-inner { min-height: 54px; }
-      nav a:not(.nav-cta) { display: none; }
-      .status { font-size: 10px; }
-      .status-descriptor, .status-divider { display: none; }
-      .nav-cta { padding: 8px 11px; font-size: 12px; }
-      .hero { padding: 50px 0 58px; }
-      .hero h1 { font-size: clamp(46px, 14.5vw, 67px); }
-      .hero-lede { font-size: 18px; }
-      .hero-actions { align-items: stretch; }
-      .hero-actions .button { width: 100%; }
-      .docket { min-height: 430px; }
-      .ghost-stage { top: -2%; right: -3%; width: 104px; }
-      .case-sheet { width: calc(100% - 18px); }
-      .docket::before { inset: 7% 4% 4%; }
-      .audience-inner { grid-template-columns: 1fr 1fr; }
-      .audience-inner > * { padding: 14px 10px; border-right: 1px solid var(--ink); border-bottom: 1px solid var(--ink); }
-      .audience-inner > *:first-child { grid-column: 1 / -1; padding-left: 10px; }
-      .audience-inner > *:nth-child(3) { border-right: 0; }
-      .audience-inner > *:last-child { border-bottom: 0; grid-column: 1 / -1; }
-      .section, .dark-inner { padding: 82px 0; }
-      .section-heading { grid-template-columns: 1fr; margin-bottom: 40px; }
-      .section-heading p { grid-column: 1; }
-      .offer { padding: 24px 0; }
-      .deliverable-grid { gap: 48px; }
-      .flow-item { grid-template-columns: 36px 1fr; }
-      .flow-state { grid-column: 2; width: max-content; }
-      .principles { grid-template-columns: 1fr; }
-      .fit-options { grid-template-columns: 1fr; }
-      .fit-option { min-height: 66px; border-right: 0; border-bottom: 1px solid var(--ink); }
-      .fit-option:last-child { border-bottom: 0; }
-      .fit-result { padding: 22px 18px; }
-      .copy-feedback { display: block; margin: 10px 0 0; }
-      .about { padding-top: 0; padding-bottom: 82px; }
-      .about-label { padding: 22px; }
-      .about-label svg { width: 64px; height: 64px; }
-      .about-copy { padding: 32px 22px; }
-      .about-proof { grid-template-columns: 1fr; }
-      .contact-layer { padding: 14px; }
-      .contact-dialog { max-height: calc(100vh - 28px); box-shadow: 8px 8px 0 var(--signal); }
-      .contact-head { grid-template-columns: 54px 1fr auto; padding: 14px; gap: 11px; }
-      .contact-ghost { width: 54px; height: 54px; }
-      .contact-head strong { font-size: 17px; }
-      .contact-form { padding: 22px 18px 24px; }
+    @media (max-width: 700px) {
+      .shell { width: min(var(--max), calc(100% - 28px)); }
+      .topbar-inner { min-height: 56px; }
+      .wordmark small, nav a:not(.nav-call) { display: none; }
+      .hero { padding: 58px 0 46px; gap: 46px; }
+      .hero h1 { font-size: clamp(44px, 13.3vw, 66px); }
+      .lede { font-size: 17px; }
+      .actions { align-items: stretch; }
+      .actions .button { width: 100%; }
+      .signal-machine { min-height: 440px; }
+      .scope { height: 330px; }
+      .machine-contact { width: 70px; height: 70px; top: 62px; right: 12px; }
+      .machine-contact svg { width: 44px; height: 44px; }
+      .machine-foot { grid-template-columns: 1fr; }
+      .meter { border-right: 0; border-bottom: 1px solid var(--line); }
+      .meter:last-child { border-bottom: 0; }
+      .signal-strip-inner { grid-template-columns: 1fr 1fr; }
+      .signal-strip-inner > *:nth-child(even) { border-right: 0; }
+      .section { padding: 82px 0; }
+      .section-head { grid-template-columns: 1fr; gap: 14px; margin-bottom: 40px; }
+      .section-head p { grid-column: 1; }
+      .between-diagram { min-width: 0; }
+      .diagram-field { min-height: 440px; padding: 28px 18px; gap: 150px 28px; }
+      .core-node { width: 112px; height: 112px; }
+      .offer { grid-template-columns: 38px 1fr; gap: 15px; }
+      .offer-copy, .offer-mode { grid-column: 2; }
+      .pattern, .pattern:nth-child(4), .pattern:nth-child(5), .pattern:last-child { grid-column: span 12; min-height: auto; }
+      .pattern h3 { margin-top: 28px; }
+      .essay-feature { min-height: 380px; padding: 24px; }
+      .dialog { box-shadow: 8px 8px 0 rgba(203,255,87,.18); }
+      .dialog-head { grid-template-columns: 52px 1fr auto; padding: 14px; gap: 11px; }
+      .dialog-mark { width: 52px; height: 52px; }
       .field-row { grid-template-columns: 1fr; gap: 0; }
+      .contact-form { padding: 22px 18px; }
       .contact-actions .button { width: 100%; }
-      .close-inner { padding-top: 78px; }
       footer { flex-direction: column; margin-top: 68px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip" href="#main">Skip to content</a>
 
-  <header class="topline">
-    <div class="topline-inner">
-      <div class="status"><span class="status-dot" aria-hidden="true"></span><strong>GhostOp</strong><span class="status-divider">/</span><span class="status-descriptor">Technical advisory</span></div>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="wordmark" href="#main" aria-label="GhostOp home">
+        <svg class="wordmark-mark" viewBox="0 0 40 36" aria-hidden="true">
+          <path d="M6 32V18C6 9.72 12.27 3 20 3s14 6.72 14 15v14l-4.67-4-4.66 4L20 28l-4.67 4-4.66-4L6 32Z" fill="#f5f2e9"/>
+          <ellipse cx="15.5" cy="17" rx="2.2" ry="3.4" fill="#0a0d0c"/>
+          <ellipse cx="24.5" cy="17" rx="2.2" ry="3.4" fill="#0a0d0c"/>
+        </svg>
+        <span>GhostOp</span><small>/ ghost in the machine</small>
+      </a>
       <nav aria-label="Primary navigation">
-        <a href="#work">Work</a>
-        <a href="#approach">Approach</a>
-        <a href="#about">About us</a>
-        <a href="/blog.html">Writing</a>
-        <a class="nav-cta" href="#fit">Find the right review</a>
+        <a href="#studio">Studio</a>
+        <a href="#investors">Investors</a>
+        <a href="#patterns">Patterns</a>
+        <a href="https://ghostop.ai/blog/">Essays</a>
+        <button class="nav-call open-contact" type="button">Talk to the ghost</button>
       </nav>
     </div>
   </header>
 
   <main id="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-copy">
-        <p class="kicker">For founders, investors &amp; operating teams</p>
-        <h1 id="hero-title">Know what’s real before you <em>bet on it.</em></h1>
-        <p class="hero-lede">Independent technical judgment for consequential software decisions—before the next check is signed, the next enterprise promise is made, or a fragile build becomes an expensive problem.</p>
-        <div class="hero-actions">
-          <a class="button" href="#fit">Find the right engagement
-            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4" stroke="currentColor" stroke-width="1.7"/></svg>
-          </a>
-          <a class="button secondary" href="#work">Explore engagements</a>
-          <button class="button secondary" id="hero-contact" type="button">Talk to the ghost</button>
+    <section class="shell hero" aria-labelledby="hero-title">
+      <div>
+        <p class="eyebrow">Technical product studio</p>
+        <h1 id="hero-title">We turn difficult technical ideas into products that <span>actually work.</span></h1>
+        <p class="lede">Bring us the difficult idea that sits between product, software, APIs, AI, integrations, security, and enterprise reality. We turn it into something that works—in the real world, with real systems, under real pressure.</p>
+        <p class="thesis">I make complex systems actually work in the real world.</p>
+        <div class="actions">
+          <button class="button open-contact" type="button">Bring us the hard problem
+            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h13M12 5.5 16.5 10 12 14.5" stroke="currentColor" stroke-width="1.6"/></svg>
+          </button>
+          <a class="button secondary" href="#studio">See how the studio works</a>
         </div>
       </div>
 
-      <div class="docket" aria-label="Illustration of a technical review docket">
-        <button class="ghost-stage" id="ghost-contact" type="button" aria-label="Ask the GhostOp ghost to open the contact form" aria-haspopup="dialog">
-          <svg class="ghost-mark" viewBox="0 0 160 160" aria-hidden="true">
-            <ellipse class="ghost-shadow" cx="78" cy="139" rx="37" ry="8"/>
-            <path class="ghost-body" d="M39 124V75c0-29 17-47 41-47s41 18 41 47v49l-14-10-14 13-13-13-14 13-13-13-14 10Z"/>
-            <ellipse class="ghost-eye" cx="67" cy="75" rx="4.7" ry="6.5"/>
-            <ellipse class="ghost-eye" cx="94" cy="75" rx="4.7" ry="6.5"/>
-            <path d="M72 91c5 5 12 5 17 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-            <circle class="ghost-cheek" cx="57" cy="89" r="5"/>
-            <circle class="ghost-cheek" cx="104" cy="89" r="5"/>
-            <path class="ghost-spark" d="m128 30 3 9 9 3-9 3-3 9-3-9-9-3 9-3 3-9Z"/>
+      <div class="signal-machine" aria-label="An abstract signal emerging from a technical system">
+        <div class="machine-head"><span>Ghost in the machine / 04</span><span class="live">signal present</span></div>
+        <div class="scope">
+          <div class="scope-grid" aria-hidden="true"></div>
+          <svg class="scope-svg" viewBox="0 0 620 410" preserveAspectRatio="none" aria-hidden="true">
+            <path class="scope-path-base" d="M0 220 C30 219 46 224 70 220 S100 218 126 220 L145 220 156 188 166 264 180 100 196 318 211 190 226 225 246 219 C270 218 280 222 305 220 S345 217 372 220 L389 220 401 206 410 235 420 174 432 257 447 212 461 222 C490 219 506 220 530 220 S570 222 620 220"/>
+            <path class="scope-path-echo" d="M0 220 C30 219 46 224 70 220 S100 218 126 220 L145 220 156 188 166 264 180 100 196 318 211 190 226 225 246 219 C270 218 280 222 305 220 S345 217 372 220 L389 220 401 206 410 235 420 174 432 257 447 212 461 222 C490 219 506 220 530 220 S570 222 620 220"/>
+            <path class="scope-path" d="M0 220 C30 219 46 224 70 220 S100 218 126 220 L145 220 156 188 166 264 180 100 196 318 211 190 226 225 246 219 C270 218 280 222 305 220 S345 217 372 220 L389 220 401 206 410 235 420 174 432 257 447 212 461 222 C490 219 506 220 530 220 S570 222 620 220"/>
           </svg>
-          <span class="ghost-hint" aria-hidden="true">psst — click me, I take messages</span>
-        </button>
-        <article class="case-sheet">
-          <div class="sheet-head"><span>Decision file / 01</span><strong>Independent review</strong></div>
-          <div class="sheet-body">
-            <h2 class="sheet-title">What the pitch deck cannot tell you.</h2>
-            <div class="signal-line"><span>01</span><p>Will the architecture survive the next stage of growth?</p></div>
-            <div class="signal-line"><span>02</span><p>Where do security, identity, and integration risks hide?</p></div>
-            <div class="signal-line"><span>03</span><p>Can this team deliver what has been promised?</p></div>
-            <div class="stamp">Evidence over theater</div>
+          <div class="apparition" aria-hidden="true">
+            <svg viewBox="0 0 320 270">
+              <circle cx="160" cy="135" r="102"/>
+              <circle cx="160" cy="135" r="78"/>
+              <path d="M54 150c34-8 47-42 74-42 31 0 33 50 63 50 27 0 39-38 76-46"/>
+              <path d="M75 189c31-22 49-11 70-33 21-22 23-59 52-63 22-4 34 17 52 30"/>
+              <path d="M99 71c18 22 35 30 62 28 34-2 42 32 67 52 14 11 27 13 39 12"/>
+            </svg>
           </div>
-        </article>
+          <div class="signal-message"><span>transmission:</span><br />there is something here.<br />build this. fix this. follow this signal.</div>
+        </div>
+        <button class="machine-contact open-contact" type="button" aria-label="Talk to the GhostOp ghost">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M10 58V31C10 17.19 19.85 6 32 6s22 11.19 22 25v27l-7.33-7-7.34 7L32 51l-7.33 7-7.34-7L10 58Z" fill="#f5f2e9"/>
+            <ellipse cx="25" cy="30" rx="3.5" ry="5.2" fill="#0a0d0c"/>
+            <ellipse cx="39" cy="30" rx="3.5" ry="5.2" fill="#0a0d0c"/>
+          </svg>
+        </button>
+        <div class="machine-foot">
+          <div class="meter"><span>Input</span><strong>Unclear idea</strong></div>
+          <div class="meter"><span>Process</span><strong>Find the signal</strong></div>
+          <div class="meter"><span>Output</span><strong>Working product</strong></div>
+        </div>
       </div>
     </section>
 
-    <div class="audience-band" aria-label="Who GhostOp advises">
-      <div class="audience-inner">
-        <div class="audience-label">Built for consequential decisions</div>
-        <div class="audience-item">Founders</div>
-        <div class="audience-item">Investors</div>
-        <div class="audience-item">Operating teams</div>
+    <div class="signal-strip">
+      <div class="shell signal-strip-inner">
+        <strong>From whisper to working system</strong>
+        <span>Product</span><span>Software</span><span>Enterprise</span><span>AI as accelerator</span>
       </div>
     </div>
 
-    <section class="section" id="work" aria-labelledby="work-title">
-      <div class="section-heading">
-        <div class="section-index">01 / Engagements</div>
-        <h2 id="work-title">Three moments when senior technical judgment changes the outcome.</h2>
-        <p>Focused scopes around a decision—not project labor, seat-filling, or an open-ended transformation program.</p>
-      </div>
-
-      <div class="offer-grid">
-        <article class="offer">
-          <span class="offer-number">01 — Before money moves</span>
-          <h3>Technical diligence</h3>
-          <p>An independent read on the product, platform, team, and hidden liabilities behind an investment, acquisition, or strategic bet.</p>
-          <ul>
-            <li>Architecture and codebase risk review</li>
-            <li>Security, identity, and integration exposure</li>
-            <li>Team and delivery capability assessment</li>
-            <li>Decision memo with red flags and conditions</li>
-          </ul>
-        </article>
-
-        <article class="offer">
-          <span class="offer-number">02 — While the stakes rise</span>
-          <h3>Fractional architecture advisor</h3>
-          <p>Senior technical counsel for a founder, board, or leadership team navigating scale, enterprise demands, and irreversible platform choices.</p>
-          <ul>
-            <li>Architecture decision support</li>
-            <li>Enterprise readiness and roadmap pressure-test</li>
-            <li>API, identity, and security strategy</li>
-            <li>Technical hiring and vendor review</li>
-          </ul>
-        </article>
-
-        <article class="offer">
-          <span class="offer-number">03 — When confidence breaks</span>
-          <h3>Build audit</h3>
-          <p>A fast, unsentimental review when the demo looks good but delivery feels fragile, the roadmap keeps slipping, or the system will not scale.</p>
-          <ul>
-            <li>Production-readiness assessment</li>
-            <li>Delivery bottleneck diagnosis</li>
-            <li>Integration and dependency mapping</li>
-            <li>Prioritized recovery plan</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <section class="dark-section" id="approach" aria-labelledby="approach-title">
-      <div class="dark-inner">
-        <div class="section-heading">
-          <div class="section-index">02 / The work</div>
-          <h2 id="approach-title">A decision-grade answer, not another stack of slides.</h2>
-          <p>Every review turns ambiguity into a compact set of findings leadership can act on immediately.</p>
+    <section class="section light" aria-labelledby="between-title">
+      <div class="shell">
+        <div class="section-head">
+          <div class="index">01 / The between-space</div>
+          <h2 id="between-title">The important idea is usually hiding between the boxes.</h2>
+          <p>Not purely product. Not purely engineering. Not a clean strategy problem or a clean implementation problem. The opportunity lives in the seams—and those seams are where most teams lose the signal.</p>
         </div>
-
-        <div class="deliverable-grid">
-          <div class="review-flow" aria-label="Review process">
-            <div class="flow-head"><span>Review sequence</span><span>Output</span></div>
-            <div class="flow-item">
-              <span class="flow-n">01</span>
-              <div><h3>Interrogate the claim</h3><p>What is being promised, and what evidence supports it?</p></div>
-              <span class="flow-state">Questions</span>
-            </div>
-            <div class="flow-item">
-              <span class="flow-n">02</span>
-              <div><h3>Trace the system</h3><p>Architecture, dependencies, data, identity, and delivery reality.</p></div>
-              <span class="flow-state">Map</span>
-            </div>
-            <div class="flow-item">
-              <span class="flow-n">03</span>
-              <div><h3>Separate risk from noise</h3><p>Material issues, acceptable debt, and false alarms.</p></div>
-              <span class="flow-state">Findings</span>
-            </div>
-            <div class="flow-item">
-              <span class="flow-n">04</span>
-              <div><h3>Make the decision usable</h3><p>Clear priorities, options, conditions, and next moves.</p></div>
-              <span class="flow-state">Memo</span>
-            </div>
+        <div class="between-grid">
+          <div class="between-copy">
+            <p>Sometimes a company knows what it wants. Sometimes it only knows <strong>something should exist.</strong></p>
+            <p>We make the ambiguity useful: determine what should be built, test the hard assumptions, prototype the right thing, connect it to real systems, and carry it through production.</p>
+            <p>AI can compress the work. It does not replace product judgment, architecture, security, integration, or the responsibility to make the result hold up.</p>
           </div>
-
-          <div class="deliverable-copy">
-            <blockquote>“The useful answer is rarely <span>yes or no.</span> It is what must be true for the bet to work.”</blockquote>
-            <p>We work across the seams where software risk becomes business risk: product and platform, APIs and identity, vendor and team, enterprise promise and delivery reality.</p>
-            <div class="principles">
-              <div class="principle"><strong>Independent</strong><span>No implementation pitch attached to the finding.</span></div>
-              <div class="principle"><strong>Direct</strong><span>Risks stated in business language, without euphemism.</span></div>
-              <div class="principle"><strong>Senior-led</strong><span>The judgment is the work, not a layer of account management.</span></div>
-              <div class="principle"><strong>Bounded</strong><span>Clear questions, clear outputs, and a defined decision.</span></div>
+          <div class="between-diagram" aria-label="Diagram showing the GhostOp operating space">
+            <div class="diagram-head"><span>Boundary map</span><span>Look between layers</span></div>
+            <div class="diagram-field">
+              <div class="node"><b>Product</b><span>What should exist</span></div>
+              <div class="node"><b>Systems</b><span>What must connect</span></div>
+              <div class="node"><b>Intelligence</b><span>What can accelerate</span></div>
+              <div class="node"><b>Reality</b><span>What must survive</span></div>
+              <div class="core-node">Signal →<br />working product</div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="fit" aria-labelledby="fit-title">
-      <div class="fit-layout">
-        <div class="fit-copy">
-          <p class="kicker">A useful first conversation</p>
-          <h2 id="fit-title">Start with the decision—not a shopping list.</h2>
-          <p>Choose the situation that looks most like yours. We’ll frame the right first review and give you a short brief you can send through the channel that brought you here.</p>
-          <div class="tiny-note">No intake form. No automated funnel. No sensitive material needed for the first conversation.</div>
+    <section class="section" id="studio" aria-labelledby="studio-title">
+      <div class="shell">
+        <div class="section-head">
+          <div class="index">02 / Studio model</div>
+          <h2 id="studio-title">Four ways a difficult idea becomes real.</h2>
+          <p>Start with the smallest engagement that can produce evidence. Build only when the signal survives contact with reality.</p>
         </div>
-
-        <div class="fit-tool" aria-live="polite">
-          <div class="fit-tool-head"><span>Engagement finder</span><span>Choose one</span></div>
-          <div class="fit-options" role="tablist" aria-label="Choose your situation">
-            <button class="fit-option" role="tab" aria-selected="true" data-fit="money">We are about to invest or acquire</button>
-            <button class="fit-option" role="tab" aria-selected="false" data-fit="scale">The company is outgrowing its architecture</button>
-            <button class="fit-option" role="tab" aria-selected="false" data-fit="stuck">The build is stuck or trust has slipped</button>
-          </div>
-          <div class="fit-result" id="fit-result"></div>
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="about" aria-labelledby="about-title">
-      <div class="about-card">
-        <div class="about-label">
-          <p class="kicker">03 / About us</p>
-          <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
-            <rect x="13" y="13" width="94" height="94" stroke="currentColor" stroke-width="2"/>
-            <path d="M30 41h60M30 60h39M30 79h49" stroke="currentColor" stroke-width="4"/>
-            <circle cx="88" cy="78" r="12" fill="#dff64f" stroke="currentColor" stroke-width="2"/>
-            <path d="m83 78 4 4 7-9" stroke="currentColor" stroke-width="2.5"/>
-          </svg>
-        </div>
-        <div class="about-copy">
-          <h2 id="about-title">Built in the space between technical detail and executive consequence.</h2>
-          <p class="credo">&ldquo;I make complex systems actually work in the real world.&rdquo;</p>
-          <p>GhostOp is an independent technical advisory and execution practice &mdash; senior judgment at expensive decision points, not a consultancy bench or an AI agency.</p>
-          <p>Our perspective comes from both sides of the table: building in startups and open-source communities, then operating inside complex enterprise environments where integrations, identity, security, mobile systems, and mission-critical delivery all collide.</p>
-          <p>That range matters. It lets us see past startup theater without applying enterprise bureaucracy—and translate deep technical findings into decisions founders, investors, and boards can actually use.</p>
-          <div class="about-proof" aria-label="Areas of experience">
-            <div class="proof"><strong>Builder’s context</strong><span>Products, teams, tradeoffs, and shipping under pressure.</span></div>
-            <div class="proof"><strong>Enterprise depth</strong><span>APIs, identity, security, integration, and regulated systems.</span></div>
-            <div class="proof"><strong>Operator’s judgment</strong><span>What is fixable, what is fragile, and what changes the bet.</span></div>
-          </div>
+        <div class="offer-list">
+          <article class="offer">
+            <span class="offer-num">01</span>
+            <h3>Should-Build Sprint</h3>
+            <div class="offer-copy"><p>Fixed-fee diligence and product discovery. Should this exist? Can it be built? What would it take—and what would make it fail?</p><ul><li>Problem framing</li><li>Technical feasibility</li><li>Risk map</li><li>Build plan</li></ul></div>
+            <div class="offer-mode">Fixed fee<br />1–3 weeks</div>
+          </article>
+          <article class="offer">
+            <span class="offer-num">02</span>
+            <h3>Build to production</h3>
+            <div class="offer-copy"><p>Prototype fast, connect to real systems, solve the hard details, and ship it live. We build what we recommend—and tell you when you should not build it.</p><ul><li>Product prototype</li><li>Architecture</li><li>Integration</li><li>Production launch</li></ul></div>
+            <div class="offer-mode">Project<br />Outcome-bound</div>
+          </article>
+          <article class="offer">
+            <span class="offer-num">03</span>
+            <h3>Technical ownership</h3>
+            <div class="offer-copy"><p>Fractional architecture plus ongoing responsibility for the system: decisions, reliability, security, vendors, roadmap, and the seams nobody else owns.</p><ul><li>Architecture counsel</li><li>Operating rhythm</li><li>Team leverage</li><li>System stewardship</li></ul></div>
+            <div class="offer-mode">Recurring<br />Senior-led</div>
+          </article>
+          <article class="offer">
+            <span class="offer-num">04</span>
+            <h3>Product participation</h3>
+            <div class="offer-copy"><p>When discovery reveals a repeatable, standalone product, we can take less cash to keep a stake in what gets built—through licensing, revenue share, partnership, or selective equity.</p><ul><li>Selective only</li><li>Aligned economics</li><li>Shared upside</li><li>Evidence first</li></ul></div>
+            <div class="offer-mode">Deal by deal<br />Not a fund</div>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="record" aria-label="Public record">
-      <div class="record-inner">
-        <p class="kicker">The record</p>
-        <dl class="record-list">
-          <div class="record-item">
-            <dt>Range</dt>
-            <dd>15+ years across startups, open-source communities, web and mobile, and enterprise systems.</dd>
-          </div>
-          <div class="record-item">
-            <dt>Public work</dt>
-            <dd>Co-maintainer of Drupal&rsquo;s PWA module, opensource.com author, and conference speaker on progressive web apps.</dd>
-          </div>
-          <div class="record-item">
-            <dt>Depth</dt>
-            <dd>APIs and integrations, identity and authentication, security, frontend/backend boundaries, performance and caching &mdash; in regulated, mission-critical environments.</dd>
-          </div>
-        </dl>
+    <section class="section signal-bg" id="investors" aria-labelledby="investor-title">
+      <div class="shell investor-layout">
+        <div class="investor-copy">
+          <p class="eyebrow" style="color:#111512">For VC, PE &amp; portfolio leaders</p>
+          <blockquote id="investor-title">We tell you what’s real before you wire the money—and build what your portfolio can’t staff.</blockquote>
+          <p>GhostOp sits between capital and technical execution: independent diligence before the decision, a focused build arm after it, and selective participation when a repeated problem points to a product.</p>
+          <div class="capital-note"><strong>We are not raising a fund.</strong> VC and PE dollars flow through GhostOp as diligence fees, studio engagements, and carefully chosen product participation.</div>
+        </div>
+        <aside class="investor-flow" aria-label="Investor engagement lane">
+          <h3>Portfolio signal path</h3>
+          <div class="lane"><span>01</span><div><b>See the deal clearly</b><p>Technical diligence that tests product, architecture, security, team, and delivery claims.</p></div></div>
+          <div class="lane"><span>02</span><div><b>Act on the finding</b><p>A build plan leadership can use—not a report that ends at the diagnosis.</p></div></div>
+          <div class="lane"><span>03</span><div><b>Supply the missing depth</b><p>Senior architecture and execution where a portfolio company cannot staff the gap.</p></div></div>
+          <div class="lane"><span>04</span><div><b>Capture the pattern</b><p>When the same problem repeats, evaluate whether it deserves to become a product.</p></div></div>
+        </aside>
       </div>
     </section>
 
-    <section class="close" aria-labelledby="close-title">
-      <div class="close-inner">
-        <div class="close-grid">
-          <h2 id="close-title">Bring the claim. We’ll help test the reality.</h2>
-          <div class="close-side">
-            <p>The best first note is simple: the decision in front of you, what feels uncertain, and when the answer matters. Copy the template, fill in the blanks, and send it through your usual channel.</p>
-            <button class="button" id="copy-general" type="button">Copy the first-note template
-              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><rect x="6" y="6" width="9" height="9" stroke="currentColor" stroke-width="1.5"/><path d="M4 12V4h8" stroke="currentColor" stroke-width="1.5"/></svg>
+    <section class="section" aria-labelledby="model-title">
+      <div class="shell model-grid">
+        <div class="model-quote">
+          <p id="model-title">Customer-funded discovery. <em>Evidence before productization.</em></p>
+          <small>PROJECT REVENUE NOW / REUSABLE TOOLS, LICENSING, PARTNERSHIPS &amp; SELECTIVE OWNERSHIP OVER TIME</small>
+        </div>
+        <div class="model-steps">
+          <article class="model-step"><h3>Solve the valuable problem first.</h3><p>Start where a real customer has real urgency and budget. No studio theater, trend-chasing, or invented demand.</p></article>
+          <article class="model-step"><h3>Notice what repeats.</h3><p>Look across engagements for the workflow, integration, capability, or risk that keeps appearing in different clothes.</p></article>
+          <article class="model-step"><h3>Productize only with evidence.</h3><p>Turn proven patterns into reusable tools or standalone products when the economics and demand are visible.</p></article>
+          <article class="model-step"><h3>Keep the upside when it earns the risk.</h3><p>Use licensing, partnerships, revenue share, or equity selectively—not as a substitute for getting paid.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section light" id="patterns" aria-labelledby="patterns-title">
+      <div class="shell">
+        <div class="section-head">
+          <div class="index">03 / Pattern library</div>
+          <h2 id="patterns-title">We’ve seen this movie. The details change. The failure patterns do not.</h2>
+          <p>Credibility here is not a logo wall. It is the range to recognize what is actually happening across the system—and the judgment to do something useful about it.</p>
+        </div>
+        <div class="patterns">
+          <article class="pattern"><span class="pattern-code">PATTERN / 01</span><h3>The prototype that cannot cross into production</h3><p>Promising software meets identity, security, operations, data access, and enterprise constraints.</p></article>
+          <article class="pattern"><span class="pattern-code">PATTERN / 02</span><h3>The integration that is actually five systems</h3><p>Frontend, gateway, identity provider, network edge, and backend each look healthy in isolation.</p></article>
+          <article class="pattern"><span class="pattern-code">PATTERN / 03</span><h3>The internal tool quietly becoming a product</h3><p>A repeated operational problem reveals demand well beyond the team that first felt it.</p></article>
+          <article class="pattern"><span class="pattern-code">PATTERN / 04</span><h3>The enterprise promise outrunning the platform</h3><p>Sales has found the market. Now architecture, reliability, and security must catch up without stopping momentum.</p></article>
+          <article class="pattern"><span class="pattern-code">PATTERN / 05</span><h3>The AI demo with a missing operating model</h3><p>The model works. The real product still needs evaluation, guardrails, access control, observability, integration, and ownership.</p></article>
+        </div>
+        <div class="between-grid" style="margin-top:64px">
+          <div class="between-copy">
+            <p><strong>Range, not résumé.</strong></p>
+            <p>15+ years across startup and agency builds, open-source work, web and mobile products, APIs, and platforms—followed by deep work in enterprise integration, authentication, security, cloud, production reliability, and utility systems.</p>
+          </div>
+          <div class="between-copy">
+            <p><strong>Public work where it matters.</strong></p>
+            <p>PWA open-source maintenance, technical publishing, and conference speaking sit alongside years spent making complicated systems hold together beyond the demo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="essays-title">
+      <div class="shell">
+        <div class="section-head">
+          <div class="index">04 / Field notes</div>
+          <h2 id="essays-title">What we notice from inside the machine.</h2>
+          <p>Essays on architecture, technical diligence, fragile builds, and the gap between what software promises and what the organization can actually operate.</p>
+        </div>
+        <div class="essays-grid">
+          <article class="essay-feature">
+            <span class="essay-label">Build reality / Featured</span>
+            <h3>The Demo Works. The Build Doesn’t.</h3>
+            <p>A polished demo can conceal brittle architecture, improvised operations, and risk that only appears when real users and systems arrive.</p>
+            <a class="text-link" href="https://ghostop.ai/blog/build-audit-what-fragile-software-looks-like/">Read the field note <span aria-hidden="true">→</span></a>
+          </article>
+          <div class="essay-list">
+            <a class="essay-row" href="https://ghostop.ai/blog/technical-diligence-before-you-sign/"><span>DILIGENCE / 05 MIN</span><strong>Technical Diligence Is Not a Code Review</strong></a>
+            <a class="essay-row" href="https://ghostop.ai/blog-microservices-tax-hidden-costs.html"><span>ARCHITECTURE / 06 MIN</span><strong>The Microservices Tax</strong></a>
+            <a class="essay-row" href="https://ghostop.ai/blog-identity-shortcut-liability.html"><span>IDENTITY / 05 MIN</span><strong>The Identity Shortcut That Becomes a Liability</strong></a>
+            <a class="essay-row" href="https://ghostop.ai/blog-coding-agents-architecture-moat.html"><span>AI &amp; SYSTEMS / 06 MIN</span><strong>In the Age of Coding Agents, Architecture Is the Only Moat</strong></a>
+            <a class="essay-row" href="https://ghostop.ai/blog/"><span>FIELD NOTES / ALL</span><strong>Browse every essay →</strong></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" aria-labelledby="contact-title">
+      <div class="shell">
+        <div class="contact-grid">
+          <h2 id="contact-title">Something is trying to get built.</h2>
+          <div class="contact-side">
+            <p>Give us the shape of the problem, what feels unresolved, and why it matters now. We’ll find the first useful move.</p>
+            <button class="button open-contact" type="button">Bring us the hard problem
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h13M12 5.5 16.5 10 12 14.5" stroke="currentColor" stroke-width="1.6"/></svg>
             </button>
-            <div class="close-note" id="general-feedback" aria-live="polite"></div>
           </div>
         </div>
         <footer>
-          <span>GhostOp / Independent technical advisory</span>
-          <span>Technical diligence · Architecture advisory · Build audits</span>
+          <span>GhostOp / Technical product studio</span>
+          <span>Find the signal. Make it real.</span>
         </footer>
       </div>
     </section>
   </main>
 
-  <div class="contact-layer" id="contact-layer" hidden>
-    <section class="contact-dialog" role="dialog" aria-modal="true" aria-labelledby="contact-title" aria-describedby="contact-description">
-      <div class="contact-head">
-        <svg class="contact-ghost" viewBox="0 0 160 160" aria-hidden="true">
-          <path class="ghost-body" d="M39 124V75c0-29 17-47 41-47s41 18 41 47v49l-14-10-14 13-13-13-14 13-13-13-14 10Z"/>
-          <ellipse class="ghost-eye" cx="67" cy="75" rx="4.7" ry="6.5"/>
-          <ellipse class="ghost-eye" cx="94" cy="75" rx="4.7" ry="6.5"/>
-          <path d="M72 91c5 5 12 5 17 0" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
-          <circle class="ghost-cheek" cx="57" cy="89" r="5"/>
-          <circle class="ghost-cheek" cx="104" cy="89" r="5"/>
-        </svg>
-        <div><strong id="contact-title">Tell us what’s haunting the build.</strong><span>Confidential first-note builder</span></div>
-        <button class="dialog-close" id="contact-close" type="button" aria-label="Close contact form">×</button>
+  <div class="modal" id="contact-modal" hidden>
+    <div class="summon-field" aria-hidden="true">
+      <div class="summon-grid"></div>
+      <span class="summon-ring"></span>
+      <span class="summon-ring"></span>
+      <span class="summon-ring"></span>
+      <span class="summon-beam b1"></span>
+      <span class="summon-beam b2"></span>
+      <span class="summon-beam b3"></span>
+      <svg class="summon-vector" viewBox="0 0 1000 700" preserveAspectRatio="none">
+        <path d="M18 92 238 188 404 74 545 226 748 102 982 190M32 602 255 475 430 620 590 467 790 610 970 488M90 350 285 294 500 350 720 278 920 350M238 188 285 294 255 475M404 74 500 350 430 620M545 226 500 350 590 467M748 102 720 278 790 610" />
+        <circle cx="238" cy="188" r="3"/><circle cx="404" cy="74" r="3"/><circle cx="545" cy="226" r="3"/><circle cx="748" cy="102" r="3"/><circle cx="285" cy="294" r="3"/><circle cx="500" cy="350" r="4"/><circle cx="720" cy="278" r="3"/><circle cx="255" cy="475" r="3"/><circle cx="430" cy="620" r="3"/><circle cx="590" cy="467" r="3"/><circle cx="790" cy="610" r="3"/>
+      </svg>
+    </div>
+    <section class="dialog" role="dialog" aria-modal="true" aria-labelledby="dialog-title" aria-describedby="dialog-description">
+      <div class="dialog-head">
+        <div class="dialog-mark">
+          <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M10 58V31C10 17.19 19.85 6 32 6s22 11.19 22 25v27l-7.33-7-7.34 7L32 51l-7.33 7-7.34-7L10 58Z" fill="#f5f2e9"/><ellipse cx="25" cy="30" rx="3.5" ry="5.2" fill="#0a0d0c"/><ellipse cx="39" cy="30" rx="3.5" ry="5.2" fill="#0a0d0c"/></svg>
+        </div>
+        <div><strong id="dialog-title">Send up a signal.</strong><span>Confidential first-note builder</span></div>
+        <button class="close-dialog" type="button" aria-label="Close contact note builder">×</button>
       </div>
       <form class="contact-form" id="contact-form">
-        <p id="contact-description">Give us the shape of the decision. We’ll turn it into a concise note you can copy and send through your preferred channel.</p>
+        <p id="dialog-description">This creates a concise note you can copy and send through the channel that brought you here. Nothing leaves this page on its own.</p>
         <div class="field-row">
-          <label>Your name
-            <input id="contact-name" name="name" autocomplete="name" required />
-          </label>
-          <label>Your email
-            <input id="contact-email" name="email" type="email" autocomplete="email" required />
-          </label>
+          <label>Your name<input id="contact-name" name="name" autocomplete="name" aria-label="Your name" required /></label>
+          <label>Your email<input id="contact-email" name="email" type="email" autocomplete="email" aria-label="Your email" required /></label>
         </div>
-        <label>What decision or problem are you facing?
-          <textarea id="contact-message" name="message" required placeholder="The decision, what feels uncertain, and when the answer matters."></textarea>
+        <label>What is trying to get built—or what needs fixing?
+          <textarea id="contact-message" name="message" required placeholder="The problem, the opportunity, what is uncertain, and why it matters now."></textarea>
         </label>
         <div class="contact-actions">
-          <button class="button" type="submit">Copy contact note
-            <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4" stroke="currentColor" stroke-width="1.7"/></svg>
-          </button>
-          <span class="contact-feedback" id="contact-feedback" aria-live="polite"></span>
+          <button class="button" type="submit">Copy the first note</button>
+          <span class="feedback" id="contact-feedback" aria-live="polite"></span>
         </div>
-        <p class="contact-note">Nothing is sent from this page. Your finished note is copied so you stay in control of where it goes.</p>
+        <p class="form-note">No automated intake, no sensitive material, no fake submit. The note is copied so you stay in control of where it goes.</p>
       </form>
     </section>
   </div>
 
   <script>
-    const fitData = {
-      money: {
-        label: 'Recommended first step',
-        title: 'Technical diligence',
-        body: 'Frame the investment thesis, then test the technology, team, and delivery assumptions that could change the deal.',
-        bullets: ['Independent risk memo', 'Material red flags and close conditions', 'Clear post-deal priorities'],
-        brief: `I'm considering an investment, acquisition, or strategic commitment and want an independent technical read.\n\nThe decision: [what is being considered]\nThe uncertainty: [what you do not yet trust]\nThe timing: [when the answer is needed]\n\nI'd like to discuss a focused technical diligence review.`
-      },
-      scale: {
-        label: 'Recommended first step',
-        title: 'Fractional architecture advisory',
-        body: 'Create a steady source of senior technical judgment around scale, enterprise commitments, security, and platform choices.',
-        bullets: ['Decision support for leadership', 'Architecture and enterprise-readiness pressure-test', 'A roadmap tied to business stakes'],
-        brief: `We're reaching a stage where architecture decisions carry more business risk.\n\nThe company: [what you build]\nThe pressure: [growth, enterprise customers, security, integrations, hiring]\nThe decision: [what needs senior judgment]\n\nI'd like to discuss a focused architecture advisory relationship.`
-      },
-      stuck: {
-        label: 'Recommended first step',
-        title: 'Build audit',
-        body: 'Establish what is actually broken, what merely looks messy, and the smallest credible path back to control.',
-        bullets: ['Production and delivery reality check', 'Root-cause map across technical boundaries', 'Prioritized recovery sequence'],
-        brief: `A software build has lost momentum or confidence, and we need an independent diagnosis.\n\nThe system: [what is being built]\nThe symptom: [slipping delivery, instability, scale, security, integration]\nThe consequence: [what is at risk]\n\nI'd like to discuss a focused build audit.`
-      }
-    };
+    const modal = document.getElementById('contact-modal');
+    const dialog = modal.querySelector('.dialog');
+    const openers = Array.from(document.querySelectorAll('.open-contact'));
+    const closer = modal.querySelector('.close-dialog');
+    const form = document.getElementById('contact-form');
+    let returnFocus = null;
 
-    const result = document.getElementById('fit-result');
-    const tabs = Array.from(document.querySelectorAll('.fit-option'));
-
-    function renderFit(key) {
-      const item = fitData[key];
-      result.innerHTML = `
-        <span class="fit-result-label">${item.label}</span>
-        <h3>${item.title}</h3>
-        <p>${item.body}</p>
-        <ul>${item.bullets.map(b => `<li>${b}</li>`).join('')}</ul>
-        <button type="button" class="button secondary" id="copy-fit">Copy a briefing note</button>
-        <span class="copy-feedback" id="copy-feedback" aria-live="polite"></span>`;
-
-      document.getElementById('copy-fit').addEventListener('click', () => {
-        copyText(item.brief, document.getElementById('copy-feedback'));
-      });
+    function openContact() {
+      returnFocus = document.activeElement;
+      modal.hidden = false;
+      modal.classList.remove('is-summoning');
+      void modal.offsetWidth;
+      modal.classList.add('is-summoning');
+      document.body.classList.add('modal-open');
+      requestAnimationFrame(() => document.getElementById('contact-name').focus());
     }
 
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        tabs.forEach(t => t.setAttribute('aria-selected', 'false'));
-        tab.setAttribute('aria-selected', 'true');
-        renderFit(tab.dataset.fit);
-      });
+    function closeContact() {
+      modal.hidden = true;
+      modal.classList.remove('is-summoning');
+      document.body.classList.remove('modal-open');
+      if (returnFocus) returnFocus.focus();
+    }
+
+    openers.forEach(button => button.addEventListener('click', openContact));
+    closer.addEventListener('click', closeContact);
+    modal.addEventListener('click', event => { if (event.target === modal) closeContact(); });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !modal.hidden) closeContact();
+      if (event.key === 'Tab' && !modal.hidden) {
+        const focusables = Array.from(dialog.querySelectorAll('button, input, textarea')).filter(el => !el.disabled);
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+        if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
+      }
     });
 
-    async function copyText(text, feedback) {
+    async function copyText(text) {
       try {
         await navigator.clipboard.writeText(text);
-        feedback.textContent = 'Copied—send it through your usual channel.';
-      } catch (err) {
+      } catch (error) {
         const area = document.createElement('textarea');
         area.value = text;
         area.setAttribute('readonly', '');
@@ -1229,71 +1022,20 @@
         area.select();
         document.execCommand('copy');
         area.remove();
-        feedback.textContent = 'Copied—send it through your usual channel.';
       }
     }
 
-    document.getElementById('copy-general').addEventListener('click', () => {
-      copyText(`I'd like an independent technical perspective on a decision we're making.\n\nThe decision: [what is being considered]\nThe uncertainty: [what feels unclear or risky]\nThe timing: [when the answer matters]\n\nCan we set up a confidential first conversation?`, document.getElementById('general-feedback'));
-    });
-
-    const ghostContact = document.getElementById('ghost-contact');
-    const contactLayer = document.getElementById('contact-layer');
-    const contactDialog = contactLayer.querySelector('.contact-dialog');
-    const contactClose = document.getElementById('contact-close');
-    const contactForm = document.getElementById('contact-form');
-    let contactReturnFocus = null;
-
-    function openContact() {
-      contactReturnFocus = document.activeElement;
-      ghostContact.classList.add('is-summoning');
-      contactLayer.hidden = false;
-      document.body.style.overflow = 'hidden';
-      requestAnimationFrame(() => document.getElementById('contact-name').focus());
-      window.setTimeout(() => ghostContact.classList.remove('is-summoning'), 600);
-    }
-
-    function closeContact() {
-      contactLayer.hidden = true;
-      document.body.style.overflow = '';
-      if (contactReturnFocus) contactReturnFocus.focus();
-    }
-
-    ghostContact.addEventListener('click', openContact);
-    document.getElementById('hero-contact').addEventListener('click', openContact);
-    contactClose.addEventListener('click', closeContact);
-    contactLayer.addEventListener('click', event => {
-      if (event.target === contactLayer) closeContact();
-    });
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && !contactLayer.hidden) closeContact();
-      if (event.key === 'Tab' && !contactLayer.hidden) {
-        const controls = Array.from(contactDialog.querySelectorAll('button, input, textarea')).filter(el => !el.disabled);
-        const first = controls[0];
-        const last = controls[controls.length - 1];
-        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
-        if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
-      }
-    });
-
-    contactForm.addEventListener('submit', event => {
+    form.addEventListener('submit', async event => {
       event.preventDefault();
-      if (!contactForm.reportValidity()) return;
+      if (!form.reportValidity()) return;
       const name = document.getElementById('contact-name').value.trim();
       const email = document.getElementById('contact-email').value.trim();
       const message = document.getElementById('contact-message').value.trim();
-      const note = `GhostOp inquiry\n\nFrom: ${name}\nEmail: ${email}\n\nDecision or problem:\n${message}\n\nI'd like to discuss the right focused review.`;
-      copyText(note, document.getElementById('contact-feedback'));
+      const note = `GhostOp signal\n\nFrom: ${name}\nEmail: ${email}\n\nWhat is trying to get built or fixed:\n${message}\n\nI'd like to discuss the smallest useful first step.`;
+      await copyText(note);
+      document.getElementById('contact-feedback').textContent = 'Signal copied—send it through your preferred channel.';
     });
 
-    renderFit('money');
-  </script>
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('service-worker.js').catch(() => {});
-      });
-    }
   </script>
 </body>
 </html>
