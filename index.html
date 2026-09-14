@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <meta name="color-scheme" content="dark" />
   <meta name="theme-color" content="#0a0d0c" />
-  <meta name="description" content="GhostOp is a technical product studio for difficult real-world problems. We find the signal inside complex systems, then design, build, integrate, and operate the product it points to." />
+  <meta name="description" content="GhostOp builds its own products and helps companies turn difficult ideas and broken systems into working ones." />
   <meta property="og:site_name" content="GhostOp" />
   <meta property="og:locale" content="en_US" />
   <meta property="og:title" content="GhostOp — Technical product studio" />
-  <meta property="og:description" content="We turn difficult technical ideas into products that actually work." />
+  <meta property="og:description" content="We build our own products, and help companies turn difficult ideas and broken systems into working ones." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://ghostop.ai/" />
   <meta property="og:image" content="https://ghostop.ai/icon-512.png" />
@@ -19,7 +19,7 @@
   <meta property="og:image:alt" content="GhostOp white ghost mark" />
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="GhostOp — Technical product studio" />
-  <meta name="twitter:description" content="We turn difficult technical ideas into products that actually work." />
+  <meta name="twitter:description" content="We build our own products, and help companies turn difficult ideas and broken systems into working ones." />
   <meta name="twitter:image" content="https://ghostop.ai/icon-512.png" />
   <meta name="twitter:image:alt" content="GhostOp white ghost mark" />
   <link rel="canonical" href="https://ghostop.ai/" />
@@ -30,9 +30,9 @@
     "name":"GhostOp",
     "url":"https://ghostop.ai/",
     "logo":"https://ghostop.ai/icon-512.png",
-    "description":"A technical product studio that discovers, designs, builds, integrates, and operates difficult technical products for companies and investors.",
+    "description":"A technical product studio that builds its own products and helps companies turn difficult ideas and broken systems into working ones.",
     "slogan":"I make complex systems actually work in the real world.",
-    "knowsAbout":["Product discovery","Software product development","Technical diligence","API architecture","Systems integration","Identity and authentication","Application security","AI product operationalization","Production reliability"],
+    "knowsAbout":["Product discovery","Software product development","Technical diligence","API architecture","Systems integration","Identity and authentication","Application security","AI product operationalization","Production reliability","Energy and utility systems","Resource-efficient systems"],
     "hasOfferCatalog":{
       "@type":"OfferCatalog",
       "name":"Studio engagements",
@@ -438,6 +438,14 @@
     .lane span { font: 600 10px/1.5 var(--mono); }
     .lane b { display: block; margin-bottom: 3px; font-size: 15px; }
     .lane p { margin: 0; color: #404640; font-size: 13px; }
+    .investor-section { padding: 86px 0; background: var(--panel); }
+    .investor-section .investor-copy blockquote { font-size: clamp(32px, 4vw, 48px); }
+    .investor-section .investor-copy p { color: var(--fog); }
+    .investor-section .capital-note { border-color: var(--line); color: #b8c0bb; }
+    .investor-section .capital-note strong { background: var(--phosphor); color: var(--ink); }
+    .investor-section .investor-flow { border-color: var(--line); background: var(--ink); }
+    .investor-section .investor-flow h3, .investor-section .lane { border-color: var(--line); }
+    .investor-section .lane p { color: var(--fog); }
 
     .model-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 80px; align-items: start; }
     .model-quote { position: sticky; top: 100px; }
@@ -456,6 +464,72 @@
     .pattern-code { color: var(--signal); font: 500 10px/1.3 var(--mono); letter-spacing: .08em; }
     .pattern h3 { margin: 48px 0 10px; font: 600 22px/1.1 var(--serif); letter-spacing: -.02em; }
     .pattern p { margin: 0; color: #555d57; font-size: 14px; }
+
+    .labs-intro {
+      display: grid;
+      grid-template-columns: minmax(0, .75fr) minmax(0, 1.25fr);
+      gap: 70px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+    .labs-intro h2 {
+      margin: 0;
+      font: 600 clamp(40px, 5vw, 67px)/1.01 var(--serif);
+      letter-spacing: -.042em;
+    }
+    .labs-intro-copy { padding-bottom: 4px; }
+    .labs-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 18px;
+      color: var(--phosphor);
+      font: 500 10px/1.4 var(--mono);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+    .labs-status::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: currentColor;
+      box-shadow: 0 0 12px currentColor;
+    }
+    .labs-intro-copy p { max-width: 720px; margin: 0; color: var(--fog); font-size: 18px; }
+    .labs-principle {
+      margin-top: 18px !important;
+      color: var(--cyan) !important;
+      font: 500 11px/1.6 var(--mono) !important;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+    .labs-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; border: 1px solid var(--line); background: var(--line); }
+    .lab-product { position: relative; min-width: 0; padding: 34px; background: var(--panel); overflow: hidden; }
+    .lab-product:first-child { grid-column: 1 / -1; }
+    .lab-product::after {
+      content: attr(data-code);
+      position: absolute;
+      right: 24px;
+      top: 18px;
+      color: rgba(203,255,87,.07);
+      font: 700 90px/1 var(--mono);
+      letter-spacing: -.08em;
+      pointer-events: none;
+    }
+    .lab-meta { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; margin-bottom: 42px; }
+    .lab-meta span { position: relative; z-index: 1; padding: 6px 8px; border: 1px solid #465049; color: var(--fog); font: 500 9px/1.2 var(--mono); letter-spacing: .06em; text-transform: uppercase; }
+    .lab-meta span:first-child { border-color: var(--phosphor); color: var(--phosphor); }
+    .lab-product h3 { position: relative; z-index: 1; margin: 0; font: 600 clamp(34px, 4vw, 51px)/1 var(--serif); letter-spacing: -.04em; }
+    .lab-product h3 a { text-decoration-thickness: 1px; text-decoration-color: transparent; text-underline-offset: 7px; }
+    .lab-product h3 a:hover { color: var(--phosphor); text-decoration-color: currentColor; }
+    .lab-value { max-width: 520px; margin: 14px 0 0; color: var(--cyan); font: 500 13px/1.55 var(--mono); }
+    .lab-description { max-width: 590px; margin: 26px 0 0; color: #c6ccc8; font-size: 16px; }
+    .lab-capabilities { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; margin: 30px 0 32px; padding: 0; list-style: none; border-top: 1px solid var(--line); }
+    .lab-capabilities li { position: relative; padding: 12px 0 12px 18px; border-bottom: 1px solid var(--line); color: var(--fog); font: 500 11px/1.45 var(--mono); }
+    .lab-capabilities li::before { content: "+"; position: absolute; left: 0; color: var(--signal); }
+    .lab-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 16px; }
+    .lab-actions small { max-width: 220px; color: #7f8a83; font: 9px/1.5 var(--mono); text-transform: uppercase; }
 
     .essays-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 1px; background: var(--line); border: 1px solid var(--line); }
     .essay-feature, .essay-list { background: var(--panel); }
@@ -631,6 +705,9 @@
       .model-quote { position: static; }
       .offer { grid-template-columns: 58px minmax(150px, .7fr) minmax(0, 1.3fr); }
       .offer-mode { grid-column: 3; text-align: left; }
+      .labs-intro, .labs-grid { grid-template-columns: 1fr; }
+      .lab-product:first-child { grid-column: auto; }
+      .labs-intro { gap: 28px; }
       .essays-grid { grid-template-columns: 1fr; }
       .pattern { grid-column: span 6; }
       .pattern:last-child { grid-column: span 12; }
@@ -667,6 +744,11 @@
       .offer-copy, .offer-mode { grid-column: 2; }
       .pattern, .pattern:nth-child(4), .pattern:nth-child(5), .pattern:last-child { grid-column: span 12; min-height: auto; }
       .pattern h3 { margin-top: 28px; }
+      .lab-product { padding: 26px 20px; }
+      .lab-product::after { font-size: 64px; }
+      .lab-meta { margin-bottom: 30px; }
+      .lab-capabilities { grid-template-columns: 1fr; }
+      .lab-actions .button { width: 100%; }
       .essay-feature { min-height: 380px; padding: 24px; }
       .dialog { box-shadow: 8px 8px 0 rgba(203,255,87,.18); }
       .dialog-head { grid-template-columns: 52px 1fr auto; padding: 14px; gap: 11px; }
@@ -698,7 +780,7 @@
       </a>
       <nav aria-label="Primary navigation">
         <a href="#studio">Studio</a>
-        <a href="#investors">Investors</a>
+        <a href="#labs">Labs</a>
         <a href="#patterns">Patterns</a>
         <a href="https://ghostop.ai/blog/">Essays</a>
         <button class="nav-call open-contact" type="button">Talk to the ghost</button>
@@ -710,8 +792,8 @@
     <section class="shell hero" aria-labelledby="hero-title">
       <div>
         <p class="eyebrow">Technical product studio</p>
-        <h1 id="hero-title">We turn difficult technical ideas into products that <span>actually work.</span></h1>
-        <p class="lede">Bring us the difficult idea that sits between product, software, APIs, AI, integrations, security, and enterprise reality. We turn it into something that works—in the real world, with real systems, under real pressure.</p>
+        <h1 id="hero-title">We turn difficult ideas and broken systems into things that <span>actually work.</span></h1>
+        <p class="lede">We build our own products, and we help companies turn difficult ideas and broken systems into working ones. From first signal to real users, we bring product judgment, architecture, integration, security, and AI-enabled execution to the work.</p>
         <p class="thesis">I make complex systems actually work in the real world.</p>
         <div class="actions">
           <button class="button open-contact" type="button">Bring us the hard problem
@@ -758,8 +840,8 @@
 
     <div class="signal-strip">
       <div class="shell signal-strip-inner">
-        <strong>From whisper to working system</strong>
-        <span>Product</span><span>Software</span><span>Enterprise</span><span>AI as accelerator</span>
+        <strong>Build more value with less waste</strong>
+        <span>Energy</span><span>Infrastructure</span><span>Money</span><span>Human attention</span>
       </div>
     </div>
 
@@ -774,7 +856,8 @@
           <div class="between-copy">
             <p>Sometimes a company knows what it wants. Sometimes it only knows <strong>something should exist.</strong></p>
             <p>We make the ambiguity useful: determine what should be built, test the hard assumptions, prototype the right thing, connect it to real systems, and carry it through production.</p>
-            <p>AI can compress the work. It does not replace product judgment, architecture, security, integration, or the responsibility to make the result hold up.</p>
+            <p>AI gives a small, experienced builder dramatically more execution leverage than the old large-team model. The measure is not how complicated the tooling looks; it is judgment, speed, and useful things shipped.</p>
+            <p><strong>Good engineering is resource stewardship.</strong> We favor systems that create more value with less waste—of energy, infrastructure, money, and human attention. Reliable power, clean water, efficient compute, and resilient environments are foundations, not side causes.</p>
           </div>
           <div class="between-diagram" aria-label="Diagram showing the GhostOp operating space">
             <div class="diagram-head"><span>Boundary map</span><span>Look between layers</span></div>
@@ -826,29 +909,11 @@
       </div>
     </section>
 
-    <section class="section signal-bg" id="investors" aria-labelledby="investor-title">
-      <div class="shell investor-layout">
-        <div class="investor-copy">
-          <p class="eyebrow" style="color:#111512">For VC, PE &amp; portfolio leaders</p>
-          <blockquote id="investor-title">We tell you what’s real before you wire the money—and build what your portfolio can’t staff.</blockquote>
-          <p>GhostOp sits between capital and technical execution: independent diligence before the decision, a focused build arm after it, and selective participation when a repeated problem points to a product.</p>
-          <div class="capital-note"><strong>We are not raising a fund.</strong> VC and PE dollars flow through GhostOp as diligence fees, studio engagements, and carefully chosen product participation.</div>
-        </div>
-        <aside class="investor-flow" aria-label="Investor engagement lane">
-          <h3>Portfolio signal path</h3>
-          <div class="lane"><span>01</span><div><b>See the deal clearly</b><p>Technical diligence that tests product, architecture, security, team, and delivery claims.</p></div></div>
-          <div class="lane"><span>02</span><div><b>Act on the finding</b><p>A build plan leadership can use—not a report that ends at the diagnosis.</p></div></div>
-          <div class="lane"><span>03</span><div><b>Supply the missing depth</b><p>Senior architecture and execution where a portfolio company cannot staff the gap.</p></div></div>
-          <div class="lane"><span>04</span><div><b>Capture the pattern</b><p>When the same problem repeats, evaluate whether it deserves to become a product.</p></div></div>
-        </aside>
-      </div>
-    </section>
-
     <section class="section" aria-labelledby="model-title">
       <div class="shell model-grid">
         <div class="model-quote">
-          <p id="model-title">Customer-funded discovery. <em>Evidence before productization.</em></p>
-          <small>PROJECT REVENUE NOW / REUSABLE TOOLS, LICENSING, PARTNERSHIPS &amp; SELECTIVE OWNERSHIP OVER TIME</small>
+          <p id="model-title">Find the shortest credible path from idea → working artifact → real user → revenue. <em>Then stay with the winners long enough to finish them.</em></p>
+          <small>DON’T PROVE SOPHISTICATION BY MAKING THINGS DIFFICULT / BUILD ONLY WHAT EARNS ITS COMPUTE, INFRASTRUCTURE, ENERGY, MONEY &amp; ATTENTION</small>
         </div>
         <div class="model-steps">
           <article class="model-step"><h3>Solve the valuable problem first.</h3><p>Start where a real customer has real urgency and budget. No studio theater, trend-chasing, or invented demand.</p></article>
@@ -876,12 +941,84 @@
         <div class="between-grid" style="margin-top:64px">
           <div class="between-copy">
             <p><strong>Range, not résumé.</strong></p>
-            <p>15+ years across startup and agency builds, open-source work, web and mobile products, APIs, and platforms—followed by deep work in enterprise integration, authentication, security, cloud, production reliability, and utility systems.</p>
+            <p>15+ years building and shipping startup products, enterprise systems, integrations, mobile and web applications, open-source software, and energy-sector technology—followed by deep work in identity, security, cloud, production reliability, and utility systems.</p>
           </div>
           <div class="between-copy">
             <p><strong>Public work where it matters.</strong></p>
-            <p>PWA open-source maintenance, technical publishing, and conference speaking sit alongside years spent making complicated systems hold together beyond the demo.</p>
+            <p>PWA open-source maintenance, technical publishing, and conference speaking sit alongside years spent making complicated systems hold together beyond the demo. AI now compresses the path from judgment to working artifact; experience decides what is worth shipping and what can survive production.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="labs" aria-labelledby="labs-title">
+      <div class="shell">
+        <div class="labs-intro">
+          <div>
+            <div class="index">04 / GhostOp Labs</div>
+            <h2 id="labs-title">Put the idea in public. Build around real demand.</h2>
+          </div>
+          <div class="labs-intro-copy">
+            <span class="labs-status">Products in public / maturity labeled</span>
+            <p>Labs is where strong product concepts meet reality early. We publish the idea, prototype the useful core, attract users and design partners, and invest deeper only when the demand is real.</p>
+            <p class="labs-principle">Idea → prototype → interest → design partners → demand → build. No finished-product theater.</p>
+          </div>
+        </div>
+
+        <div class="labs-grid">
+          <article class="lab-product" data-code="SS">
+            <div class="lab-meta"><span>GhostOp Labs</span><span>Working Prototype</span></div>
+            <h3><a href="https://selectsource.ai">Source Select</a></h3>
+            <p class="lab-value">Visual control over how AI uses your sources.</p>
+            <p class="lab-description">A working interface for choosing sources and tuning retrieval, behavior, parameters, and presets. Source Select makes the controls behind AI answers visible and usable instead of burying them behind provider tooling.</p>
+            <ul class="lab-capabilities">
+              <li>Choose and control sources</li>
+              <li>Tune retrieval behavior</li>
+              <li>Adjust model parameters</li>
+              <li>Save reusable presets</li>
+              <li>Inspect source-backed answers</li>
+            </ul>
+            <div class="lab-actions">
+              <a class="button" href="https://selectsource.ai">Open Working Prototype</a>
+              <small>Live at selectsource.ai. Use it, test it, and tell us where it earns a place.</small>
+            </div>
+          </article>
+
+          <article class="lab-product" data-code="TN">
+            <div class="lab-meta"><span>GhostOp Labs</span><span>Early Access / Seeking Design Partners</span></div>
+            <h3>TrustNode</h3>
+            <p class="lab-value">Trusted enterprise knowledge, with receipts.</p>
+            <p class="lab-description">A trusted enterprise knowledge layer over documentation, tickets, APIs, architecture notes, runbooks, and tribal knowledge. Answers stay grounded in sources while respecting provenance, permissions, freshness, and conflicting information.</p>
+            <ul class="lab-capabilities">
+              <li>Source-backed answers</li>
+              <li>Permission-aware retrieval</li>
+              <li>Freshness and stale-document checks</li>
+              <li>Conflict detection across sources</li>
+              <li>Architecture and service mapping</li>
+            </ul>
+            <div class="lab-actions">
+              <button class="button open-contact product-interest" type="button" data-product="TrustNode">Join Early Access</button>
+              <small>Become a design partner and help define the first useful version.</small>
+            </div>
+          </article>
+
+          <article class="lab-product" data-code="AT">
+            <div class="lab-meta"><span>GhostOp Labs</span><span>Early Access / Seeking Design Partners</span></div>
+            <h3>AuthTrace</h3>
+            <p class="lab-value">See exactly where authentication breaks.</p>
+            <p class="lab-description">Visual debugging and intelligence for OAuth, OIDC, and PKCE flows. AuthTrace maps the full chain—tokens, redirects, cookies, CORS, gateways, WAF/APIM, and browser or mobile differences—then explains where it failed and why.</p>
+            <ul class="lab-capabilities">
+              <li>OAuth, OIDC, and PKCE flow mapping</li>
+              <li>Token and redirect failures</li>
+              <li>Cookie, SameSite, and CORS failures</li>
+              <li>WAF and APIM interference</li>
+              <li>Mobile, browser, and IdP differences</li>
+            </ul>
+            <div class="lab-actions">
+              <button class="button open-contact product-interest" type="button" data-product="AuthTrace">Join Early Access</button>
+              <small>Become a design partner and test it against real auth failures.</small>
+            </div>
+          </article>
         </div>
       </div>
     </section>
@@ -889,7 +1026,7 @@
     <section class="section" aria-labelledby="essays-title">
       <div class="shell">
         <div class="section-head">
-          <div class="index">04 / Field notes</div>
+          <div class="index">05 / Field notes</div>
           <h2 id="essays-title">What we notice from inside the machine.</h2>
           <p>Essays on architecture, technical diligence, fragile builds, and the gap between what software promises and what the organization can actually operate.</p>
         </div>
@@ -911,12 +1048,30 @@
       </div>
     </section>
 
+    <section class="section investor-section" id="investors" aria-labelledby="investor-title">
+      <div class="shell investor-layout">
+        <div class="investor-copy">
+          <p class="eyebrow">For funds and portfolio teams, when relevant</p>
+          <blockquote id="investor-title">Technical diligence when the decision matters. Senior execution when the portfolio needs it.</blockquote>
+          <p>GhostOp can assess the product and technical reality before a decision, then help founders and operators act on what the diligence reveals. The work stays centered on useful products, capable teams, and evidence from real users.</p>
+          <div class="capital-note"><strong>Demand over theater.</strong> Diligence and build work are services to the company and its customers—not a substitute for proving the product.</div>
+        </div>
+        <aside class="investor-flow" aria-label="Portfolio engagement lane">
+          <h3>Portfolio signal path</h3>
+          <div class="lane"><span>01</span><div><b>See the product clearly</b><p>Technical diligence that tests architecture, security, team, product claims, and delivery reality.</p></div></div>
+          <div class="lane"><span>02</span><div><b>Act on the finding</b><p>A build plan founders and operators can use—not a report that ends at the diagnosis.</p></div></div>
+          <div class="lane"><span>03</span><div><b>Supply the missing depth</b><p>Senior architecture and execution where a portfolio company cannot staff the gap.</p></div></div>
+          <div class="lane"><span>04</span><div><b>Return to the user</b><p>Use shipped evidence and customer demand to decide what deserves more capital and attention.</p></div></div>
+        </aside>
+      </div>
+    </section>
+
     <section class="contact-section" aria-labelledby="contact-title">
       <div class="shell">
         <div class="contact-grid">
           <h2 id="contact-title">Something is trying to get built.</h2>
           <div class="contact-side">
-            <p>Give us the shape of the problem, what feels unresolved, and why it matters now. We’ll find the first useful move.</p>
+            <p>Bring the product idea, the broken system, or the workflow nobody has made tractable yet. We’ll find the smallest credible move toward something users can test—and favor systems that waste less compute, infrastructure, energy, money, and human attention.</p>
             <button class="button open-contact" type="button">Bring us the hard problem
               <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M3 10h13M12 5.5 16.5 10 12 14.5" stroke="currentColor" stroke-width="1.6"/></svg>
             </button>
@@ -978,14 +1133,19 @@
     const form = document.getElementById('contact-form');
     let returnFocus = null;
 
-    function openContact() {
+    function openContact(event) {
       returnFocus = document.activeElement;
+      const product = event?.currentTarget?.dataset?.product;
+      if (product) {
+        const message = document.getElementById('contact-message');
+        message.value = `I'm interested in becoming a design partner for ${product}.\n\nThe problem or workflow I want to explore:\n`;
+      }
       modal.hidden = false;
       modal.classList.remove('is-summoning');
       void modal.offsetWidth;
       modal.classList.add('is-summoning');
       document.body.classList.add('modal-open');
-      requestAnimationFrame(() => document.getElementById('contact-name').focus());
+      requestAnimationFrame(() => document.getElementById(product ? 'contact-message' : 'contact-name').focus());
     }
 
     function closeContact() {
