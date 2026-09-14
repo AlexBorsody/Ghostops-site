@@ -920,28 +920,172 @@
     }
 
   </style>
+
+  <style>
+    /* 2026 studio identity — article shell */
+    :root {
+      --paper: #0a0d0c;
+      --white: #111512;
+      --ink: #f5f2e9;
+      --muted: #aeb7b1;
+      --line: #303834;
+      --line-dark: #303834;
+      --signal: #ff542b;
+      --acid: #cbff57;
+      --dark: #0a0d0c;
+      --content: 1180px;
+    }
+    html { background: var(--paper); }
+    body {
+      color: var(--ink);
+      background:
+        linear-gradient(rgba(255,255,255,.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.014) 1px, transparent 1px),
+        var(--paper);
+      background-size: 52px 52px;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      pointer-events: none;
+      opacity: .03;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+    }
+    .skip-link { background: var(--acid); color: #0a0d0c; }
+    .topline {
+      border-color: var(--line);
+      background: rgba(10,13,12,.92);
+      backdrop-filter: blur(14px);
+    }
+    .topline-inner { min-height: 62px; }
+    .status { color: var(--ink); text-decoration: none; gap: 10px; }
+    .status-mark { width: 28px; height: 28px; flex: 0 0 auto; }
+    .status strong { color: var(--ink); font-weight: 600; }
+    .status-divider { color: var(--signal); }
+    .status-descriptor { color: var(--muted); }
+    nav { font-size: 12px; }
+    nav a:hover, nav a:focus-visible { color: var(--acid); text-decoration: none; }
+    nav a[aria-current="page"] { color: var(--acid); text-decoration: none; }
+    .nav-cta { border: 1px solid #667069; background: transparent; color: var(--ink); }
+    .nav-cta:hover, .nav-cta:focus-visible { border-color: var(--acid); color: var(--acid); }
+    main { overflow: hidden; }
+    .blog-top {
+      position: relative;
+      width: min(980px, calc(100% - 40px));
+      padding: 92px 0 0;
+    }
+    .blog-back { color: var(--acid); }
+    .kicker { color: var(--signal); }
+    .blog-title { max-width: 900px; color: var(--ink); font-size: clamp(44px, 6.4vw, 78px); line-height: .99; }
+    .blog-title em { text-decoration-color: var(--acid); }
+    .blog-meta { color: var(--muted); }
+    .blog-meta .dot { background: var(--acid); box-shadow: 0 0 12px rgba(203,255,87,.42); }
+    .transmission {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(160px,.48fr) minmax(0,1.52fr);
+      gap: 22px;
+      align-items: center;
+      min-height: 112px;
+      margin-top: 48px;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      overflow: hidden;
+      background: rgba(16,20,18,.78);
+    }
+    .transmission-copy { padding: 18px 0 18px 18px; font: 500 10px/1.55 "IBM Plex Mono",monospace; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+    .transmission-copy strong { display: block; margin-bottom: 4px; color: var(--acid); font-weight: 500; }
+    .transmission svg { width: 100%; height: 90px; overflow: visible; }
+    .signal-base { fill: none; stroke: #39423d; stroke-width: 1.5; vector-effect: non-scaling-stroke; }
+    .signal-trace { fill: none; stroke: var(--acid); stroke-width: 2; stroke-dasharray: 9 7; filter: drop-shadow(0 0 4px rgba(203,255,87,.5)); vector-effect: non-scaling-stroke; animation: article-trace 10s linear infinite; }
+    .signal-eye { fill: var(--ink); }
+    @keyframes article-trace { to { stroke-dashoffset: -128; } }
+    .article-body {
+      width: min(720px, calc(100% - 40px));
+      margin-top: 68px;
+      color: #d8ddd9;
+      font-size: 19px;
+    }
+    .article-body h2 { color: var(--ink); }
+    .article-body a { text-decoration-color: var(--acid); }
+    .article-signoff { border-color: var(--line); color: #b8c0bb; }
+    .blog-cta {
+      position: relative;
+      overflow: hidden;
+      border-color: var(--line);
+      background: var(--white);
+    }
+    .blog-cta::after {
+      content: "GHOST / SIGNAL / PRODUCT";
+      position: absolute;
+      right: -23px;
+      top: 22px;
+      color: #445048;
+      font: 500 9px/1 "IBM Plex Mono",monospace;
+      letter-spacing: .12em;
+      transform: rotate(90deg);
+    }
+    .blog-cta p { color: var(--muted); }
+    .button { background: var(--acid); border-color: var(--acid); color: #0a0d0c; }
+    .button:hover, .button:focus-visible { background: var(--ink); border-color: var(--ink); color: #0a0d0c; }
+    .button.secondary { background: transparent; border-color: #667069; color: var(--ink); }
+    .button.secondary:hover, .button.secondary:focus-visible { border-color: var(--acid); background: transparent; color: var(--acid); }
+    footer { border-color: var(--line); color: var(--muted); }
+    footer span:first-child { color: var(--ink); }
+    :focus-visible { outline-color: var(--acid); }
+    @media (max-width: 650px) {
+      .topline-inner { min-height: 56px; }
+      .status-divider, .status-descriptor { display: none; }
+      .blog-top { width: min(100% - 28px, 980px); padding-top: 58px; }
+      .blog-title { font-size: clamp(40px, 12.8vw, 62px); }
+      .article-body { width: min(100% - 28px, 720px); font-size: 18px; line-height: 1.68; }
+      .transmission { grid-template-columns: 1fr; gap: 0; }
+      .transmission-copy { padding: 16px; }
+      .transmission svg { height: 72px; }
+      .blog-cta { width: min(100% - 28px, 860px); padding: 32px 24px; }
+      .blog-cta .button { width: 100%; }
+      .blog-foot { width: min(100% - 28px, 860px); }
+    }
+    @media (prefers-reduced-motion: reduce) { .signal-trace { animation: none; } }
+  </style>
 </head><body>
   <a class="skip-link" href="#main">Skip to content</a>
 
   <header class="topline">
     <div class="topline-inner">
-      <a class="status" href="https://ghostop.ai/" style="text-decoration: none;"><span class="status-dot" aria-hidden="true"></span><strong>GhostOp</strong><span class="status-divider">/</span><span class="status-descriptor">Technical advisory</span></a>
+      <a class="status" href="https://ghostop.ai/" aria-label="GhostOp home">
+        <svg class="status-mark" viewBox="0 0 40 36" aria-hidden="true">
+          <path d="M6 32V18C6 9.72 12.27 3 20 3s14 6.72 14 15v14l-4.67-4-4.66 4L20 28l-4.67 4-4.66-4L6 32Z" fill="#f5f2e9"/>
+          <ellipse cx="15.5" cy="17" rx="2.2" ry="3.4" fill="#0a0d0c"/>
+          <ellipse cx="24.5" cy="17" rx="2.2" ry="3.4" fill="#0a0d0c"/>
+        </svg>
+        <strong>GhostOp</strong><span class="status-divider">/</span><span class="status-descriptor">ghost in the machine</span>
+      </a>
       <nav aria-label="Primary navigation">
-        <a href="https://ghostop.ai/#work">Work</a>
-        <a href="https://ghostop.ai/#approach">Approach</a>
-        <a href="https://ghostop.ai/#about">About us</a>
-        <a href="/blog.html">Writing</a>
-        <a class="nav-cta" href="https://ghostop.ai/#fit">Find the right review</a>
+        <a href="https://ghostop.ai/#studio">Studio</a>
+        <a href="https://ghostop.ai/#investors">Investors</a>
+        <a href="https://ghostop.ai/#patterns">Patterns</a>
+        <a href="/blog.html" aria-current="page">Essays</a>
+        <a class="nav-cta" href="https://ghostop.ai/#studio">Bring the hard problem</a>
       </nav>
     </div>
   </header>
 
   <main id="main">
     <div class="blog-top">
-      <p class="blog-back"><a href="/blog.html">&larr; Writing</a></p>
-      <p class="kicker">Build audits</p>
+      <p class="blog-back"><a href="/blog.html">&larr; Essays</a></p>
+      <p class="kicker">Identity / Field note</p>
       <h1 class="blog-title">The Identity Shortcut That <em>Becomes a Liability</em></h1>
       <p class="blog-meta"><span class="dot" aria-hidden="true"></span><span>GhostOp</span><span>&middot;</span><span>September 13, 2026</span></p>
+      <div class="transmission" aria-label="A GhostOp signal moving through the machine">
+        <div class="transmission-copy"><strong>Ghost in the machine</strong>IDENTITY / FIELD NOTE 04<br />Signal isolated / pattern visible</div>
+        <svg viewBox="0 0 680 90" preserveAspectRatio="none" aria-hidden="true">
+          <path class="signal-base" d="M0 46H112l15-18 17 40 20-61 22 78 19-39h83l13-9 13 18 14-42 22 63 18-30h78l16-18 15 37 18-19h198"/>
+          <path class="signal-trace" d="M0 46H112l15-18 17 40 20-61 22 78 19-39h83l13-9 13 18 14-42 22 63 18-30h78l16-18 15 37 18-19h198"/>
+        </svg>
+      </div>
     </div>
     <article class="article-body">
 <p>Identity is the one layer of a system where every shortcut compounds. A skipped test can be rewritten. A slow query can be tuned. But a login system built on assumptions &mdash; trusted networks, small teams, &ldquo;we&rsquo;ll add SSO later&rdquo; &mdash; hardens into the foundation, and everything above it inherits the weakness. By the time it matters, replacing it means touching every user, every integration, and every customer contract.</p>
@@ -968,13 +1112,13 @@
 <p>Clear answers mean the liability is managed. Evasion means it is compounding.</p>
 <h2>Why this matters more every year</h2>
 <p>Identity shortcuts used to be survivable because the blast radius was small. That era is over. Systems now hold regulated data, serve enterprise customers, and integrate with partners &mdash; every one of which inherits your identity posture. A shortcut taken to ship faster in year one becomes the reason a deal dies in year three, or the paragraph in a breach notification that names the company. The cheapest time to get identity right was at the start. The second cheapest time is an audit, before someone else finds it first.</p>
-<p class="article-signoff"><em>GhostOp performs independent build audits with deep identity and security review: what the shortcuts are, what they could cost, and what to fix first.</em> <a href="https://ghostop.ai/#work">Explore engagements</a>.</p>
+<p class="article-signoff"><em>GhostOp is a technical product studio with deep identity and security judgment. We find the signal inside difficult systems and make it real: what the shortcuts are, what they could cost, and what to fix first.</em> <a href="https://ghostop.ai/#studio">See how the studio works</a>.</p>
     </article>
     <section class="blog-cta" aria-labelledby="blog-cta-title">
-      <h2 id="blog-cta-title">Bring the claim. We&rsquo;ll help test the reality.</h2>
-      <p>If this reads like your build &mdash; or the one you&rsquo;re about to bet on &mdash; start with the decision, not a shopping list.</p>
+      <h2 id="blog-cta-title">Something is trying to get built.</h2>
+      <p>Bring us the difficult idea hiding between product, software, AI, integrations, security, and enterprise reality. We&rsquo;ll find the signal and make the first useful move.</p>
       <div class="row">
-        <a class="button" href="https://ghostop.ai/#work">Explore engagements
+        <a class="button" href="https://ghostop.ai/#studio">See how the studio works
           <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M4 10h11M11 6l4 4-4 4" stroke="currentColor" stroke-width="1.7"/></svg>
         </a>
         <a class="button secondary" href="https://ghostop.ai/">Back to the homepage</a>
@@ -983,8 +1127,8 @@
 
     <div class="blog-foot">
       <footer>
-        <span>GhostOp / Independent technical advisory</span>
-        <span>Technical diligence &middot; Architecture advisory &middot; Build audits</span>
+        <span>GhostOp / Technical product studio</span>
+        <span>Ghost in the machine / Find the signal. Make it real.</span>
       </footer>
     </div>
   </main>
