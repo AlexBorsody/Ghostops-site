@@ -1,5 +1,5 @@
 /* GhostOp service worker — cache-first PWA shell for ghostop.ai */
-const CACHE = 'ghostop-v2';
+const CACHE = 'ghostop-v3';
 const ASSETS = [
   './',
   'index.html',
@@ -8,7 +8,6 @@ const ASSETS = [
   'icon-512.png',
   'icon-maskable-512.png',
   'apple-touch-icon.png',
-  'sitemap.xml',
   'robots.txt'
 ];
 
